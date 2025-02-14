@@ -9,4 +9,3 @@ class PracticePage extends StatelessWidget {
   }
 }
 
-
