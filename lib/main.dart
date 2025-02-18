@@ -15,8 +15,6 @@ import 'utils/themes/app_theme.dart';
 
 final faker = Faker();
 
-
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
