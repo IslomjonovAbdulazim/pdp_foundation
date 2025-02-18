@@ -13,7 +13,6 @@ import 'utils/services/theme_service.dart';
 import 'utils/services/token_service.dart';
 import 'utils/themes/app_theme.dart';
 
-
 final faker = Faker();
 
 void main() async {
