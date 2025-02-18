@@ -7,7 +7,7 @@ import '../constants/color_constants.dart';
 class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    colorScheme: ColorScheme(
+    colorScheme: const ColorScheme(
       brightness: Brightness.light,
       primary: LightColorConstants.primary,
       onPrimary: Colors.white,
@@ -21,11 +21,11 @@ class AppTheme {
     scaffoldBackgroundColor: LightColorConstants.background,
     cardColor: LightColorConstants.card,
     dividerColor: LightColorConstants.border,
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       bodyLarge: TextStyle(color: LightColorConstants.textPrimary),
       bodyMedium: TextStyle(color: LightColorConstants.textSecondary),
     ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backgroundColor: LightColorConstants.background,
       iconTheme: IconThemeData(color: LightColorConstants.textPrimary),
       titleTextStyle: TextStyle(
@@ -35,7 +35,8 @@ class AppTheme {
       ),
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: LightColorConstants.background,
-        statusBarIconBrightness: Brightness.dark, // Dark icons for light background
+        statusBarIconBrightness: Brightness.dark,
+        // Dark icons for light background
         statusBarBrightness: Brightness.light, // Light status bar
       ),
     ),
@@ -43,7 +44,7 @@ class AppTheme {
 
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    colorScheme: ColorScheme(
+    colorScheme: const ColorScheme(
       brightness: Brightness.dark,
       primary: DarkColorConstants.primary,
       onPrimary: Colors.white,
@@ -57,11 +58,11 @@ class AppTheme {
     scaffoldBackgroundColor: DarkColorConstants.background,
     cardColor: DarkColorConstants.card,
     dividerColor: DarkColorConstants.border,
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       bodyLarge: TextStyle(color: DarkColorConstants.textPrimary),
       bodyMedium: TextStyle(color: DarkColorConstants.textSecondary),
     ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backgroundColor: DarkColorConstants.background,
       iconTheme: IconThemeData(color: DarkColorConstants.textPrimary),
       titleTextStyle: TextStyle(
@@ -71,7 +72,8 @@ class AppTheme {
       ),
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: DarkColorConstants.background,
-        statusBarIconBrightness: Brightness.light, // Light icons for dark background
+        statusBarIconBrightness: Brightness.light,
+        // Light icons for dark background
         statusBarBrightness: Brightness.dark, // Dark status bar
       ),
     ),

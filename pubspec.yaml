@@ -223,7 +223,7 @@ flutter:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/brand/logo.jpg"  # ✅ Make sure this file has NO transparency
+  image_path: "assets/brand/logo.png"  # ✅ Make sure this file has NO transparency
   adaptive_icon_background: "#FFFFFF"  # (Optional) Ensures a solid background
 
 

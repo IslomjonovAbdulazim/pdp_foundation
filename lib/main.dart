@@ -15,16 +15,13 @@ import 'utils/themes/app_theme.dart';
 
 final faker = Faker();
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
-  await GetStorage.init();
   Get.put(ThemeController());
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-      overlays: SystemUiOverlay.values);
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
