@@ -12,6 +12,7 @@ import '../bindings/study/quiz_history_binding.dart';
 import '../bindings/study/quiz_result_binding.dart';
 import '../bindings/study/quiz_stats_binding.dart';
 import '../bindings/study/themes_binding.dart';
+import '../bindings/study/watch_binding.dart';
 import '../features/home/home/imports.dart';
 import '../features/leaderboard/leaderboard/imports.dart';
 import '../features/leaderboard/live_quiz/imports.dart';
@@ -25,6 +26,7 @@ import '../features/study/quiz_history/imports.dart';
 import '../features/study/quiz_result/imports.dart';
 import '../features/study/quiz_stats/imports.dart';
 import '../features/study/themes/imports.dart';
+import '../features/study/watch/imports.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -93,6 +95,11 @@ class AppPages {
       name: AppRoutes.themes,
       page: () => const ThemesPage(),
       binding: ThemesBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.themes,
+      page: () => const WatchPage(),
+      binding: WatchBinding(),
     ),
 
     /// #SCREENS
