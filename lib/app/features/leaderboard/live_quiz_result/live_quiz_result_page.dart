@@ -1,10 +1,10 @@
 part of 'imports.dart';
 
-class LiveQuizPage extends StatelessWidget {
-  const LiveQuizPage({super.key});
+class LiveQuizResultPage extends StatelessWidget {
+  const LiveQuizResultPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }

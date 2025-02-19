@@ -20,11 +20,11 @@ class LoadingPage extends StatelessWidget {
                 color:
                     colorNeeded ? context.primary.withValues(alpha: .1) : null,
               ),
-              child: Center(
+              child: const Center(
                 child: CircularProgressIndicator.adaptive(),
               ),
             ),
           )
-        : SizedBox.shrink();
+        : const SizedBox.shrink();
   }
 }

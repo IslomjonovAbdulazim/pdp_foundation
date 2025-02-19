@@ -79,7 +79,7 @@ class StatusCodeService {
       backgroundColor:
           isError ? Get.theme.colorScheme.error : Get.theme.colorScheme.primary,
       colorText: Get.theme.colorScheme.onPrimary,
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
     );
   }
 }

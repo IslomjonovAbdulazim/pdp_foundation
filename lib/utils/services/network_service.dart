@@ -13,8 +13,8 @@ class NetworkService {
     _dio = Dio(
       BaseOptions(
         baseUrl: AppConstants.baseUrl,
-        connectTimeout: Duration(seconds: AppConstants.timeoutSeconds),
-        receiveTimeout: Duration(seconds: AppConstants.timeoutSeconds),
+        connectTimeout: const Duration(seconds: AppConstants.timeoutSeconds),
+        receiveTimeout: const Duration(seconds: AppConstants.timeoutSeconds),
       ),
     );
 
