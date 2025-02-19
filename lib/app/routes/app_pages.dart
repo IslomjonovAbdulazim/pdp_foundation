@@ -89,6 +89,7 @@ class AppPages {
       page: () => const QuizStatsPage(),
       binding: QuizStatsBinding(),
     ),
+
     GetPage(
       name: AppRoutes.themes,
       page: () => const ThemesPage(),
