@@ -8,3 +8,4 @@ class UserProfileBinding extends Bindings {
     Get.lazyPut(() => UserProfileController());
   }
 }
+
