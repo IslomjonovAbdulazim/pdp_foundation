@@ -8,4 +8,3 @@ class UpgradeBinding extends Bindings {
     Get.lazyPut(() => UpgradeController());
   }
 }
-
