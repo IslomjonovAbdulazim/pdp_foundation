@@ -13,7 +13,6 @@ class AppRoutes {
   static const String quizResult = "/quiz_result";
   static const String quizStats = "/quiz_stats";
 
-
   /// #SCREENS
   static const String offline = "/offline";
 }
