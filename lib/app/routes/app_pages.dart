@@ -12,7 +12,7 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.home,
-      page: () => HomePage(),
+      page: () => const HomePage(),
     ),
   ];
 }

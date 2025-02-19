@@ -1,7 +1,7 @@
 part of 'imports.dart';
 
-class PracticePage extends StatelessWidget {
-  const PracticePage({super.key});
+class LeaderboardPage extends StatelessWidget {
+  const LeaderboardPage({super.key});
 
   @override
   Widget build(BuildContext context) {

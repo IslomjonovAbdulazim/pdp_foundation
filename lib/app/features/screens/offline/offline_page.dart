@@ -39,7 +39,7 @@ class OfflinePage extends StatelessWidget {
                     style: context.body,
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     style: context.elevatedButtonStyle,
                     onPressed: () {
