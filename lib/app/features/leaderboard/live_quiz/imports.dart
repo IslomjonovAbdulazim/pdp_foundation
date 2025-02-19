@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
-part 'leaderboard_page.dart';
-part 'leaderboard_view.dart';
-part 'leaderboard_widgets.dart';
+part 'live_quiz_page.dart';
+part 'live_quiz_view.dart';
+part 'live_quiz_widgets.dart';

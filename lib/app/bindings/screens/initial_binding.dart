@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../data/providers/dio_manager.dart';
+import '../../data/providers/dio_manager.dart';
 
 class InitialBinding extends Bindings {
   @override
