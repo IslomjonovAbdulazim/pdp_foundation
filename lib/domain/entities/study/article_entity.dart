@@ -21,3 +21,4 @@ class ArticleContentEntity {
 }
 
 enum ContentType { title, text, code, image, quote }
+
