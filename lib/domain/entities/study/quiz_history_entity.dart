@@ -23,3 +23,5 @@ class QuizHistoryDetailEntity {
     required this.time,
   });
 }
+
+
