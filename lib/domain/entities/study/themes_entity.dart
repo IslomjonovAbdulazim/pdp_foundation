@@ -2,7 +2,7 @@ class ThemesEntity {
   final int id;
   final String name;
   final String description;
-  final String status;
+  final String status; // not-started, ongoing, finished
 
   ThemesEntity({
     required this.id,
