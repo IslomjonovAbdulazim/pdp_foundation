@@ -1,10 +1,10 @@
 class PointEntity {
-  final int point;
+  final int points;
   final DateTime time;
   final String userID;
 
   PointEntity({
-    required this.point,
+    required this.points,
     required this.time,
     required this.userID,
   });
