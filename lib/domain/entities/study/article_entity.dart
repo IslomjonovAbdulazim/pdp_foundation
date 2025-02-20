@@ -20,10 +20,4 @@ class ArticleContentEntity {
   });
 }
 
-enum ContentType {
-  title, // Section titles
-  text, // Paragraphs
-  code, // Code snippets
-  image, // Images (URL or asset path)
-  quote, // Blockquotes or highlights
-}
+enum ContentType { title, text, code, image, quote }
