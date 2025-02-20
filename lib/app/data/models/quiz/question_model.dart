@@ -5,7 +5,6 @@ import 'fill_in_blank_question_model.dart';
 import 'multiple_choice_question_model.dart';
 import 'true_false_question_model.dart';
 
-
 abstract class QuestionModel {
   final int id;
   final String questionText;
