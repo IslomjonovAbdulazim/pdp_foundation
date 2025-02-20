@@ -1,9 +1,9 @@
-class Article {
+class ArticleEntity {
   final String id;
   final String title;
   final List<ArticleContentEntity> content;
 
-  Article({
+  ArticleEntity({
     required this.id,
     required this.title,
     required this.content,
