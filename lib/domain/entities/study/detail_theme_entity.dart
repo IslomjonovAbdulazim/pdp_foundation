@@ -2,13 +2,13 @@ class DetailThemeEntity {
   final int id;
   final String themeTitle;
   final List<GeneralVideoEntity> videos;
-  final String article;
+  final String articleID;
 
   DetailThemeEntity({
     required this.id,
     required this.themeTitle,
     required this.videos,
-    required this.article,
+    required this.articleID,
   });
 }
 
