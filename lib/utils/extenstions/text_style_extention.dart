@@ -35,6 +35,15 @@ extension TextStylesExtension on BuildContext {
         fontWeight: FontWeight.w600,
         color: Theme.of(this).colorScheme.onSurface,
       );
+
+  TextStyle get smallName => TextStyle(
+        fontFamily: FontConstants.montserrat,
+        fontSize: 13,
+        height: 1,
+        fontWeight: FontWeight.w500,
+        color: Theme.of(this).colorScheme.onSurface,
+      );
+
   TextStyle get number => TextStyle(
         fontFamily: FontConstants.montserrat,
         fontSize: 16,
