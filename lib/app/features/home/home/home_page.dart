@@ -41,6 +41,17 @@ class HomePage extends StatelessWidget {
           const SizedBox(width: 10),
         ],
       ),
+      body: const SingleChildScrollView(
+        padding: EdgeInsets.symmetric(
+          horizontal: 10,
+          vertical: 20,
+        ),
+        child: Column(
+          children: [
+            _LastRead(),
+          ],
+        ),
+      ),
     );
   }
 }

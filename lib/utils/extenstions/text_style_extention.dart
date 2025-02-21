@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pdp_foundation/utils/extenstions/color_extension.dart';
+import 'package:pdp_foundation/utils/extenstions/context_extension.dart';
 
 import '../constants/font_constants.dart';
 
@@ -23,7 +25,7 @@ extension TextStylesExtension on BuildContext {
   TextStyle get title => TextStyle(
         fontFamily: FontConstants.nunito,
         fontSize: 24,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w800,
         color: Theme.of(this).colorScheme.onSurface,
       );
 
@@ -90,10 +92,10 @@ extension TextStylesExtension on BuildContext {
   /// A bold style intended for buttons or call-to-action text.
   TextStyle get button => TextStyle(
         fontFamily: FontConstants.nunito,
-        fontSize: 16,
-        fontWeight: FontWeight.bold,
+        fontSize: 20,
+        fontWeight: FontWeight.w800,
         // Typically used on a contrasting background (e.g. primary color).
-        color: Theme.of(this).colorScheme.onPrimary,
+        color: backgroundColor,
       );
 
   /// A monospaced style ideal for code snippets or technical info.
