@@ -167,7 +167,7 @@ class _UserItem extends StatelessWidget {
         Get.toNamed(AppRoutes.userProfile, arguments: user);
       },
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        margin: const EdgeInsets.symmetric(vertical: 6),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 7),
         decoration: BoxDecoration(
           color: context.cardColor,
