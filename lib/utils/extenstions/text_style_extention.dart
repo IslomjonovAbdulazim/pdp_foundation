@@ -27,6 +27,22 @@ extension TextStylesExtension on BuildContext {
         color: Theme.of(this).colorScheme.onSurface,
       );
 
+  /// A refined title style for primary headings.
+  TextStyle get name => TextStyle(
+        fontFamily: FontConstants.montserrat,
+        fontSize: 16,
+        height: 1,
+        fontWeight: FontWeight.w600,
+        color: Theme.of(this).colorScheme.onSurface,
+      );
+  TextStyle get number => TextStyle(
+        fontFamily: FontConstants.montserrat,
+        fontSize: 16,
+        height: 1,
+        fontWeight: FontWeight.w600,
+        color: Theme.of(this).colorScheme.onSurface,
+      );
+
   /// A softer style for subtitles or secondary headings.
   TextStyle get subtitle => TextStyle(
         fontFamily: FontConstants.oswald,

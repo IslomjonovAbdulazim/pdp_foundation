@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pdp_foundation/utils/extenstions/theme_data.dart';
 
 extension ColorExtension on BuildContext {
   /// Background used for Scaffold and AppBar.
@@ -35,4 +36,7 @@ extension ColorExtension on BuildContext {
 
   /// Secondary text color.
   Color get textSecondary => Theme.of(this).textTheme.bodyMedium!.color!;
+
+  /// Custom
+  Color get selection => Theme.of(this).extension<CustomTheme>()!.selectionColor;
 }

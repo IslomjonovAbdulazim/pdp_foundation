@@ -19,4 +19,5 @@ class AppRoutes {
 
   /// #SCREENS
   static const String offline = "/offline";
+  static const String bnb = "/bnb";
 }

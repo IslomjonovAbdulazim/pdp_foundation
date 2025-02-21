@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:pdp_foundation/app/features/screens/bnb/imports.dart';
 
 import '../bindings/home/home_binding.dart';
 import '../bindings/leaderboard/leaderboard_binding.dart';
@@ -106,6 +107,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.offline,
       page: () => OfflinePage(),
+    ),
+    GetPage(
+      name: AppRoutes.bnb,
+      page: () => const BNBPage(),
     ),
   ];
 }

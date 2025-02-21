@@ -21,8 +21,8 @@ void main() async {
     DeviceOrientation.portraitUp,
   ]);
   Get.put(ThemeController());
-  await GetStorage.init();
-
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+      overlays: SystemUiOverlay.values);
   runApp(const MyApp());
 }
 
@@ -53,7 +53,7 @@ class _MyAppState extends State<MyApp> {
         darkTheme: AppTheme.darkTheme,
         themeMode: themeController.themeMode,
         debugShowCheckedModeBanner: false,
-        initialRoute: AppRoutes.leaderboard,
+        initialRoute: AppRoutes.bnb,
         initialBinding: InitialBinding(),
         getPages: AppPages.pages,
         builder: (context, child) => MediaQuery(

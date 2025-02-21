@@ -5,6 +5,11 @@ class UserProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    final user = Get.arguments as LeaderboardUserEntity;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(user.fullname),
+      ),
+    );
   }
 }
