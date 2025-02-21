@@ -5,6 +5,42 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        leadingWidth: 60,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: CupertinoButton(
+            padding: EdgeInsets.zero,
+            onPressed: () {},
+            child: SizedBox(
+              height: 40,
+              width: 40,
+              child: Image.asset(BrandConstants.logo),
+            ),
+          ),
+        ),
+        centerTitle: false,
+        title: const Text(
+          "Salom, Aziz!",
+        ),
+        actions: [
+          CupertinoButton(
+            padding: EdgeInsets.zero,
+            onPressed: () {},
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(100),
+              clipBehavior: Clip.antiAlias,
+              child: SizedBox(
+                height: 40,
+                width: 40,
+                child: CachedNetworkWidget(mockUser.image),
+              ),
+            ),
+          ),
+          const SizedBox(width: 10),
+        ],
+      ),
+    );
   }
 }

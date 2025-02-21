@@ -8,8 +8,8 @@ class CachedNetworkWidget extends StatelessWidget {
   final double width;
   final double height;
 
-  const CachedNetworkWidget(
-      {super.key, required this.imageUrl, this.width = 100, this.height = 100});
+  const CachedNetworkWidget(this.imageUrl,
+      {super.key, this.width = 100, this.height = 100});
 
   @override
   Widget build(BuildContext context) {

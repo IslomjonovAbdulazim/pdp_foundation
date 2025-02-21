@@ -26,7 +26,7 @@ class BNBPage extends StatelessWidget {
               ),
               const BottomNavigationBarItem(
                 icon: Icon(CupertinoIcons.chart_bar_alt_fill),
-                label: "Profile",
+                label: "Leaderboard",
               ),
               const BottomNavigationBarItem(
                 icon: Icon(CupertinoIcons.book_fill),

@@ -24,7 +24,7 @@ class _ThemeItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(100),
               child: CachedNetworkWidget(
-                imageUrl: theme.image,
+                theme.image,
                 height: 40,
                 width: 40,
               ),

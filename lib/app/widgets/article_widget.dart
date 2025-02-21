@@ -50,7 +50,7 @@ class ArticleWidget extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 10),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: CachedNetworkWidget(imageUrl: content.data),
+            child: CachedNetworkWidget(content.data),
           ),
         );
       case ContentType.code:
