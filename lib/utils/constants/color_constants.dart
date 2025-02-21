@@ -10,6 +10,7 @@ class DarkColorConstants {
   static const Color error = Color(0xFFFF453A);
   static const Color border = Color(0xFF323232);
   static const Color card = Color(0xFF1A1A1A);
+  static const Color selection = Color(0xFF536724);
 }
 
 class LightColorConstants {
@@ -22,4 +23,5 @@ class LightColorConstants {
   static const Color error = Color(0xFFC71026);
   static const Color border = Color(0xFFE5E5E5);
   static const Color card = Color(0xFFFCFCFC);
+  static const Color selection = Color(0xffC7F064);
 }

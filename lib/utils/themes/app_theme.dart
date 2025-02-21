@@ -1,6 +1,7 @@
 // lib/utils/themes/app_theme.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pdp_foundation/utils/extenstions/theme_data.dart';
 
 import '../constants/color_constants.dart';
 
@@ -40,6 +41,9 @@ class AppTheme {
         statusBarBrightness: Brightness.light, // Light status bar
       ),
     ),
+    extensions: [
+      const CustomTheme(selectionColor: LightColorConstants.selection),
+    ],
   );
 
   static final ThemeData darkTheme = ThemeData(
@@ -77,5 +81,8 @@ class AppTheme {
         statusBarBrightness: Brightness.dark, // Dark status bar
       ),
     ),
+    extensions: [
+      const CustomTheme(selectionColor: DarkColorConstants.selection),
+    ],
   );
 }
