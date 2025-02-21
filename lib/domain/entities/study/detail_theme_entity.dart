@@ -197,4 +197,52 @@ List<DetailThemeEntity> mockDetailThemes = [
             videoURL: "https://www.youtube.com/watch?v=30LWjhZzg50"),
       ],
       articleID: 700),
+  DetailThemeEntity(
+      id: 8,
+      themeTitle: "TypeScript Basics",
+      videos: [
+        GeneralVideoEntity(
+            themeID: 7,
+            id: 7,
+            thumbnailImage: "https://img.youtube.com/vi/BwuLxPH8IDs/0.jpg",
+            title: "TypeScript Basics",
+            videoURL: "https://www.youtube.com/watch?v=BwuLxPH8IDs"),
+        GeneralVideoEntity(
+            themeID: 7,
+            id: 8,
+            thumbnailImage: "https://img.youtube.com/vi/-xIVn3UqYFs/0.jpg",
+            title: "TypeScript with React",
+            videoURL: "https://www.youtube.com/watch?v=-xIVn3UqYFs"),
+        GeneralVideoEntity(
+            themeID: 7,
+            id: 9,
+            thumbnailImage: "https://img.youtube.com/vi/30LWjhZzg50/0.jpg",
+            title: "Advanced TypeScript",
+            videoURL: "https://www.youtube.com/watch?v=30LWjhZzg50"),
+      ],
+      articleID: 800),
+  DetailThemeEntity(
+      id: 9,
+      themeTitle: "TypeScript Basics",
+      videos: [
+        GeneralVideoEntity(
+            themeID: 7,
+            id: 7,
+            thumbnailImage: "https://img.youtube.com/vi/BwuLxPH8IDs/0.jpg",
+            title: "TypeScript Basics",
+            videoURL: "https://www.youtube.com/watch?v=BwuLxPH8IDs"),
+        GeneralVideoEntity(
+            themeID: 7,
+            id: 8,
+            thumbnailImage: "https://img.youtube.com/vi/-xIVn3UqYFs/0.jpg",
+            title: "TypeScript with React",
+            videoURL: "https://www.youtube.com/watch?v=-xIVn3UqYFs"),
+        GeneralVideoEntity(
+            themeID: 7,
+            id: 9,
+            thumbnailImage: "https://img.youtube.com/vi/30LWjhZzg50/0.jpg",
+            title: "Advanced TypeScript",
+            videoURL: "https://www.youtube.com/watch?v=30LWjhZzg50"),
+      ],
+      articleID: 900),
 ];

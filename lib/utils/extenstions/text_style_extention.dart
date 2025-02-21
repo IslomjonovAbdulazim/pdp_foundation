@@ -23,7 +23,7 @@ extension TextStylesExtension on BuildContext {
   TextStyle get title => TextStyle(
         fontFamily: FontConstants.nunito,
         fontSize: 24,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w700,
         color: Theme.of(this).colorScheme.onSurface,
       );
 
@@ -31,6 +31,15 @@ extension TextStylesExtension on BuildContext {
   TextStyle get name => TextStyle(
         fontFamily: FontConstants.montserrat,
         fontSize: 16,
+        height: 1,
+        fontWeight: FontWeight.w600,
+        color: Theme.of(this).colorScheme.onSurface,
+      );
+
+  TextStyle get italic => TextStyle(
+        fontFamily: FontConstants.montserrat,
+        fontSize: 16,
+        fontStyle: FontStyle.italic,
         height: 1,
         fontWeight: FontWeight.w600,
         color: Theme.of(this).colorScheme.onSurface,

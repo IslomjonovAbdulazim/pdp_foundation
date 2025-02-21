@@ -1,7 +1,7 @@
 part of 'imports.dart';
 
 class _ThemeItem extends StatelessWidget {
-  final ThemesEntity theme;
+  final ThemeEntity theme;
 
   const _ThemeItem({required this.theme});
 

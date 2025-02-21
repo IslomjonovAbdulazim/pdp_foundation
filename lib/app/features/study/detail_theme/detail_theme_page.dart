@@ -5,6 +5,23 @@ class DetailThemePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    final theme = Get.arguments as ThemeEntity;
+    final detailTheme = mockDetailThemes.firstWhere((th) => th.id == theme.id);
+    final article = mockArticles.firstWhere((article) => article.id == theme.id);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(detailTheme.themeTitle),
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          child: Column(
+            children: [
+              ArticleWidget(article: article),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
