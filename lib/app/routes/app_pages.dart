@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:pdp_foundation/app/bindings/screens/auth_binding.dart';
+import 'package:pdp_foundation/app/features/screens/auth/auth_page.dart';
 import 'package:pdp_foundation/app/features/screens/bnb/imports.dart';
 
 import '../bindings/home/home_binding.dart';
@@ -65,6 +67,11 @@ class AppPages {
       page: () => const UserProfilePage(),
       binding: UserProfileBinding(),
     ),
+    GetPage(
+      name: AppRoutes.liveQuiz,
+      page: () => const LiveQuizPage(),
+      binding: LiveQuizBinding(),
+    ),
 
     /// #STUDY
     GetPage(
@@ -111,6 +118,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.bnb,
       page: () => const BNBPage(),
+    ),
+    GetPage(
+      name: AppRoutes.bnb,
+      page: () => const AuthPage(),
+      binding: AuthBinding(),
     ),
   ];
 }

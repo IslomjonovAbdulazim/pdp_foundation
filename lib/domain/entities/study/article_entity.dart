@@ -1,7 +1,7 @@
 class ArticleModel {
   final int id;
   final int themeID;
-  final int videoID;
+  final int videoID;// todo  remove
   final String title;
   final List<ArticleContentEntity> content;
 

@@ -14,6 +14,8 @@ class LightColorConstants {
   static const Color border = Color(0xFFE5E5E5);
   static const Color card = Color(0xFFFCFCFC);
   static const Color selection = Color(0xffC7F064);
+  static const Color blue = Color(0xff3A94E7);
+  static const Color yellow = Color(0xffFFCE51);
 
   // ---- GitHub-style code syntax colors (Light) ----
   static const Color codeRoot = Color(0xff333333);
@@ -46,6 +48,8 @@ class DarkColorConstants {
   static const Color border = Color(0xFF323232);
   static const Color card = Color(0xFF1A1A1A);
   static const Color selection = Color(0xFF536724);
+  static const Color blue = Color(0xff2270B5);
+  static const Color yellow = Color(0xffB8862D);
 
   // ---- GitHub-style code syntax colors (Dark) ----
   // These sample colors are chosen to contrast well on dark backgrounds.

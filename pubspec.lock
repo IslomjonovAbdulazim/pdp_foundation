@@ -374,6 +374,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.2"
+  flutter_heatmap_calendar:
+    dependency: "direct main"
+    description:
+      name: flutter_heatmap_calendar
+      sha256: "0933071844cd604b938e38358984244292ba1ba8f4b4b6f0f091f5927a23e958"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5"
   flutter_highlight:
     dependency: "direct main"
     description:
@@ -1176,6 +1184,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  simple_gesture_detector:
+    dependency: transitive
+    description:
+      name: simple_gesture_detector
+      sha256: ba2cd5af24ff20a0b8d609cec3f40e5b0744d2a71804a2616ae086b9c19d19a3
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.1"
   skeletonizer:
     dependency: "direct main"
     description:
@@ -1301,6 +1317,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.3.0+3"
+  table_calendar:
+    dependency: "direct main"
+    description:
+      name: table_calendar
+      sha256: "0c0c6219878b363a2d5f40c7afb159d845f253d061dc3c822aa0d5fe0f721982"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.0"
   term_glyph:
     dependency: transitive
     description:

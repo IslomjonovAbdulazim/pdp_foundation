@@ -3,6 +3,7 @@ import 'question_model.dart';
 class CodeCompletionQuestionModel extends QuestionModel {
   final String codeSnippet;
   final String correctAnswer;
+  final String language;
   final List<String> options;
 
   CodeCompletionQuestionModel({
@@ -11,6 +12,8 @@ class CodeCompletionQuestionModel extends QuestionModel {
     required this.codeSnippet,
     required this.correctAnswer,
     required this.options,
+    required super.type,
+    required this.language,
   });
 
   factory CodeCompletionQuestionModel.fromJson(Map<String, dynamic> json) {
@@ -20,6 +23,8 @@ class CodeCompletionQuestionModel extends QuestionModel {
       codeSnippet: json['codeSnippet'],
       correctAnswer: json['correctAnswer'],
       options: List<String>.from(json['options']),
+      type: json["type"],
+      language: json["language"],
     );
   }
 
@@ -32,6 +37,23 @@ class CodeCompletionQuestionModel extends QuestionModel {
       'codeSnippet': codeSnippet,
       'correctAnswer': correctAnswer,
       'options': options,
+      "language": language,
     };
   }
 }
+
+CodeCompletionQuestionModel mockCodeCompletion = CodeCompletionQuestionModel(
+  id: 1,
+  type: 'code_completion',
+  questionText:
+      'What will be the correct syntax to declare a JavaScript function?',
+  codeSnippet: 'function myFunction() { \n  // ... \n}',
+  correctAnswer: 'function myFunction() { }',
+  options: [
+    'function = myFunction() { }',
+    'def myFunction() { }',
+    'function myFunction() { }',
+    'func myFunction() { }'
+  ],
+  language: "javascript",
+);

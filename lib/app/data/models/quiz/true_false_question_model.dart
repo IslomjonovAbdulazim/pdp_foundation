@@ -7,6 +7,7 @@ class TrueFalseQuestionModel extends QuestionModel {
     required super.id,
     required super.questionText,
     required this.correctAnswer,
+    required super.type,
   });
 
   factory TrueFalseQuestionModel.fromJson(Map<String, dynamic> json) {
@@ -14,6 +15,7 @@ class TrueFalseQuestionModel extends QuestionModel {
       id: json['id'],
       questionText: json['questionText'],
       correctAnswer: json['correctAnswer'],
+      type: json["type"],
     );
   }
 
@@ -27,3 +29,10 @@ class TrueFalseQuestionModel extends QuestionModel {
     };
   }
 }
+
+TrueFalseQuestionModel mockTrueFalse = TrueFalseQuestionModel(
+  id: 1,
+  type: 'true_false',
+  questionText: 'JavaScript is a statically typed language.',
+  correctAnswer: false,
+);

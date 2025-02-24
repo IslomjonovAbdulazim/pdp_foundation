@@ -8,8 +8,13 @@ import 'true_false_question_model.dart';
 abstract class QuestionModel {
   final int id;
   final String questionText;
+  final String type;
 
-  QuestionModel({required this.id, required this.questionText});
+  QuestionModel({
+    required this.id,
+    required this.questionText,
+    required this.type,
+  });
 
   factory QuestionModel.fromJson(Map<String, dynamic> json) {
     switch (json['type']) {

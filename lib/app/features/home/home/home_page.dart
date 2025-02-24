@@ -6,7 +6,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.backgroundColor,
       appBar: AppBar(
+        backgroundColor: context.backgroundColor,
+        surfaceTintColor: context.backgroundColor,
         leadingWidth: 60,
         leading: Padding(
           padding: const EdgeInsets.only(left: 10),
@@ -48,7 +51,16 @@ class HomePage extends StatelessWidget {
         ),
         child: Column(
           children: [
+            _QuickInfo(),
+            SizedBox(height: 15),
             _LastRead(),
+            SizedBox(height: 30),
+            _Challenges(),
+            SizedBox(height: 30),
+            _Heatmap(),
+            SizedBox(height: 30),
+            _Streak(),
+            SizedBox(height: 200),
           ],
         ),
       ),

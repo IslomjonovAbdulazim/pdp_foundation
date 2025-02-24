@@ -42,7 +42,11 @@ class AppTheme {
       ),
     ),
     extensions: [
-      const CustomTheme(selectionColor: LightColorConstants.selection),
+      const CustomTheme(
+        selectionColor: LightColorConstants.selection,
+        blueColor: LightColorConstants.blue,
+        yellowColor: LightColorConstants.yellow,
+      ),
     ],
   );
 
@@ -82,7 +86,11 @@ class AppTheme {
       ),
     ),
     extensions: [
-      const CustomTheme(selectionColor: DarkColorConstants.selection),
+      const CustomTheme(
+        selectionColor: DarkColorConstants.selection,
+        blueColor: DarkColorConstants.blue,
+        yellowColor: DarkColorConstants.yellow,
+      ),
     ],
   );
 }

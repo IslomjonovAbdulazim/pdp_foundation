@@ -22,10 +22,21 @@ class LeaderboardPage extends StatelessWidget {
                 flexibleSpace: FlexibleSpaceBar(
                   background: _Top3(top3users: mockLeaderboard.sublist(0, 3)),
                 ),
+                actions: [
+                  CupertinoButton(
+                    onPressed: () {
+                      Get.toNamed(AppRoutes.liveQuiz);
+                    },
+                    child: const Icon(
+                      CupertinoIcons.play,
+                    ),
+                  ),
+                ],
               ),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                  (context, index) => _UserItem(user: mockLeaderboard[index + 3]),
+                  (context, index) =>
+                      _UserItem(user: mockLeaderboard[index + 3]),
                   childCount:
                       mockLeaderboard.length - 3, // Number of items in the list
                 ),

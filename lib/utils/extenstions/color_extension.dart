@@ -39,4 +39,6 @@ extension ColorExtension on BuildContext {
 
   /// Custom
   Color get selection => Theme.of(this).extension<CustomTheme>()!.selectionColor;
+  Color get blueColor => Theme.of(this).extension<CustomTheme>()!.blueColor;
+  Color get yellowColor => Theme.of(this).extension<CustomTheme>()!.yellowColor;
 }

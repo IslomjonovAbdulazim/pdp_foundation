@@ -4,6 +4,7 @@ class UserInformation {
   final String image;
   final int streaks;
   final int points;
+  final int rank;
 
   UserInformation({
     required this.firstname,
@@ -11,6 +12,7 @@ class UserInformation {
     required this.image,
     required this.streaks,
     required this.points,
+    required this.rank,
   });
 }
 
@@ -66,16 +68,38 @@ UserInformation mockUser = UserInformation(
   image: "https://randomuser.me/api/portraits/men/1.jpg",
   streaks: 5,
   points: 1250,
+  rank: 12,
 );
 
 List<ActivityLevel> mockActivityLevels = [
-  ActivityLevel(userID: 1, time: DateTime.now().subtract(const Duration(days: 1)), quizSolved: 3),
-  ActivityLevel(userID: 1, time: DateTime.now().subtract(const Duration(days: 2)), quizSolved: 2),
-  ActivityLevel(userID: 1, time: DateTime.now().subtract(const Duration(days: 3)), quizSolved: 4),
-  ActivityLevel(userID: 1, time: DateTime.now().subtract(const Duration(days: 4)), quizSolved: 1),
-  ActivityLevel(userID: 1, time: DateTime.now().subtract(const Duration(days: 5)), quizSolved: 5),
-  ActivityLevel(userID: 1, time: DateTime.now().subtract(const Duration(days: 6)), quizSolved: 0),
-  ActivityLevel(userID: 1, time: DateTime.now().subtract(const Duration(days: 7)), quizSolved: 3),
+  ActivityLevel(
+      userID: 1,
+      time: DateTime.now().subtract(const Duration(days: 1)),
+      quizSolved: 3),
+  ActivityLevel(
+      userID: 1,
+      time: DateTime.now().subtract(const Duration(days: 2)),
+      quizSolved: 2),
+  ActivityLevel(
+      userID: 1,
+      time: DateTime.now().subtract(const Duration(days: 3)),
+      quizSolved: 4),
+  ActivityLevel(
+      userID: 1,
+      time: DateTime.now().subtract(const Duration(days: 4)),
+      quizSolved: 1),
+  ActivityLevel(
+      userID: 1,
+      time: DateTime.now().subtract(const Duration(days: 5)),
+      quizSolved: 5),
+  ActivityLevel(
+      userID: 1,
+      time: DateTime.now().subtract(const Duration(days: 6)),
+      quizSolved: 0),
+  ActivityLevel(
+      userID: 1,
+      time: DateTime.now().subtract(const Duration(days: 7)),
+      quizSolved: 3),
 ];
 
 List<DailyChallenges> mockDailyChallenges = [

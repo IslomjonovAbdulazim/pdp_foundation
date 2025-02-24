@@ -9,6 +9,7 @@ class DragAndDropQuestionModel extends QuestionModel {
     required super.questionText,
     required this.items,
     required this.correctOrder,
+    required super.type,
   });
 
   factory DragAndDropQuestionModel.fromJson(Map<String, dynamic> json) {
@@ -17,6 +18,7 @@ class DragAndDropQuestionModel extends QuestionModel {
       questionText: json['questionText'],
       items: List<String>.from(json['items']),
       correctOrder: List<String>.from(json['correctOrder']),
+      type: json["type"],
     );
   }
 
@@ -31,3 +33,12 @@ class DragAndDropQuestionModel extends QuestionModel {
     };
   }
 }
+
+DragAndDropQuestionModel mockDragAndDrop = DragAndDropQuestionModel(
+  id: 1,
+  type: 'drag_and_drop',
+  questionText:
+      'Arrange the steps of the CSS box model from innermost to outermost.',
+  items: ['Margin', 'Padding', 'Content', 'Border'],
+  correctOrder: ['Content', 'Padding', 'Border', 'Margin'],
+);

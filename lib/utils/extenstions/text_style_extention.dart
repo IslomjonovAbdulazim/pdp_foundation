@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pdp_foundation/utils/extenstions/color_extension.dart';
-import 'package:pdp_foundation/utils/extenstions/context_extension.dart';
 
 import '../constants/font_constants.dart';
 
@@ -35,6 +34,14 @@ extension TextStylesExtension on BuildContext {
         fontSize: 16,
         height: 1,
         fontWeight: FontWeight.w600,
+        color: Theme.of(this).colorScheme.onSurface,
+      );
+
+  TextStyle get biggerName => TextStyle(
+        fontFamily: FontConstants.nunito,
+        fontSize: 20,
+        height: 1.2,
+        fontWeight: FontWeight.w800,
         color: Theme.of(this).colorScheme.onSurface,
       );
 
