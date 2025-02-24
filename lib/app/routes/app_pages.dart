@@ -1,7 +1,13 @@
 import 'package:get/get.dart';
 import 'package:pdp_foundation/app/bindings/screens/auth_binding.dart';
+import 'package:pdp_foundation/app/bindings/screens/internal_error_binding.dart';
+import 'package:pdp_foundation/app/bindings/screens/splash_binding.dart';
+import 'package:pdp_foundation/app/bindings/screens/upgrade_binding.dart';
 import 'package:pdp_foundation/app/features/screens/auth/auth_page.dart';
 import 'package:pdp_foundation/app/features/screens/bnb/imports.dart';
+import 'package:pdp_foundation/app/features/screens/internal_error/imports.dart';
+import 'package:pdp_foundation/app/features/screens/splash/splash_page.dart';
+import 'package:pdp_foundation/app/features/screens/upgrade/imports.dart';
 
 import '../bindings/home/home_binding.dart';
 import '../bindings/leaderboard/leaderboard_binding.dart';
@@ -120,9 +126,24 @@ class AppPages {
       page: () => const BNBPage(),
     ),
     GetPage(
-      name: AppRoutes.bnb,
+      name: AppRoutes.auth,
       page: () => const AuthPage(),
       binding: AuthBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.splash,
+      page: () => const SplashPage(),
+      binding: SplashBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.internalError,
+      page: () => const InternalErrorPage(),
+      binding: InternalErrorBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.upgrade,
+      page: () => const UpgradePage(),
+      binding: UpgradeBinding(),
     ),
   ];
 }

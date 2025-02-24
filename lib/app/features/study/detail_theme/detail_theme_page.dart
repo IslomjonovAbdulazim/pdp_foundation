@@ -10,7 +10,7 @@ class DetailThemePage extends StatelessWidget {
     final article = mockArticles.firstWhere((article) => article.id == theme.id);
     return Scaffold(
       appBar: AppBar(
-        title: Text(detailTheme.themeTitle),
+        title: Text(detailTheme.topicTitle),
       ),
       body: SafeArea(
         child: Padding(

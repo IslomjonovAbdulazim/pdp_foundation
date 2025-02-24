@@ -142,8 +142,9 @@ class _LastRead extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 20),
-          ElevatedButton(
-            style: context.elevatedButtonSmallStyle,
+          CupertinoButton(
+            color: context.textPrimary,
+            borderRadius: BorderRadius.circular(20),
             onPressed: () {},
             child: Center(
               child: Text(
@@ -248,8 +249,9 @@ class __ChallengeItem extends StatelessWidget {
             style: context.body,
           ),
           const Spacer(),
-          ElevatedButton(
-            style: context.elevatedButtonStyle,
+          CupertinoButton(
+            color: context.textPrimary,
+            borderRadius: BorderRadius.circular(20),
             onPressed: () {},
             child: Center(
               child: Text(

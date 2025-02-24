@@ -3,7 +3,6 @@ import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 
 import 'app/bindings/screens/initial_binding.dart';
 import 'app/routes/app_pages.dart';
@@ -53,7 +52,7 @@ class _MyAppState extends State<MyApp> {
         darkTheme: AppTheme.darkTheme,
         themeMode: themeController.themeMode,
         debugShowCheckedModeBanner: false,
-        initialRoute: AppRoutes.bnb,
+        initialRoute: AppRoutes.internalError,
         initialBinding: InitialBinding(),
         getPages: AppPages.pages,
         builder: (context, child) => MediaQuery(

@@ -20,4 +20,8 @@ class AppRoutes {
   /// #SCREENS
   static const String offline = "/offline";
   static const String bnb = "/bnb";
+  static const String auth = "/auth";
+  static const String upgrade = "/upgrade";
+  static const String internalError = "/internal_error";
+  static const String splash = "/splash";
 }

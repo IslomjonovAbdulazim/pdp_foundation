@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pdp_foundation/utils/extenstions/color_extension.dart';
 
 import '../constants/font_constants.dart';
 
@@ -17,7 +18,7 @@ extension TextStylesExtension on BuildContext {
 extension ButtonStylesExtension on BuildContext {
   /// Standard ElevatedButton style.
   ButtonStyle get elevatedButtonStyle => ElevatedButton.styleFrom(
-        foregroundColor: Theme.of(this).colorScheme.onPrimary,
+        foregroundColor: backgroundColor,
         backgroundColor: Theme.of(this).colorScheme.primary,
         // Foreground (text/icon) color.
         textStyle: elevatedButton,
@@ -28,7 +29,7 @@ extension ButtonStylesExtension on BuildContext {
 
   /// A compact ElevatedButton style for smaller buttons.
   ButtonStyle get elevatedButtonSmallStyle => ElevatedButton.styleFrom(
-        foregroundColor: Theme.of(this).colorScheme.onPrimary,
+        foregroundColor: backgroundColor,
         backgroundColor: Theme.of(this).colorScheme.primary,
         // A slightly smaller font size.
         textStyle: elevatedButton.copyWith(fontSize: 14),
