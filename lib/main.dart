@@ -1,4 +1,3 @@
-// lib/main_binding.dart
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -52,7 +51,7 @@ class _MyAppState extends State<MyApp> {
         darkTheme: AppTheme.darkTheme,
         themeMode: themeController.themeMode,
         debugShowCheckedModeBanner: false,
-        initialRoute: AppRoutes.internalError,
+        initialRoute: AppRoutes.bnb,
         initialBinding: InitialBinding(),
         getPages: AppPages.pages,
         builder: (context, child) => MediaQuery(
