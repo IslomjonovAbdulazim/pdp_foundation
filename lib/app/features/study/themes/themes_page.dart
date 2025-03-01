@@ -29,8 +29,8 @@ class ThemesPage extends GetView<ThemesController> {
                           SliverList(
                             delegate: SliverChildBuilderDelegate(
                               (context, index) =>
-                                  _ThemeItem(theme: mockThemes[index]),
-                              childCount: mockThemes.length,
+                                  _ThemeItem(theme: controller.themes[index]),
+                              childCount: controller.themes.length,
                             ),
                           ),
                         ],

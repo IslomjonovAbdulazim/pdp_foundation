@@ -1,17 +1,9 @@
 enum ContentType { title, text, code, image, quote, link }
 
-class ArticleModel {
-  final int id;
-  final int themeID;
-  final int videoID; // todo remove
-  final String title;
+class ArticleEntity {
   final List<ArticleContentEntity> content;
 
-  ArticleModel({
-    required this.id,
-    required this.themeID,
-    required this.videoID,
-    required this.title,
+  ArticleEntity({
     required this.content,
   });
 }
@@ -28,12 +20,8 @@ class ArticleContentEntity {
   });
 }
 
-List<ArticleModel> mockArticles = [
-  ArticleModel(
-    id: 1,
-    themeID: 1,
-    videoID: 1,
-    title: "HTML Basics",
+List<ArticleEntity> mockArticles = [
+  ArticleEntity(
     content: [
       ArticleContentEntity(
           type: ContentType.title,
@@ -74,11 +62,7 @@ List<ArticleModel> mockArticles = [
           keyword: "Flutter"),
     ],
   ),
-  ArticleModel(
-    id: 2,
-    themeID: 2,
-    videoID: 2,
-    title: "HTML Forms & Inputs",
+  ArticleEntity(
     content: [
       ArticleContentEntity(
           type: ContentType.title,
@@ -118,11 +102,7 @@ List<ArticleModel> mockArticles = [
           keyword: "Google"),
     ],
   ),
-  ArticleModel(
-    id: 3,
-    themeID: 3,
-    videoID: 3,
-    title: "HTML Forms & Inputs",
+  ArticleEntity(
     content: [
       ArticleContentEntity(
           type: ContentType.title,
@@ -162,11 +142,7 @@ List<ArticleModel> mockArticles = [
           keyword: "GitHub"),
     ],
   ),
-  ArticleModel(
-    id: 4,
-    themeID: 4,
-    videoID: 4,
-    title: "CSS Fundamentals",
+  ArticleEntity(
     content: [
       ArticleContentEntity(
           type: ContentType.title,
@@ -206,11 +182,7 @@ List<ArticleModel> mockArticles = [
           keyword: "Stack Overflow"),
     ],
   ),
-  ArticleModel(
-    id: 5,
-    themeID: 5,
-    videoID: 5,
-    title: "CSS Flexbox & Grid",
+  ArticleEntity(
     content: [
       ArticleContentEntity(
           type: ContentType.title,
@@ -244,11 +216,7 @@ List<ArticleModel> mockArticles = [
           keyword: "Medium"),
     ],
   ),
-  ArticleModel(
-    id: 6,
-    themeID: 6,
-    videoID: 6,
-    title: "CSS Animations & Transitions",
+  ArticleEntity(
     content: [
       ArticleContentEntity(
           type: ContentType.title,
@@ -283,11 +251,7 @@ List<ArticleModel> mockArticles = [
           keyword: "Example"),
     ],
   ),
-  ArticleModel(
-    id: 7,
-    themeID: 7,
-    videoID: 7,
-    title: "TypeScript Basics",
+  ArticleEntity(
     content: [
       ArticleContentEntity(
           type: ContentType.title,

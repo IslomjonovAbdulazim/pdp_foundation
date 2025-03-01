@@ -11,14 +11,20 @@ class DetailThemePage extends GetView<DetailThemeController> {
         title: Text(controller.topic.value.title),
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            children: [
-              const _Video(),
-              ArticleWidget(article: mockArticles.first),
-            ],
-          ),
+        child: Obx(
+          () => controller.isLoading.value
+              ? const Center(
+                  child: CircularProgressIndicator.adaptive(),
+                )
+              : SingleChildScrollView(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      _Video(controller.topic.value.videoURL),
+                      ArticleWidget(article: controller.article),
+                    ],
+                  ),
+                ),
         ),
       ),
     );

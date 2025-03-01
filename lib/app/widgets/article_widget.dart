@@ -13,7 +13,7 @@ import '../../utils/extenstions/code_style.dart';
 import '../../utils/extenstions/color_extension.dart';
 
 class ArticleWidget extends StatelessWidget {
-  final ArticleModel article;
+  final List<ArticleContentEntity> article;
 
   const ArticleWidget({super.key, required this.article});
 
@@ -22,9 +22,9 @@ class ArticleWidget extends StatelessWidget {
     return ListView.builder(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: article.content.length,
+      itemCount: article.length,
       itemBuilder: (context, index) {
-        final content = article.content[index];
+        final content = article[index];
         return _buildContent(context, content);
       },
     );

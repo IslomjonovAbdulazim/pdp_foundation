@@ -14,212 +14,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ThemeModel _$ThemeModelFromJson(Map<String, dynamic> json) {
-  return _ThemeModel.fromJson(json);
-}
-
-/// @nodoc
-mixin _$ThemeModel {
-  int get id => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  String? get icon => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-
-  /// Serializes this ThemeModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ThemeModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ThemeModelCopyWith<ThemeModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ThemeModelCopyWith<$Res> {
-  factory $ThemeModelCopyWith(
-          ThemeModel value, $Res Function(ThemeModel) then) =
-      _$ThemeModelCopyWithImpl<$Res, ThemeModel>;
-  @useResult
-  $Res call({int id, String title, String? icon, String description});
-}
-
-/// @nodoc
-class _$ThemeModelCopyWithImpl<$Res, $Val extends ThemeModel>
-    implements $ThemeModelCopyWith<$Res> {
-  _$ThemeModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ThemeModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? icon = freezed,
-    Object? description = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ThemeModelImplCopyWith<$Res>
-    implements $ThemeModelCopyWith<$Res> {
-  factory _$$ThemeModelImplCopyWith(
-          _$ThemeModelImpl value, $Res Function(_$ThemeModelImpl) then) =
-      __$$ThemeModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int id, String title, String? icon, String description});
-}
-
-/// @nodoc
-class __$$ThemeModelImplCopyWithImpl<$Res>
-    extends _$ThemeModelCopyWithImpl<$Res, _$ThemeModelImpl>
-    implements _$$ThemeModelImplCopyWith<$Res> {
-  __$$ThemeModelImplCopyWithImpl(
-      _$ThemeModelImpl _value, $Res Function(_$ThemeModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ThemeModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? icon = freezed,
-    Object? description = null,
-  }) {
-    return _then(_$ThemeModelImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ThemeModelImpl implements _ThemeModel {
-  const _$ThemeModelImpl(
-      {required this.id,
-      required this.title,
-      this.icon,
-      required this.description});
-
-  factory _$ThemeModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ThemeModelImplFromJson(json);
-
-  @override
-  final int id;
-  @override
-  final String title;
-  @override
-  final String? icon;
-  @override
-  final String description;
-
-  @override
-  String toString() {
-    return 'ThemeModel(id: $id, title: $title, icon: $icon, description: $description)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ThemeModelImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.description, description) ||
-                other.description == description));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, title, icon, description);
-
-  /// Create a copy of ThemeModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ThemeModelImplCopyWith<_$ThemeModelImpl> get copyWith =>
-      __$$ThemeModelImplCopyWithImpl<_$ThemeModelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ThemeModelImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ThemeModel implements ThemeModel {
-  const factory _ThemeModel(
-      {required final int id,
-      required final String title,
-      final String? icon,
-      required final String description}) = _$ThemeModelImpl;
-
-  factory _ThemeModel.fromJson(Map<String, dynamic> json) =
-      _$ThemeModelImpl.fromJson;
-
-  @override
-  int get id;
-  @override
-  String get title;
-  @override
-  String? get icon;
-  @override
-  String get description;
-
-  /// Create a copy of ThemeModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ThemeModelImplCopyWith<_$ThemeModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 TopicModel _$TopicModelFromJson(Map<String, dynamic> json) {
   return _TopicModel.fromJson(json);
 }
@@ -229,10 +23,11 @@ mixin _$TopicModel {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
+  @JsonKey(name: "document_id")
   int get documentId => throw _privateConstructorUsedError;
+  @JsonKey(name: "video_url")
   String get videoUrl => throw _privateConstructorUsedError;
   int get progress => throw _privateConstructorUsedError;
-  ThemeModel get theme => throw _privateConstructorUsedError;
 
   /// Serializes this TopicModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -254,12 +49,9 @@ abstract class $TopicModelCopyWith<$Res> {
       {int id,
       String title,
       String description,
-      int documentId,
-      String videoUrl,
-      int progress,
-      ThemeModel theme});
-
-  $ThemeModelCopyWith<$Res> get theme;
+      @JsonKey(name: "document_id") int documentId,
+      @JsonKey(name: "video_url") String videoUrl,
+      int progress});
 }
 
 /// @nodoc
@@ -283,7 +75,6 @@ class _$TopicModelCopyWithImpl<$Res, $Val extends TopicModel>
     Object? documentId = null,
     Object? videoUrl = null,
     Object? progress = null,
-    Object? theme = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -310,21 +101,7 @@ class _$TopicModelCopyWithImpl<$Res, $Val extends TopicModel>
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as int,
-      theme: null == theme
-          ? _value.theme
-          : theme // ignore: cast_nullable_to_non_nullable
-              as ThemeModel,
     ) as $Val);
-  }
-
-  /// Create a copy of TopicModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ThemeModelCopyWith<$Res> get theme {
-    return $ThemeModelCopyWith<$Res>(_value.theme, (value) {
-      return _then(_value.copyWith(theme: value) as $Val);
-    });
   }
 }
 
@@ -340,13 +117,9 @@ abstract class _$$TopicModelImplCopyWith<$Res>
       {int id,
       String title,
       String description,
-      int documentId,
-      String videoUrl,
-      int progress,
-      ThemeModel theme});
-
-  @override
-  $ThemeModelCopyWith<$Res> get theme;
+      @JsonKey(name: "document_id") int documentId,
+      @JsonKey(name: "video_url") String videoUrl,
+      int progress});
 }
 
 /// @nodoc
@@ -368,7 +141,6 @@ class __$$TopicModelImplCopyWithImpl<$Res>
     Object? documentId = null,
     Object? videoUrl = null,
     Object? progress = null,
-    Object? theme = null,
   }) {
     return _then(_$TopicModelImpl(
       id: null == id
@@ -395,10 +167,6 @@ class __$$TopicModelImplCopyWithImpl<$Res>
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as int,
-      theme: null == theme
-          ? _value.theme
-          : theme // ignore: cast_nullable_to_non_nullable
-              as ThemeModel,
     ));
   }
 }
@@ -410,10 +178,9 @@ class _$TopicModelImpl implements _TopicModel {
       {required this.id,
       required this.title,
       required this.description,
-      required this.documentId,
-      required this.videoUrl,
-      this.progress = 0,
-      required this.theme});
+      @JsonKey(name: "document_id") required this.documentId,
+      @JsonKey(name: "video_url") required this.videoUrl,
+      this.progress = 0});
 
   factory _$TopicModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$TopicModelImplFromJson(json);
@@ -425,18 +192,18 @@ class _$TopicModelImpl implements _TopicModel {
   @override
   final String description;
   @override
+  @JsonKey(name: "document_id")
   final int documentId;
   @override
+  @JsonKey(name: "video_url")
   final String videoUrl;
   @override
   @JsonKey()
   final int progress;
-  @override
-  final ThemeModel theme;
 
   @override
   String toString() {
-    return 'TopicModel(id: $id, title: $title, description: $description, documentId: $documentId, videoUrl: $videoUrl, progress: $progress, theme: $theme)';
+    return 'TopicModel(id: $id, title: $title, description: $description, documentId: $documentId, videoUrl: $videoUrl, progress: $progress)';
   }
 
   @override
@@ -453,14 +220,13 @@ class _$TopicModelImpl implements _TopicModel {
             (identical(other.videoUrl, videoUrl) ||
                 other.videoUrl == videoUrl) &&
             (identical(other.progress, progress) ||
-                other.progress == progress) &&
-            (identical(other.theme, theme) || other.theme == theme));
+                other.progress == progress));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, description,
-      documentId, videoUrl, progress, theme);
+  int get hashCode => Object.hash(
+      runtimeType, id, title, description, documentId, videoUrl, progress);
 
   /// Create a copy of TopicModel
   /// with the given fields replaced by the non-null parameter values.
@@ -483,10 +249,9 @@ abstract class _TopicModel implements TopicModel {
       {required final int id,
       required final String title,
       required final String description,
-      required final int documentId,
-      required final String videoUrl,
-      final int progress,
-      required final ThemeModel theme}) = _$TopicModelImpl;
+      @JsonKey(name: "document_id") required final int documentId,
+      @JsonKey(name: "video_url") required final String videoUrl,
+      final int progress}) = _$TopicModelImpl;
 
   factory _TopicModel.fromJson(Map<String, dynamic> json) =
       _$TopicModelImpl.fromJson;
@@ -498,13 +263,13 @@ abstract class _TopicModel implements TopicModel {
   @override
   String get description;
   @override
+  @JsonKey(name: "document_id")
   int get documentId;
   @override
+  @JsonKey(name: "video_url")
   String get videoUrl;
   @override
   int get progress;
-  @override
-  ThemeModel get theme;
 
   /// Create a copy of TopicModel
   /// with the given fields replaced by the non-null parameter values.
