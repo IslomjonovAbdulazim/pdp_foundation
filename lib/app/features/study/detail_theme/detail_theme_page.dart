@@ -9,6 +9,18 @@ class DetailThemePage extends GetView<DetailThemeController> {
       appBar: AppBar(
         surfaceTintColor: context.backgroundColor,
         title: Text(controller.topic.value.title),
+        actions: [
+          CupertinoButton(
+            padding: EdgeInsets.zero,
+            onPressed: () {
+              Get.toNamed(AppRoutes.liveQuiz);
+            },
+            child: Icon(
+              CupertinoIcons.play,
+              color: context.textPrimary,
+            ),
+          ),
+        ],
       ),
       body: SafeArea(
         child: Obx(

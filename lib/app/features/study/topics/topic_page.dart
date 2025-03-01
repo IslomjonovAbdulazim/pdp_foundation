@@ -34,8 +34,9 @@ class TopicPage extends GetView<TopicController> {
                     onPressed: () {
                       Get.toNamed(AppRoutes.liveQuiz);
                     },
-                    child: const Icon(
+                    child: Icon(
                       CupertinoIcons.play,
+                      color: context.textPrimary,
                     ),
                   ),
                 ],

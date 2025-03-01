@@ -25,6 +25,8 @@ class ThemesPage extends GetView<ThemesController> {
                             stretch: true,
                             centerTitle: true,
                             title: const Text("Study"),
+                            actions: [
+                            ],
                           ),
                           SliverList(
                             delegate: SliverChildBuilderDelegate(
