@@ -1,17 +1,16 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pdp_foundation/app/bindings/screens/auth_binding.dart';
 import 'package:pdp_foundation/app/bindings/screens/internal_error_binding.dart';
 import 'package:pdp_foundation/app/bindings/screens/splash_binding.dart';
 import 'package:pdp_foundation/app/bindings/screens/upgrade_binding.dart';
+import 'package:pdp_foundation/app/bindings/study/topic_binding.dart';
 import 'package:pdp_foundation/app/features/screens/auth/auth_page.dart';
 import 'package:pdp_foundation/app/features/screens/bnb/imports.dart';
 import 'package:pdp_foundation/app/features/screens/internal_error/imports.dart';
 import 'package:pdp_foundation/app/features/screens/splash/splash_page.dart';
 import 'package:pdp_foundation/app/features/screens/upgrade/imports.dart';
+import 'package:pdp_foundation/app/features/study/topics/imports.dart';
 
-import '../bindings/home/home_binding.dart';
-import '../bindings/leaderboard/leaderboard_binding.dart';
 import '../bindings/leaderboard/live_quiz_binding.dart';
 import '../bindings/leaderboard/live_quiz_history_binding.dart';
 import '../bindings/leaderboard/live_quiz_result_binding.dart';
@@ -21,7 +20,6 @@ import '../bindings/study/quiz_binding.dart';
 import '../bindings/study/quiz_history_binding.dart';
 import '../bindings/study/quiz_result_binding.dart';
 import '../bindings/study/quiz_stats_binding.dart';
-import '../bindings/study/themes_binding.dart';
 import '../bindings/study/watch_binding.dart';
 import '../features/home/home/imports.dart';
 import '../features/leaderboard/leaderboard/imports.dart';
@@ -45,14 +43,12 @@ class AppPages {
     GetPage(
       name: AppRoutes.home,
       page: () => const HomePage(),
-      binding: HomeBinding(),
     ),
 
     /// #LEADERBOARD
     GetPage(
       name: AppRoutes.leaderboard,
       page: () => const LeaderboardPage(),
-      binding: LeaderboardBinding(),
     ),
     GetPage(
       name: AppRoutes.liveQuiz,
@@ -109,7 +105,13 @@ class AppPages {
     GetPage(
       name: AppRoutes.themes,
       page: () => const ThemesPage(),
-      binding: ThemesBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.topics,
+      page: () => const TopicPage(),
+      bindings: [
+        TopicBinding(),
+      ],
     ),
     GetPage(
       name: AppRoutes.themes,

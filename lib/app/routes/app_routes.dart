@@ -11,6 +11,7 @@ class AppRoutes {
 
   /// #STUDY
   static const String themes = "/themes";
+  static const String topics = "/topics";
   static const String detailTheme = "/detail_theme";
   static const String quiz = "/quiz";
   static const String quizHistory = "/quiz_history";

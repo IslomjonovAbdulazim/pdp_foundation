@@ -1,16 +1,16 @@
 part of 'imports.dart';
 
-class _ThemeItem extends StatelessWidget {
-  final ThemeEntity theme;
+class _TopicItem extends StatelessWidget {
+  final TopicEntity topic;
 
-  const _ThemeItem({required this.theme});
+  const _TopicItem({required this.topic});
 
   @override
   Widget build(BuildContext context) {
     return CupertinoButton(
       padding: EdgeInsets.zero,
       onPressed: () {
-        Get.toNamed(AppRoutes.topics, arguments: theme);
+        Get.toNamed(AppRoutes.detailTheme, arguments: topic);
       },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 5),
@@ -41,11 +41,11 @@ class _ThemeItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    theme.name,
+                    topic.title,
                     style: context.name,
                   ),
                   Text(
-                    theme.description,
+                    topic.description,
                     style: context.body,
                     textAlign: TextAlign.start,
                     maxLines: 2,
@@ -54,12 +54,12 @@ class _ThemeItem extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(width: 15),
+            const SizedBox(width: 10),
             Stack(
               alignment: Alignment.center,
               children: [
                 CircularProgressIndicator(
-                  value: theme.progress / 100,
+                  value: topic.progress / 100,
                   color: context.textPrimary,
                   strokeCap: StrokeCap.round,
                   strokeAlign: 4,
@@ -67,7 +67,7 @@ class _ThemeItem extends StatelessWidget {
                   backgroundColor: context.dividerColor,
                 ),
                 Text(
-                  "${theme.progress}%",
+                  "${topic.progress}%",
                   style: context.smallName,
                 ),
               ],
