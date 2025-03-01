@@ -2,17 +2,17 @@ import 'package:get/get.dart';
 
 class ThemesController extends GetxController {
   List<ThemesController> themes = [];
-  RxBool isLoading = false.obs;
+  RxBool isLoading = true.obs;
 
   @override
   void onInit() {
-    load();
     super.onInit();
+    load();
   }
 
-  void load() async {
-    isLoading = true.obs;
+  Future<void> load() async {
+    isLoading.value = true;
     await Future.delayed(const Duration(seconds: 2));
-    isLoading = false.obs;
+    isLoading.value = false;
   }
 }
