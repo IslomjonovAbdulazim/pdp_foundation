@@ -1,23 +1,22 @@
 part of 'imports.dart';
 
-class DetailThemePage extends StatelessWidget {
+class DetailThemePage extends GetView<DetailThemeController> {
   const DetailThemePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Get.arguments as ThemeEntity;
-    final detailTheme = mockDetailThemes.firstWhere((th) => th.id == theme.id);
-    final article = mockArticles.firstWhere((article) => article.id == theme.id);
     return Scaffold(
       appBar: AppBar(
-        title: Text(detailTheme.topicTitle),
+        surfaceTintColor: context.backgroundColor,
+        title: Text(controller.topic.value.title),
       ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(10),
           child: Column(
             children: [
-              ArticleWidget(article: article),
+              const _Video(),
+              ArticleWidget(article: mockArticles.first),
             ],
           ),
         ),

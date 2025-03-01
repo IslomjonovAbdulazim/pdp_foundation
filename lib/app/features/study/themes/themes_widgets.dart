@@ -30,7 +30,7 @@ class _ThemeItem extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  theme.id.toString().padLeft(2, "0"),
+                  theme.number.toString().padLeft(2, "0"),
                   style: context.title,
                 ),
               ),

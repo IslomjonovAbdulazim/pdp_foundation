@@ -30,7 +30,7 @@ class _TopicItem extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  theme.id.toString().padLeft(2, "0"),
+                  topic.number.toString().padLeft(2, "0"),
                   style: context.title,
                 ),
               ),
