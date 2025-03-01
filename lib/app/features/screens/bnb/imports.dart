@@ -9,5 +9,5 @@ import 'package:pdp_foundation/app/routes/app_routes.dart';
 import 'package:pdp_foundation/utils/extenstions/color_extension.dart';
 
 part 'bnb_animations.dart';
-part 'bnb_page.dart';
 part 'bnb_widgets.dart';
+part 'bnb_page.dart';

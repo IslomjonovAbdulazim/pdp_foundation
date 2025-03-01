@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pdp_foundation/app/bindings/screens/auth_binding.dart';
 import 'package:pdp_foundation/app/bindings/screens/internal_error_binding.dart';
@@ -124,6 +125,8 @@ class AppPages {
     GetPage(
       name: AppRoutes.bnb,
       page: () => const BNBPage(),
+      transition: Transition.topLevel,
+      bindings: [],
     ),
     GetPage(
       name: AppRoutes.auth,

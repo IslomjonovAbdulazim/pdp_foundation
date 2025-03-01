@@ -6,7 +6,6 @@ class ThemeEntity {
   final String image;
   final List<String> cover;
 
-
   ThemeEntity({
     required this.id,
     required this.name,

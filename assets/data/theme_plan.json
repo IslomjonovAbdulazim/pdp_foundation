@@ -1,0 +1,1115 @@
+{
+  "planThemes": [
+    {
+      "id": 1,
+      "title": "Getting Started",
+      "subtitle": "Kursga kirish va uni qanday o‘rganish kerakligi haqida qisqacha ma’lumot.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "Kursning umumiy mazmuni bilan tanishish."
+        },
+        {
+          "id": 2,
+          "title": "Who This Course is For",
+          "subtitle": "Kurs kimlar uchun mo‘ljallanganligini bilib olish."
+        },
+        {
+          "id": 3,
+          "title": "What You Need",
+          "subtitle": "Kursni muvaffaqiyatli o‘rganish uchun zarur vositalar."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Web Development Fundamentals",
+      "subtitle": "Veb dasturlashning asosiy tushunchalari va ishlash tamoyillari.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "Veb dasturlashning ahamiyati va asosiy maqsadlari haqida."
+        },
+        {
+          "id": 2,
+          "title": "Languages and Tools of Web Development",
+          "subtitle": "Veb dasturlashda ishlatiladigan tillar va vositalar haqida ma’lumot."
+        },
+        {
+          "id": 3,
+          "title": "How the Web Works",
+          "subtitle": "Brauzer va server qanday aloqada bo‘lishi, sahifalar qanday ishlashi."
+        },
+        {
+          "id": 4,
+          "title": "Inspecting HTTP Requests and Responses",
+          "subtitle": "HTTP so‘rovlarini va javoblarni tahlil qilish."
+        },
+        {
+          "id": 5,
+          "title": "HTML Basics",
+          "subtitle": "Veb sahifalarni tuzishdagi HTMLning o‘rni va asoslari."
+        },
+        {
+          "id": 6,
+          "title": "CSS Basics",
+          "subtitle": "CSS yordamida dizayn va bezakni boshqarish."
+        },
+        {
+          "id": 7,
+          "title": "Formatting Code",
+          "subtitle": "Kod yozish uslubi va tartibini saqlash qoidalari."
+        },
+        {
+          "id": 8,
+          "title": "Inspecting Pages Using DevTools",
+          "subtitle": "DevTools bilan sahifalarni kuzatish va xatolarni topish."
+        },
+        {
+          "id": 9,
+          "title": "Validating Web Pages",
+          "subtitle": "HTML va CSS xatolarini topish va tuzatish."
+        },
+        {
+          "id": 10,
+          "title": "Summary",
+          "subtitle": "Bo‘limdagi asosiy g‘oyalarni umumlashtirish."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "HTML Basics",
+      "subtitle": "HTML tilining asosiy tushunchalari, elementlari va tuzilishi.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "HTML tilining vazifasi va qo‘llanilish sohasi."
+        },
+        {
+          "id": 2,
+          "title": "The Head Section",
+          "subtitle": "Head bo‘limining maqsadi va tarkibi."
+        },
+        {
+          "id": 3,
+          "title": "Text",
+          "subtitle": "Matn elementlarini yaratish va formatlash."
+        },
+        {
+          "id": 4,
+          "title": "Entities",
+          "subtitle": "HTMLda maxsus belgilarni ko‘rsatish."
+        },
+        {
+          "id": 5,
+          "title": "Hyperlinks",
+          "subtitle": "Sahifalararo bog‘lanish yaratish."
+        },
+        {
+          "id": 6,
+          "title": "Images",
+          "subtitle": "Rasmlarni HTML sahifasiga joylashtirish va sozlash."
+        },
+        {
+          "id": 7,
+          "title": "Video and Audio",
+          "subtitle": "Multimedia kontent qo‘shish usullari."
+        },
+        {
+          "id": 8,
+          "title": "Lists",
+          "subtitle": "Turli xil ro‘yxatlar tuzish."
+        },
+        {
+          "id": 9,
+          "title": "Tables",
+          "subtitle": "Jadvallar bilan ishlash va ularni bezash."
+        },
+        {
+          "id": 10,
+          "title": "Containers",
+          "subtitle": "Elementlarni guruhlash va joylashtirish."
+        },
+        {
+          "id": 11,
+          "title": "Semantic Elements",
+          "subtitle": "Semantik elementlardan foydalanishning afzalliklari."
+        },
+        {
+          "id": 12,
+          "title": "Structuring a Web Page",
+          "subtitle": "HTML sahifalarining to‘g‘ri strukturasini yaratish."
+        },
+        {
+          "id": 13,
+          "title": "Summary",
+          "subtitle": "HTML bo‘limining muhim jihatlarini takrorlash."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "CSS Basics",
+      "subtitle": "CSSning asosiy selektorlari, qoidalari va dizayn amaliyoti.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "CSSning ahamiyati va asosiy vazifalari."
+        },
+        {
+          "id": 2,
+          "title": "Providing CSS",
+          "subtitle": "HTMLga CSSni bog‘lash usullari."
+        },
+        {
+          "id": 3,
+          "title": "Normalizing CSS",
+          "subtitle": "CSSni bir xil ko‘rinishda chiqarish uchun normalizatsiya."
+        },
+        {
+          "id": 4,
+          "title": "Basic Selectors",
+          "subtitle": "Asosiy selektorlar va ularning qo‘llanilishi."
+        },
+        {
+          "id": 5,
+          "title": "Relational Selectors",
+          "subtitle": "Elementlararo bog‘lanishga asoslangan selektorlar."
+        },
+        {
+          "id": 6,
+          "title": "Pseudo-class Selectors",
+          "subtitle": "Holatga asoslangan selektorlardan foydalanish."
+        },
+        {
+          "id": 7,
+          "title": "Pseudo-element Selectors",
+          "subtitle": "Elementning ma’lum qismiga stil berish."
+        },
+        {
+          "id": 8,
+          "title": "Selectos Specificity",
+          "subtitle": "Selektorlar ustuvorligi va konfliktlarni boshqarish."
+        },
+        {
+          "id": 9,
+          "title": "Inheritance",
+          "subtitle": "CSS meros olish xususiyatlari va cheklovlari."
+        },
+        {
+          "id": 10,
+          "title": "Colors",
+          "subtitle": "Ranglar va ularni turli formatlarda ifodalash."
+        },
+        {
+          "id": 11,
+          "title": "Gradients",
+          "subtitle": "Gradientlar bilan fonga maxsus effekt berish."
+        },
+        {
+          "id": 12,
+          "title": "Borders",
+          "subtitle": "Elementning chegaralarini sozlash."
+        },
+        {
+          "id": 13,
+          "title": "Shadows",
+          "subtitle": "Soyalar bilan dizaynga chuqurlik qo‘shish."
+        },
+        {
+          "id": 14,
+          "title": "Summary",
+          "subtitle": "CSS asoslari bo‘limini takrorlash."
+        },
+        {
+          "id": 15,
+          "title": "What's Next",
+          "subtitle": "Keyingi mavzular haqida qisqacha ma’lumot."
+        },
+        {
+          "id": 16,
+          "title": "Exercises",
+          "subtitle": "Amaliy mashqlar bilan mustahkamlash."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Layout",
+      "subtitle": "Sahifani tuzish va elementlarni joylash mahoratini egallash.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "Veb sahifa layoutining asosiy tushunchalari."
+        },
+        {
+          "id": 2,
+          "title": "The Box Model",
+          "subtitle": "Elementlarning tashqi, ichki, chegara va kontent oblastlari."
+        },
+        {
+          "id": 3,
+          "title": "Sizing Elements",
+          "subtitle": "Elementlarning o‘lchamini boshqarish usullari."
+        },
+        {
+          "id": 4,
+          "title": "Overflowing",
+          "subtitle": "Kontent sig‘masligi va uni boshqarish."
+        },
+        {
+          "id": 5,
+          "title": "Measurement Units",
+          "subtitle": "Px, em, rem kabi o‘lchov birliklari."
+        },
+        {
+          "id": 6,
+          "title": "Positioning",
+          "subtitle": "Elementlarni sahifada joylashtirish strategiyalari."
+        },
+        {
+          "id": 7,
+          "title": "Floating Elements",
+          "subtitle": "Elementlarni oqimdan chiqarish va gorizontal joylash."
+        },
+        {
+          "id": 8,
+          "title": "FlexBox",
+          "subtitle": "Elementlarni interaktiv tarzda tekislash usuli."
+        },
+        {
+          "id": 9,
+          "title": "Grid",
+          "subtitle": "Ikki o‘lchovli layout yaratish uchun qulay vosita."
+        },
+        {
+          "id": 10,
+          "title": "Hiding Elements",
+          "subtitle": "Elementlarni ko‘rinmas qilish yoki butunlay olib tashlash."
+        },
+        {
+          "id": 11,
+          "title": "Media Queries",
+          "subtitle": "Turli ekran o‘lchamlari uchun layoutni moslashtirish."
+        },
+        {
+          "id": 12,
+          "title": "Summary",
+          "subtitle": "Layout bo‘limining asosiy xulosalari."
+        },
+        {
+          "id": 13,
+          "title": "Exercises",
+          "subtitle": "Amaliy mashqlar bilan mustahkamlash."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Typography",
+      "subtitle": "Veb sahifalarda matnni bezash va o‘qish qulayligini ta’minlash.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "Tipografiyaning veb dizayndagi roli."
+        },
+        {
+          "id": 2,
+          "title": "Styling Fonts",
+          "subtitle": "Shriftlarga stil berish va sozlash."
+        },
+        {
+          "id": 3,
+          "title": "Embedding Web Fonts",
+          "subtitle": "Tashqi shriftlarni ulash va ishlatish usullari."
+        },
+        {
+          "id": 4,
+          "title": "Flash of unstyled Text",
+          "subtitle": "FOUT muammosi va uni hal qilish usullari."
+        },
+        {
+          "id": 5,
+          "title": "Font Services",
+          "subtitle": "Google Fonts kabi xizmatlardan shrift olish."
+        },
+        {
+          "id": 6,
+          "title": "System Font Stack",
+          "subtitle": "Turli operatsion tizimlardagi standart shriftlar."
+        },
+        {
+          "id": 7,
+          "title": "Sizing Fonts",
+          "subtitle": "Turli birliklar va responsiv shrift o‘lchamlari."
+        },
+        {
+          "id": 8,
+          "title": "Vertical Spacing",
+          "subtitle": "Satrlardagi vertikal masofani sozlash."
+        },
+        {
+          "id": 9,
+          "title": "Horizontal Spacing",
+          "subtitle": "Matnning gorizontal bo‘shliqlarini boshqarish."
+        },
+        {
+          "id": 10,
+          "title": "Formatting Text",
+          "subtitle": "Matnga turli xildagi formatlarni qo‘llash."
+        },
+        {
+          "id": 11,
+          "title": "Summary",
+          "subtitle": "Tipografiya bo‘limining asosiy hulosalari."
+        },
+        {
+          "id": 12,
+          "title": "Exercises",
+          "subtitle": "Amaliy mashqlar bilan o‘zlashtirish."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Images",
+      "subtitle": "Rasmlar va ularning turli formatlarda ishlatilishi.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "Veb sahifalarda rasmlarning o‘rni."
+        },
+        {
+          "id": 2,
+          "title": "Image Types and Formats",
+          "subtitle": "Eng keng tarqalgan rasm formatlari va xususiyatlari."
+        },
+        {
+          "id": 3,
+          "title": "Content Images",
+          "subtitle": "Kontent sifatida ishlatiladigan rasmlarni joylashtirish."
+        },
+        {
+          "id": 4,
+          "title": "Background Images",
+          "subtitle": "CSS fon rasmlari bilan ishlash va bezash."
+        },
+        {
+          "id": 5,
+          "title": "CSS Sprites",
+          "subtitle": "Bir nechta ikonka yoki rasmni bitta faylga yig‘ish."
+        },
+        {
+          "id": 6,
+          "title": "Data URLs",
+          "subtitle": "Rasmni matn ko‘rinishida kodlab HTML yoki CSSda ishlatish."
+        },
+        {
+          "id": 7,
+          "title": "Clipping",
+          "subtitle": "Elementning bir qismini kesib ko‘rsatish."
+        },
+        {
+          "id": 8,
+          "title": "Filters",
+          "subtitle": "Rasmlarga turli filtrelar qo‘llash."
+        },
+        {
+          "id": 9,
+          "title": "Supporting High-density Screens",
+          "subtitle": "Retina va yuqori pikselli displeylar uchun moslash."
+        },
+        {
+          "id": 10,
+          "title": "Resolution Switching",
+          "subtitle": "Turli o‘lchamlarda rasm yuklash texnikalari."
+        },
+        {
+          "id": 11,
+          "title": "Using Modern Image Formats",
+          "subtitle": "WebP, AVIF kabi zamonaviy formatlardan foydalanish."
+        },
+        {
+          "id": 12,
+          "title": "Art Direction",
+          "subtitle": "Turli ekranlar uchun turli versiyadagi rasmlardan foydalanish."
+        },
+        {
+          "id": 13,
+          "title": "Scalable Vector Graphics",
+          "subtitle": "SVG formati va uning afzalliklari."
+        },
+        {
+          "id": 14,
+          "title": "Font Icons",
+          "subtitle": "Icon shriftlaridan foydalanish."
+        },
+        {
+          "id": 15,
+          "title": "Summary",
+          "subtitle": "Rasmlarni samarali boshqarish bo‘yicha xulosa."
+        },
+        {
+          "id": 16,
+          "title": "Exercises",
+          "subtitle": "Rasm formati va joylashtirishni mashq qilish."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Forms",
+      "subtitle": "Veb sahifalarda turli ma’lumotlar kiritish va yuborish jarayonlarini boshqarish.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "Vebda shakllar va ularning ahamiyati."
+        },
+        {
+          "id": 2,
+          "title": "Creating a Basic Form",
+          "subtitle": "Oddiy formani tuzish va ishlatish."
+        },
+        {
+          "id": 3,
+          "title": "Styling Forms",
+          "subtitle": "Shakl elementlarini CSS yordamida bezash."
+        },
+        {
+          "id": 4,
+          "title": "CSS Frameworks",
+          "subtitle": "Bootstrap kabi frameworklardan foydalanish."
+        },
+        {
+          "id": 5,
+          "title": "Text Fields",
+          "subtitle": "Matn kiritish oynasi va uning turlari."
+        },
+        {
+          "id": 6,
+          "title": "Data Lists",
+          "subtitle": "AutoComplete yoki Datalist elementidan foydalanish."
+        },
+        {
+          "id": 7,
+          "title": "Drop-down Lists",
+          "subtitle": "Select elementidan foydalanish."
+        },
+        {
+          "id": 8,
+          "title": "Check Boxes",
+          "subtitle": "Bir nechta variantni tanlash usullari."
+        },
+        {
+          "id": 9,
+          "title": "Radio Buttons",
+          "subtitle": "Bir nechta variant ichidan faqat bittasini tanlash."
+        },
+        {
+          "id": 10,
+          "title": "Sliders",
+          "subtitle": "Range input elementlari bilan ishlash."
+        },
+        {
+          "id": 11,
+          "title": "File Inputs",
+          "subtitle": "Fayl kiritish uchun input elementi."
+        },
+        {
+          "id": 12,
+          "title": "Grouping Related Fields",
+          "subtitle": "Fieldset va legend elementlari."
+        },
+        {
+          "id": 13,
+          "title": "Hidden Fields",
+          "subtitle": "Foydalanuvchiga ko‘rinmaydigan ma’lumotlar saqlash."
+        },
+        {
+          "id": 14,
+          "title": "Data Validation",
+          "subtitle": "Formadagi ma’lumotlarni tekshirish va xatolarni ko‘rsatish."
+        },
+        {
+          "id": 15,
+          "title": "Submitting the Form",
+          "subtitle": "Ma’lumotni serverga yuborish jarayoni."
+        },
+        {
+          "id": 16,
+          "title": "Summary",
+          "subtitle": "Formalar bilan ishlash bo‘yicha umumiy xulosa."
+        },
+        {
+          "id": 17,
+          "title": "Exercises",
+          "subtitle": "Mashqlar orqali shakllar bilan ishlashni mustahkamlash."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Transformations, Transitions, and Animations",
+      "subtitle": "Elementlarni harakatlantirish va jonlantirish yordamida interaktiv dizayn yaratish.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "CSS transformatsiya va animatsiya imkoniyatlari."
+        },
+        {
+          "id": 2,
+          "title": "Transformations",
+          "subtitle": "2D o‘lchamda elementga turli ko‘rinish berish."
+        },
+        {
+          "id": 3,
+          "title": "3D Transformations",
+          "subtitle": "3D o‘lchamda aylantirish va dinamika qo‘shish."
+        },
+        {
+          "id": 4,
+          "title": "Transitions",
+          "subtitle": "Elementlarning o‘zgarishini sekinlashtirish va muloyim o‘tish."
+        },
+        {
+          "id": 5,
+          "title": "Animations",
+          "subtitle": "CSS animatsiyalarini bosqichma-bosqich yaratish."
+        },
+        {
+          "id": 6,
+          "title": "Reusable Animations",
+          "subtitle": "Bir necha elementda takrorlanuvchi animatsiyalarni tuzish."
+        },
+        {
+          "id": 7,
+          "title": "Summary",
+          "subtitle": "Transformatsiya va animatsiya bo‘yicha xulosa."
+        },
+        {
+          "id": 8,
+          "title": "Exercises",
+          "subtitle": "Amaliy mashqlar bilan animatsiya ko‘nikmalarini mustahkamlash."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Writing Clean, Maintainable CSS",
+      "subtitle": "Katta loyihalarda CSS kodini soddalashtirish va tartibga solish usullari.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "Toza va boshqarilishi oson CSSning ahamiyati."
+        },
+        {
+          "id": 2,
+          "title": "CSS Best Practices",
+          "subtitle": "Kod yozishda qo‘llaniladigan eng yaxshi amaliyotlar."
+        },
+        {
+          "id": 3,
+          "title": "Variables",
+          "subtitle": "Sass yoki CSS Custom Properties bilan o‘zgaruvchilardan foydalanish."
+        },
+        {
+          "id": 4,
+          "title": "Object-Oriented CSS",
+          "subtitle": "Katta kod bazasida CSSni modul shaklida tashkil etish."
+        },
+        {
+          "id": 5,
+          "title": "BEM",
+          "subtitle": "Block, Element, Modifier metodologiyasi."
+        },
+        {
+          "id": 6,
+          "title": "Summary",
+          "subtitle": "Bo‘limdagi asosiy xulosalar va tajribalar."
+        },
+        {
+          "id": 7,
+          "title": "What's Next",
+          "subtitle": "Kelgusi bosqichlarda nimalarni o‘rganish kerakligi."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Welcome",
+      "subtitle": "TypeScript kursiga xush kelibsiz! Bu bo‘limda dastlabki ma’lumotlar beriladi.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Welcome",
+          "subtitle": "Kursning asosiy maqsadi va umumiy ko‘rinishi."
+        },
+        {
+          "id": 2,
+          "title": "Prerequistes",
+          "subtitle": "TypeScriptni o‘rganishdan oldin bilish kerak bo‘lgan narsa va dasturlar."
+        },
+        {
+          "id": 3,
+          "title": "How to Take this Course",
+          "subtitle": "Ushbu kursni o‘rganish jarayonida nimaga e’tibor berish."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Getting Started with TypeScript",
+      "subtitle": "TypeScript asoslarini o‘rganish va dastlabki loyihani ishga tushirish.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "TypeScriptning maqsadi va imkoniyatlari haqida qisqacha."
+        },
+        {
+          "id": 2,
+          "title": "What is TypeScript",
+          "subtitle": "JavaScript ustiga qurilgan kuchli typed tilning ta’rifi."
+        },
+        {
+          "id": 3,
+          "title": "Setting Up the Development Environment",
+          "subtitle": "TypeScriptni o‘rnatish va IDE sozlash."
+        },
+        {
+          "id": 4,
+          "title": "Your First TypeScript Program",
+          "subtitle": "Oddiy TypeScript dasturini yozish va kompilyatsiya qilish."
+        },
+        {
+          "id": 5,
+          "title": "Configuring the TypeScript Compiler",
+          "subtitle": "tsconfig.json fayli va uning asosiy parametrlarini tushunish."
+        },
+        {
+          "id": 6,
+          "title": "Debugging TypeScript Applications",
+          "subtitle": "Dastur xatolarini topish va ularni tuzatish usullari."
+        },
+        {
+          "id": 7,
+          "title": "Summary",
+          "subtitle": "Bo‘limda o‘rganilgan asosiy ko‘nikmalarni takrorlash."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Fundamentals",
+      "subtitle": "TypeScript tilining asosiy turlari va sintaksisini chuqurroq o‘rganish.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "TypeScript fundamental tushunchalari haqida qisqacha."
+        },
+        {
+          "id": 2,
+          "title": "Built-in Types",
+          "subtitle": "Number, string, boolean va boshqa asosiy turlarning xususiyatlari."
+        },
+        {
+          "id": 3,
+          "title": "The any Type",
+          "subtitle": "Ma’lum turga bog‘lamasdan o‘zgaruvchi yaratish."
+        },
+        {
+          "id": 4,
+          "title": "Strict Compiler Option",
+          "subtitle": "Katta loyihalarda xatolarni oldini olish uchun qat’iy rejim."
+        },
+        {
+          "id": 5,
+          "title": "Arrays",
+          "subtitle": "Elementlar to‘plamini boshqarish."
+        },
+        {
+          "id": 6,
+          "title": "Tuples",
+          "subtitle": "Bir nechta turdagi ma’lumotni bitta massivda saqlash."
+        },
+        {
+          "id": 7,
+          "title": "Enums",
+          "subtitle": "Oldindan belgilangan konstantalar to‘plamini yaratish."
+        },
+        {
+          "id": 8,
+          "title": "Functions",
+          "subtitle": "Funksiyalarni tip bilan ishlash va typing metodlari."
+        },
+        {
+          "id": 9,
+          "title": "Objects",
+          "subtitle": "Object ma’lumot turini ko‘rib chiqish va tip berish."
+        },
+        {
+          "id": 10,
+          "title": "Summary",
+          "subtitle": "Bo‘limning asosiy xulosalari va takrorlash."
+        },
+        {
+          "id": 11,
+          "title": "Exercises",
+          "subtitle": "Amaliy mashqlar orqali mavzuni mustahkamlash."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Advanced Types",
+      "subtitle": "TypeScriptda keng qamrovli turdagi imkoniyatlardan foydalanish.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "Murakkab tiplar bilan ishlashga kirish."
+        },
+        {
+          "id": 2,
+          "title": "Type Aliases",
+          "subtitle": "Turli murakkab turlarni oddiyroq nom bilan ishlatish."
+        },
+        {
+          "id": 3,
+          "title": "Union Types",
+          "subtitle": "Bir nechta turdan birini qabul qilishi mumkin bo‘lgan tip."
+        },
+        {
+          "id": 4,
+          "title": "Intersection Types",
+          "subtitle": "Bir nechta tur xususiyatlarini birlashtirish."
+        },
+        {
+          "id": 5,
+          "title": "Literal Types",
+          "subtitle": "Aniq qiymatlar bilan cheklangan tiplar."
+        },
+        {
+          "id": 6,
+          "title": "Nullable Types",
+          "subtitle": "Null va undefinedni hisobga olish."
+        },
+        {
+          "id": 7,
+          "title": "Optional Chaining",
+          "subtitle": "Obyekt ichidagi malumotga xavfsiz tarzda murojaat."
+        },
+        {
+          "id": 8,
+          "title": "The Nullish Coaelscing Operator",
+          "subtitle": "Null yoki undefined holatlarida standart qiymat berish."
+        },
+        {
+          "id": 9,
+          "title": "Type Assertions",
+          "subtitle": "Kompilyatorni ma’lum turga ishontirish usullari."
+        },
+        {
+          "id": 10,
+          "title": "The unknown Type",
+          "subtitle": "Har qanday turdagi qiymatni saqlashi mumkin bo‘lgan tip."
+        },
+        {
+          "id": 11,
+          "title": "The never Type",
+          "subtitle": "Hech qachon qiymat qaytarmaydigan vaziyatlar."
+        },
+        {
+          "id": 12,
+          "title": "Summary",
+          "subtitle": "Murakkab tiplarni qo‘llash bo‘yicha xulosa."
+        },
+        {
+          "id": 13,
+          "title": "Exercises",
+          "subtitle": "Amaliy mashqlar orqali ilg‘or tiplarni mustahkamlash."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Classes, Interfaces and Object-Oriented Programming",
+      "subtitle": "TypeScriptda OOP konsepsiyasini to‘liq o‘zlashtirish va amalda qo‘llash.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "OOPning asosiy tamoyillari va TypeScriptdagi roli."
+        },
+        {
+          "id": 2,
+          "title": "What is Object-Oriented Programming",
+          "subtitle": "OOPning nazariy jihatlari va mazmuni."
+        },
+        {
+          "id": 3,
+          "title": "Creating Classes",
+          "subtitle": "TypeScriptda class e’lon qilish va xususiyatlari."
+        },
+        {
+          "id": 4,
+          "title": "Creating Objects",
+          "subtitle": "Class asosida obyektlar yaratish va boshqarish."
+        },
+        {
+          "id": 5,
+          "title": "Read-only and Optional Properties",
+          "subtitle": "Xususiyatlarni o‘qish bilan cheklash yoki ixtiyoriy qilish."
+        },
+        {
+          "id": 6,
+          "title": "Access Control Keywords",
+          "subtitle": "public, private, protected kabi kalit so‘zlardan foydalanish."
+        },
+        {
+          "id": 7,
+          "title": "Parameter Properties",
+          "subtitle": "Konstruktor parametrlarini to‘g‘ridan-to‘g‘ri xususiyatlarga o‘tkazish."
+        },
+        {
+          "id": 8,
+          "title": "Getters and Setters",
+          "subtitle": "Xususiyatlarga moslama funksiyalar orqali murojaat."
+        },
+        {
+          "id": 9,
+          "title": "Index Signatures",
+          "subtitle": "Obyekt kalitlariga dynamic tarzda murojaat qilish."
+        },
+        {
+          "id": 10,
+          "title": "Static Members",
+          "subtitle": "Classga bog‘liq, lekin obyektlarga bog‘liq bo‘lmagan a’zolar."
+        },
+        {
+          "id": 11,
+          "title": "Inheritance",
+          "subtitle": "Bir classning xususiyatlarini boshqasiga meros qilish."
+        },
+        {
+          "id": 12,
+          "title": "Method Overriding",
+          "subtitle": "Child klassda ota klass metodini qayta e’lon qilish."
+        },
+        {
+          "id": 13,
+          "title": "Polymorphism",
+          "subtitle": "Bir xil metodga turli xatti-harakat berish."
+        },
+        {
+          "id": 14,
+          "title": "Private vs Protected Members",
+          "subtitle": "Mazkur a’zolarning farqlari va qo‘llash usullari."
+        },
+        {
+          "id": 15,
+          "title": "Abstract Classes and Methods",
+          "subtitle": "Faqat meros olish uchun mo‘ljallangan classlar."
+        },
+        {
+          "id": 16,
+          "title": "Interfaces",
+          "subtitle": "Object shaklini belgilash uchun shartnoma."
+        },
+        {
+          "id": 17,
+          "title": "Interfaces vs Types",
+          "subtitle": "Interfaces va type alias o‘rtasidagi farqlar."
+        },
+        {
+          "id": 18,
+          "title": "Summary",
+          "subtitle": "OOP bo‘limi bo‘yicha olingan bilimlarni yakuniy xulosa."
+        },
+        {
+          "id": 19,
+          "title": "Exercises",
+          "subtitle": "Amaliy mashqlar bilan OOP ko‘nikmalarini mustahkamlash."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Generics",
+      "subtitle": "Turli ma’lumot turlariga moslashuvchan dasturlash usullari.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "Generic turlarga kirish va ularning ahamiyati."
+        },
+        {
+          "id": 2,
+          "title": "Understanding the Problem",
+          "subtitle": "Generic usullarni qachon va nima uchun ishlatish."
+        },
+        {
+          "id": 3,
+          "title": "Generic Classes",
+          "subtitle": "Generic parametrlarga ega classlar yozish."
+        },
+        {
+          "id": 4,
+          "title": "Generic Functions",
+          "subtitle": "Funksiyalarni bir nechta turga moslash."
+        },
+        {
+          "id": 5,
+          "title": "Generic Interfaces",
+          "subtitle": "Generic xususiyatlarga ega interfeyslar yaratish."
+        },
+        {
+          "id": 6,
+          "title": "Generic Constraints",
+          "subtitle": "Generic parametrlarni cheklash usullari."
+        },
+        {
+          "id": 7,
+          "title": "Extending Generic Classes",
+          "subtitle": "Meros olish orqali generic classlarni kengaytirish."
+        },
+        {
+          "id": 8,
+          "title": "The keyof Operator",
+          "subtitle": "Obyekt kalitlarini tip sifatida ishlatish."
+        },
+        {
+          "id": 9,
+          "title": "Type Mapping",
+          "subtitle": "Mavjud turlarni qayta shakllantirish va o‘zgartirish."
+        },
+        {
+          "id": 10,
+          "title": "Summary",
+          "subtitle": "Generic mavzusi bo‘yicha asosiy xulosalar."
+        },
+        {
+          "id": 11,
+          "title": "Exercises",
+          "subtitle": "Generic bilan bog‘liq amaliy mashqlar."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Decorators",
+      "subtitle": "Kodga meta-ma’lumot qo‘shish orqali funksionallikni kengaytirish.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "Dekoratorlarning vazifasi va tarixi."
+        },
+        {
+          "id": 2,
+          "title": "What Are Decorators",
+          "subtitle": "Dekoratorlar bilan bog‘liq asosiy tushunchalar."
+        },
+        {
+          "id": 3,
+          "title": "Class Decorators",
+          "subtitle": "Classlarga qo‘llaniladigan dekoratorlarni yaratish."
+        },
+        {
+          "id": 4,
+          "title": "Parameterized Decorators",
+          "subtitle": "Parametr qabul qiluvchi dekoratorlarni ishlab chiqish."
+        },
+        {
+          "id": 5,
+          "title": "Decorator Composition",
+          "subtitle": "Bir nechta dekoratorlarni birlashtirish."
+        },
+        {
+          "id": 6,
+          "title": "Method Decorators",
+          "subtitle": "Metodlarga dekoratorlarni qo‘llash va imkoniyatlari."
+        },
+        {
+          "id": 7,
+          "title": "Access Decorators - Title",
+          "subtitle": "Getter/setter kabi methodlarga dekoratorlar qo‘llash."
+        },
+        {
+          "id": 8,
+          "title": "Property Decorators",
+          "subtitle": "Class xususiyatlariga dekoratorlar yozish."
+        },
+        {
+          "id": 9,
+          "title": "Parameter Decortors",
+          "subtitle": "Funksiya parametrlariga dekoratorlardan foydalanish."
+        },
+        {
+          "id": 10,
+          "title": "Summary",
+          "subtitle": "Dekoratorlar bo‘limining asosiy xulosalari."
+        },
+        {
+          "id": 11,
+          "title": "Exercises",
+          "subtitle": "Dekoratorlar mavzusini mustahkamlash uchun amaliy mashqlar."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Modules",
+      "subtitle": "TypeScript loyihalarini modulga bo‘lib tashkil etish.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "subtitle": "Modullar va ularning afzalliklari haqida qisqacha."
+        },
+        {
+          "id": 2,
+          "title": "Exporting and Importing",
+          "subtitle": "Kod qismlarini tashqi fayllardan ulash va ishlatish."
+        },
+        {
+          "id": 3,
+          "title": "Module Formats",
+          "subtitle": "CommonJS, ES Modules kabi turli formatlar."
+        },
+        {
+          "id": 4,
+          "title": "Default Exports",
+          "subtitle": "Bitta modulda yagona eksport e’lon qilish."
+        },
+        {
+          "id": 5,
+          "title": "Wildcard Imports",
+          "subtitle": "Modulning barcha eksportlarini bitta obyekt sifatida olish."
+        },
+        {
+          "id": 6,
+          "title": "Re-exporting",
+          "subtitle": "Oraliq modul orqali eksportni takrorlash."
+        },
+        {
+          "id": 7,
+          "title": "Summary",
+          "subtitle": "Modullar bilan ishlash bo‘yicha xulosa."
+        }
+      ]
+    }
+  ]
+}
