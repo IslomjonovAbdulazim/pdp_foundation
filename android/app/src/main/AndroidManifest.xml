@@ -4,6 +4,9 @@
         android:label="pdp_foundation"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data
+            android:name="io.flutter.embedding.android.ExperimentalImpeller"
+            android:value="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
