@@ -42,3 +42,54 @@ QuizModel mockQuiz = QuizModel(
     mockMCQ, // Multiple Choice Question
   ],
 );
+
+QuizModel mockQuiz2 = QuizModel(
+  id: 1,
+  questions: [
+    CodeOutputPredictionQuestionModel(
+      id: 1,
+      type: 'code_output',
+      questionText: 'What will be the output of the following JavaScript code?',
+      codeSnippet: """
+        console.log(2 + '2');
+        console.log(2 - '2');
+      """,
+      correctOutput: """
+        "22"
+        0
+      """,
+      language: "javascript",
+    ),
+    CodeCompletionQuestionModel(
+      id: 2,
+      type: 'code_completion',
+      questionText:
+          'What will be the correct syntax to declare a JavaScript function?',
+      codeSnippet: 'function myFunction() { \n  // ... \n}',
+      correctAnswer: 'function myFunction() { }',
+      options: [
+        'function = myFunction() { }',
+        'def myFunction() { }',
+        'function myFunction() { }',
+        'func myFunction() { }'
+      ],
+      language: "javascript",
+    ),
+    FillInTheBlankQuestionModel(
+      id: 3,
+      type: 'fill_in_the_blank',
+      questionText:
+          'Fill in the missing keyword to declare a variable in JavaScript.',
+      codeSnippet: '___ myVariable = 10;',
+      correctAnswer: 'let',
+      language: "javascript",
+    ),
+    MCQQuestionModel(
+      id: 4,
+      type: 'mcq',
+      questionText: 'Which of the following is not a JavaScript data type?',
+      options: ['String', 'Boolean', 'Float', 'Undefined'],
+      correctOptionIndex: 2,
+    ),
+  ],
+);

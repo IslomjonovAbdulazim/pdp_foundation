@@ -3,6 +3,7 @@ import 'question_model.dart';
 class FillInTheBlankQuestionModel extends QuestionModel {
   final String codeSnippet;
   final String correctAnswer;
+  final String language;
 
   FillInTheBlankQuestionModel({
     required super.id,
@@ -10,6 +11,7 @@ class FillInTheBlankQuestionModel extends QuestionModel {
     required this.correctAnswer,
     required this.codeSnippet,
     required super.type,
+    required this.language,
   });
 
   factory FillInTheBlankQuestionModel.fromJson(Map<String, dynamic> json) {
@@ -19,6 +21,7 @@ class FillInTheBlankQuestionModel extends QuestionModel {
       correctAnswer: json['correctAnswer'],
       codeSnippet: json["codeSnippet"],
       type: json["type"],
+      language: json["language"],
     );
   }
 
@@ -30,6 +33,7 @@ class FillInTheBlankQuestionModel extends QuestionModel {
       'questionText': questionText,
       'correctAnswer': correctAnswer,
       'codeSnippet': codeSnippet,
+      'language': language,
     };
   }
 }
@@ -43,4 +47,5 @@ FillInTheBlankQuestionModel mockFillInTheBlank = FillInTheBlankQuestionModel(
   ___ myVariable = 10;
   ''',
   correctAnswer: 'let',
+  language: "javascript",
 );
