@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:pdp_foundation/domain/entities/screens/quiz_entity.dart';
+import 'package:pdp_foundation/domain/entities/study/quiz_entity.dart';
 import 'package:pdp_foundation/domain/entities/study/topic_entity.dart';
 import 'package:pdp_foundation/utils/constants/sound_constants.dart';
 import 'package:pdp_foundation/utils/constants/title_constants.dart';
