@@ -7,10 +7,9 @@ extension TextStylesExtension on BuildContext {
   /// Elevated button text style – bold with a bit of letter spacing for clarity.
   TextStyle get elevatedButton => TextStyle(
         fontFamily: FontConstants.nunito,
-        fontSize: 18,
-        fontWeight: FontWeight.bold,
-        letterSpacing: 1.25,
-        color: Theme.of(this).colorScheme.onPrimary,
+        fontSize: 20,
+        fontWeight: FontWeight.w800,
+        color: backgroundColor,
       );
 }
 

@@ -76,6 +76,7 @@ class QuizController extends GetxController {
   }
 
   void nextQuestion() async {
+    if (quizStatus.value == QuizStatusEnum.notSelected) return;
     if (currentQuestion.value < quiz.length - 1) {
       currentQuestion.value += 1;
       selected.value = "";

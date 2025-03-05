@@ -10,4 +10,5 @@ class TitleConstants {
   static const String select = "Tanlang";
   static const String check = "Tekshirish";
   static const String finishQuiz = "Testni Yakunlash";
+  static const String goBack = "Ortga qaytish";
 }
