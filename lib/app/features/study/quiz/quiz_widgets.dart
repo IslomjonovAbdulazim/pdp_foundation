@@ -29,7 +29,7 @@ class _Code extends StatelessWidget {
     return code.isNotEmpty
         ? Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: _buildCodeBlock(context, code, language),
+            child: _buildCodeBlock(context, code.trim(), language),
           )
         : const SizedBox.shrink();
   }

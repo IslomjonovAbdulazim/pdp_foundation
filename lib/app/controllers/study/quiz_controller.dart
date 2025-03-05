@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:pdp_foundation/domain/entities/study/quiz_entity.dart';
-import 'package:pdp_foundation/domain/entities/study/topic_entity.dart';
-import 'package:pdp_foundation/utils/constants/sound_constants.dart';
-import 'package:pdp_foundation/utils/constants/title_constants.dart';
-import 'package:pdp_foundation/utils/extenstions/color_extension.dart';
+import 'package:pdp_foundation/app/routes/app_routes.dart';
+import 'package:pdp_foundation/domain/entities/study/quiz_result_entity.dart';
+
+import '../../../domain/entities/study/quiz_entity.dart';
+import '../../../domain/entities/study/topic_entity.dart';
+import '../../../utils/constants/sound_constants.dart';
+import '../../../utils/constants/title_constants.dart';
+import '../../../utils/extenstions/color_extension.dart';
 
 enum QuizStatusEnum { notSelected, wrong, correct }
 
@@ -19,6 +22,7 @@ class QuizController extends GetxController {
   RxString buttonText = TitleConstants.select.obs;
   Set<int> corrects = {};
   Set<int> wrongs = {};
+  DateTime start = DateTime.now();
   AudioPlayer player = AudioPlayer();
 
   QuizEntity get question => quiz[currentQuestion.value];
@@ -77,15 +81,23 @@ class QuizController extends GetxController {
       selected.value = "";
       quizStatus.value = QuizStatusEnum.notSelected;
     } else {
-      print("Done");
+      QuizResultEntity result = QuizResultEntity(
+        quizID: topic.value.id,
+        topicID: topic.value.id,
+        corrects: List.from(corrects),
+        wrongs: List.from(wrongs),
+        start: start,
+        end: DateTime.now(),
+        topic: topic.value.title,
+      );
+      Get.offNamed(AppRoutes.quizResult, arguments: result);
     }
   }
 
-  void done(bool result) {}
-
   String get status {
-    if (currentQuestion.value == quiz.length - 1)
+    if (currentQuestion.value == quiz.length - 1) {
       return TitleConstants.finishQuiz;
+    }
     if (selected.value.isNotEmpty) return TitleConstants.next;
     return TitleConstants.select;
   }
