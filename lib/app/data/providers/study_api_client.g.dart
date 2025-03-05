@@ -10,7 +10,7 @@ part of 'study_api_client.dart';
 
 class _StudyApiClient implements StudyApiClient {
   _StudyApiClient(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'http://10.10.2.163:8000/';
+    baseUrl ??= 'http://10.10.1.215:8000/';
   }
 
   final Dio _dio;

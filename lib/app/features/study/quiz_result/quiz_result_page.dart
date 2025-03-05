@@ -78,7 +78,9 @@ class QuizResultPage extends GetView<QuizResultController> {
                       CupertinoButton(
                         color: context.onSurface,
                         borderRadius: BorderRadius.circular(15),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.back();
+                        },
                         child: Center(
                           child: Text(
                             TitleConstants.goBack,

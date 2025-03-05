@@ -25,6 +25,7 @@ extension TextStylesExtension on BuildContext {
         fontFamily: FontConstants.nunito,
         fontSize: 24,
         fontWeight: FontWeight.w800,
+        height: 1.1,
         color: Theme.of(this).colorScheme.onSurface,
       );
 

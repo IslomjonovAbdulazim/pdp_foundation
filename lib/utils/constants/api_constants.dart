@@ -1,5 +1,5 @@
 class ApiConstants {
-  static const String baseURL = "http://10.10.2.163:8000/";
+  static const String baseURL = "http://10.10.1.215:8000/";
 
   /// STUDY
   static const String themeList = "/api/v1/theme/list/";
