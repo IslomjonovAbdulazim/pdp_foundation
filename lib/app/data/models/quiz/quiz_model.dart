@@ -1,3 +1,4 @@
+import 'classic_question_model.dart';
 import 'code_completion_question_model.dart';
 import 'code_output_prediction_question_model.dart';
 import 'fill_in_blank_question_model.dart';
@@ -40,6 +41,7 @@ QuizModel mockQuiz = QuizModel(
     mockCodeCompletion, // Code Completion Question
     mockFillInTheBlank, // Fill in the Blank Question
     mockMCQ, // Multiple Choice Question
+    mockClassicQuestion,
   ],
 );
 
@@ -90,6 +92,19 @@ QuizModel mockQuiz2 = QuizModel(
       questionText: 'Which of the following is not a JavaScript data type?',
       options: ['String', 'Boolean', 'Float', 'Undefined'],
       correctOptionIndex: 2,
+    ),
+    ClassicQuestionModel(
+      id: 1,
+      type: 'classic',
+      questionText:
+          'What will be the correct syntax to declare a JavaScript function?',
+      correctAnswer: 'function myFunction() { }',
+      options: [
+        'function = myFunction() { }',
+        'def myFunction() { }',
+        'function myFunction() { }',
+        'func myFunction() { }'
+      ],
     ),
   ],
 );

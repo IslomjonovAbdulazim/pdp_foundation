@@ -12,13 +12,37 @@ class QuizPage extends GetView<QuizController> {
               ? const Center(
                   child: CircularProgressIndicator.adaptive(),
                 )
-              : Column(
-                  children: [
-                    Text(
-                      controller.quiz.value.questions.length.toString(),
-                      style: context.title,
-                    ),
-                  ],
+              : Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    children: [
+                      const Spacer(),
+                      Text(
+                        controller.question.questionText,
+                        style: context.title,
+                        textAlign: TextAlign.center,
+                      ),
+                      QuizScreen(question: controller.question),
+                      const Spacer(flex: 3),
+                      CupertinoButton(
+                        color: context.textPrimary,
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        borderRadius: BorderRadius.circular(15),
+                        onPressed: () {},
+                        child: Center(
+                          child: Text(
+                            controller.buttonText.value,
+                            style: TextStyle(
+                              color: context.backgroundColor,
+                              fontSize: 22,
+                              fontFamily: FontConstants.nunito,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
         ),
       ),
