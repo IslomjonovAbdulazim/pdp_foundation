@@ -1,298 +1,107 @@
 part of 'imports.dart';
 
-class QuizScreen extends StatelessWidget {
-  final QuestionModel question;
+class _Question extends StatelessWidget {
+  final String text;
 
-  const QuizScreen({super.key, required this.question});
-
-  @override
-  Widget build(BuildContext context) {
-    switch (question.type) {
-      case 'code_output':
-        return CodeOutputPredictionQuestionWidget(
-          question: question as CodeOutputPredictionQuestionModel,
-        );
-      case 'code_completion':
-        return CodeCompletionQuestionWidget(
-          question: question as CodeCompletionQuestionModel,
-        );
-      case 'fill_in_the_blank':
-        return FillInTheBlankQuestionWidget(
-          question: question as FillInTheBlankQuestionModel,
-        );
-      case 'mcq':
-        return MCQQuestionWidget(
-          question: question as MCQQuestionModel,
-        );
-      case 'classic':
-        return ClassicQuestionWidget(
-          question: question as ClassicQuestionModel,
-        );
-      default:
-        return const ListTile(
-          title: Text('Unknown question type'),
-        );
-    }
-  }
-}
-
-class CodeOutputPredictionQuestionWidget extends GetView<QuizController> {
-  final CodeOutputPredictionQuestionModel question;
-
-  const CodeOutputPredictionQuestionWidget({super.key, required this.question});
+  const _Question({required this.text});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(height: 10),
-        _buildCodeBlock(context, question.codeSnippet, question.language),
-        InputWidget(
-          controller: controller.controller,
-          focus: FocusNode().obs,
-          hint: "Output...",
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Text(
+        text,
+        style: context.title,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }
 
-// Widget for Code Completion questions.
-class CodeCompletionQuestionWidget extends StatelessWidget {
-  final CodeCompletionQuestionModel question;
+class _Code extends StatelessWidget {
+  final String code;
+  final String language;
 
-  const CodeCompletionQuestionWidget({super.key, required this.question});
+  const _Code({required this.code, required this.language});
 
   @override
   Widget build(BuildContext context) {
-    // For demonstration, this widget shows a list of options.
-    // In a real app, you might want to track the selected option.
-    return Card(
-      margin: EdgeInsets.all(8.0),
-      child: Padding(
-        padding: EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              question.questionText,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8),
-            Text('Code Snippet:'),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(8),
-              color: Colors.grey[200],
-              child: Text(
-                question.codeSnippet,
-                style: TextStyle(fontFamily: 'monospace'),
+    return code.isNotEmpty
+        ? Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: _buildCodeBlock(context, code, language),
+          )
+        : const SizedBox.shrink();
+  }
+}
+
+class _Variants extends GetView<QuizController> {
+  final void Function(String) onTap;
+  final List<String> options;
+  final bool isSelected;
+
+  const _Variants(this.onTap, this.options, this.isSelected);
+
+  @override
+  Widget build(BuildContext context) {
+    return Flexible(
+      child: ListView.builder(
+        itemCount: 4,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        physics: const BouncingScrollPhysics(),
+        reverse: true,
+        itemBuilder: (context, index) {
+          final String option = options[index];
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 3),
+            child: Obx(
+              () => CupertinoButton(
+                disabledColor: controller.variantColor(option, context),
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                borderRadius: BorderRadius.circular(15),
+                color: controller.variantColor(option, context),
+                onPressed: isSelected
+                    ? null
+                    : () {
+                        onTap(option);
+                      },
+                child: Text(
+                  option,
+                  style: context.name,
+                ),
               ),
             ),
-            SizedBox(height: 8),
-            ...question.options.map((option) => RadioListTile<String>(
-                  title: Text(option),
-                  value: option,
-                  groupValue: null, // To be managed with state.
-                  onChanged: (value) {},
-                )),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to show the correct answer.
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        AnswerScreen(answer: question.correctAnswer),
-                  ),
-                );
-              },
-              child: Text('Show Answer'),
-            ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
 }
 
-// Widget for Fill in the Blank questions.
-class FillInTheBlankQuestionWidget extends StatelessWidget {
-  final FillInTheBlankQuestionModel question;
+class _Button extends StatelessWidget {
+  final void Function() onTap;
+  final String buttonText;
 
-  const FillInTheBlankQuestionWidget({Key? key, required this.question})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    // Using a TextEditingController to capture the user's answer.
-    TextEditingController controller = TextEditingController();
-    return Card(
-      margin: EdgeInsets.all(8.0),
-      child: Padding(
-        padding: EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              question.questionText,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8),
-            Text('Code Snippet:'),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(8),
-              color: Colors.grey[200],
-              child: Text(
-                question.codeSnippet,
-                style: TextStyle(fontFamily: 'monospace'),
-              ),
-            ),
-            SizedBox(height: 8),
-            TextField(
-              controller: controller,
-              decoration: InputDecoration(
-                labelText: 'Your Answer',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 8),
-            ElevatedButton(
-              onPressed: () {
-                // For this demo, navigate to the answer screen.
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        AnswerScreen(answer: question.correctAnswer),
-                  ),
-                );
-              },
-              child: Text('Submit Answer'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// Widget for Multiple Choice questions.
-class MCQQuestionWidget extends StatelessWidget {
-  final MCQQuestionModel question;
-
-  const MCQQuestionWidget({Key? key, required this.question}) : super(key: key);
+  const _Button(this.onTap, {required this.buttonText});
 
   @override
   Widget build(BuildContext context) {
-    // For demonstration purposes, state management is not included.
-    return Card(
-      margin: EdgeInsets.all(8.0),
-      child: Padding(
-        padding: EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              question.questionText,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8),
-            Column(
-              children: List.generate(question.options.length, (index) {
-                return RadioListTile<int>(
-                  title: Text(question.options[index]),
-                  value: index,
-                  groupValue: null, // This should be managed via state.
-                  onChanged: (value) {},
-                );
-              }),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to an answer screen showing the correct option.
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AnswerScreen(
-                        answer: question.options[question.correctOptionIndex]),
-                  ),
-                );
-              },
-              child: Text('Show Answer'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// Widget for Classic questions.
-class ClassicQuestionWidget extends StatelessWidget {
-  final ClassicQuestionModel question;
-
-  const ClassicQuestionWidget({Key? key, required this.question})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    // In this example, tapping on any option will navigate to the answer.
-    return Card(
-      margin: EdgeInsets.all(8.0),
-      child: Padding(
-        padding: EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              question.questionText,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8),
-            Column(
-              children: question.options.map((option) {
-                return ListTile(
-                  title: Text(option),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            AnswerScreen(answer: question.correctAnswer),
-                      ),
-                    );
-                  },
-                );
-              }).toList(),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// A simple answer screen widget to display the correct answer.
-class AnswerScreen extends StatelessWidget {
-  final String answer;
-
-  const AnswerScreen({Key? key, required this.answer}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Answer'),
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: CupertinoButton(
+        color: context.dividerColor,
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        borderRadius: BorderRadius.circular(15),
+        onPressed: onTap,
+        child: Center(
           child: Text(
-            answer,
-            style: TextStyle(fontSize: 18),
+            buttonText,
+            style: TextStyle(
+              color: context.textPrimary,
+              fontSize: 22,
+              fontFamily: FontConstants.nunito,
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ),
       ),

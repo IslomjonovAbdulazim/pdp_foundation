@@ -46,6 +46,7 @@ class AppTheme {
         selectionColor: LightColorConstants.selection,
         blueColor: LightColorConstants.blue,
         yellowColor: LightColorConstants.yellow,
+        greenColor: LightColorConstants.success,
       ),
     ],
   );
@@ -90,6 +91,7 @@ class AppTheme {
         selectionColor: DarkColorConstants.selection,
         blueColor: DarkColorConstants.blue,
         yellowColor: DarkColorConstants.yellow,
+        greenColor: DarkColorConstants.success,
       ),
     ],
   );

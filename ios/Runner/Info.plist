@@ -7,6 +7,14 @@
       <key>NSAllowsArbitraryLoads</key>
       <true/>
     </dict>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>audio</string>
+    </array>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>We need microphone access for audio playback and recording.</string>
+
+
 
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

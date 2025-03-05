@@ -6,43 +6,49 @@ class QuizPage extends GetView<QuizController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          controller.topic.value.title,
+          style: context.biggerName,
+        ),
+        actions: [
+          Obx(
+            () => Text(
+              "${controller.currentQuestion.value + 1}/${controller.quiz.length}",
+              style: context.biggerName,
+            ),
+          ),
+          const SizedBox(width: 10),
+        ],
+      ),
       body: SafeArea(
         child: Obx(
           () => controller.isLoading.value
               ? const Center(
                   child: CircularProgressIndicator.adaptive(),
                 )
-              : Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      const Spacer(),
-                      Text(
-                        controller.question.questionText,
-                        style: context.title,
-                        textAlign: TextAlign.center,
-                      ),
-                      QuizScreen(question: controller.question),
-                      const Spacer(flex: 3),
-                      CupertinoButton(
-                        color: context.textPrimary,
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        borderRadius: BorderRadius.circular(15),
-                        onPressed: () {},
-                        child: Center(
-                          child: Text(
-                            controller.buttonText.value,
-                            style: TextStyle(
-                              color: context.backgroundColor,
-                              fontSize: 22,
-                              fontFamily: FontConstants.nunito,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+              : Column(
+                  children: [
+                    _Question(text: controller.question.question),
+                    const SizedBox(height: 10),
+                    _Code(
+                      code: controller.question.codeSnippet,
+                      language: controller.question.language,
+                    ),
+                    _Variants(
+                      (String variant) {
+                        controller.selectVariant(variant);
+                      },
+                      controller.question.options,
+                      controller.isSelected,
+                    ),
+                    const SizedBox(height: 10),
+                    _Button(
+                      controller.nextQuestion,
+                      buttonText: controller.status,
+                    ),
+                  ],
                 ),
         ),
       ),
