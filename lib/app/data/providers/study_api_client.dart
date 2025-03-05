@@ -1,6 +1,7 @@
 // lib/app/data/providers/api_client.dart
 
 import 'package:dio/dio.dart';
+import 'package:pdp_foundation/app/data/models/study/quiz_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../utils/constants/api_constants.dart';
@@ -25,5 +26,10 @@ abstract class StudyApiClient {
   @GET(ApiConstants.document)
   Future<List<DocumentModel>> getDocument(
     @Path("document_id") int documentID,
+  );
+
+  @GET(ApiConstants.quiz)
+  Future<List<QuizModel>> getQuiz(
+    @Path("topic_id") int topicID,
   );
 }
