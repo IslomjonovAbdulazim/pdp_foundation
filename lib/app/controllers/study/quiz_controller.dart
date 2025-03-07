@@ -6,9 +6,13 @@ import 'package:pdp_foundation/domain/entities/study/quiz_result_entity.dart';
 
 import '../../../domain/entities/study/quiz_entity.dart';
 import '../../../domain/entities/study/topic_entity.dart';
+import '../../../domain/respositories/study_repository.dart';
 import '../../../utils/constants/sound_constants.dart';
 import '../../../utils/constants/title_constants.dart';
 import '../../../utils/extenstions/color_extension.dart';
+import '../../../utils/helpers/status_code_helper.dart';
+import '../../data/providers/dio_manager.dart';
+import '../../data/repositories/study_repository_imp.dart';
 
 enum QuizStatusEnum { notSelected, wrong, correct }
 
@@ -27,21 +31,21 @@ class QuizController extends GetxController {
 
   QuizEntity get question => quiz[currentQuestion.value];
 
-  String get correct => question.correct;
+  String get correct => question.correct.trim();
 
-  bool get isCorrect => correct == selected.value;
+  bool get isCorrect => correct == selected.value.trim();
 
   bool get isSelected => selected.value.isNotEmpty;
 
   Color variantColor(String option, BuildContext context) {
     if (isSelected) {
-      if (option == selected.value) {
+      if (option.trim() == selected.value.trim()) {
         if (quizStatus.value == QuizStatusEnum.correct) {
           return context.greenColor;
         } else {
           return context.error;
         }
-      } else if (option == correct) {
+      } else if (option.trim() == correct.trim()) {
         return context.greenColor;
       }
     }
@@ -56,7 +60,23 @@ class QuizController extends GetxController {
 
   void init() async {
     isLoading.value = true;
-    quiz.value = quizzes;
+    Get.put<StudyRepository>(
+      StudyRepositoryImp(dio: dioInstance),
+    );
+    final api = Get.find<StudyRepository>();
+    final result = await api.quiz(topic.value.id);
+    result.fold(
+      (failure) {
+        StatusCodeService.showSnackbar(failure.statusCode ?? 505);
+      },
+      (response) {
+        if (response.isNotEmpty) {
+          quiz.value = response;
+        } else {
+          StatusCodeService.showSnackbar(505);
+        }
+      },
+    );
     isLoading.value = false;
   }
 

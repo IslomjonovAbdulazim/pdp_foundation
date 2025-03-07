@@ -17,3 +17,5 @@ class QuizResultEntity {
     required this.topic,
   });
 }
+
+
