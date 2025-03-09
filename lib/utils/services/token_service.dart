@@ -18,6 +18,11 @@ class TokenService extends GetxService {
     await _storage.write('token', token);
   }
 
+  Future<void> saveRefreshToken(String refreshToken) async {
+    _token.value = refreshToken;
+    await _storage.write('refresh-token', refreshToken);
+  }
+
   Future<void> clearToken() async {
     _token.value = '';
     await _storage.remove('token');

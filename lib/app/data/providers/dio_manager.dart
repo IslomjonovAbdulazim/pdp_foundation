@@ -7,7 +7,10 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import '../../../utils/constants/api_constants.dart';
 
 final Dio dioInstance = Dio(
-  BaseOptions(baseUrl: ApiConstants.baseURL),
+  BaseOptions(
+    baseUrl: ApiConstants.baseURL,
+    contentType: 'application/json',
+  ),
 );
 
 void configureDio() {

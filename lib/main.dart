@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
         darkTheme: AppTheme.darkTheme,
         themeMode: themeController.themeMode,
         debugShowCheckedModeBanner: false,
-        initialRoute: AppRoutes.bnb,
+        initialRoute: AppRoutes.splash,
         initialBinding: InitialBinding(),
         getPages: AppPages.pages,
         builder: (context, child) => MediaQuery(

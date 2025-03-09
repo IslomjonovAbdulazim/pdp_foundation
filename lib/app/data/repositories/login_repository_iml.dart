@@ -26,6 +26,9 @@ class LoginRepositoryImp extends LoginRepository {
   Future<Either<NetworkFailure, LoginResponseEntity>> login(
       LoginModel model) async {
     try {
+      print("device: ${model.deviceId}");
+      print("phone: ${model.phoneNumber}");
+      print("1 pass: ${model.password}");
       final response = await apiClient.login(model);
       return Right(response.toEntity());
     } on DioException catch (e) {

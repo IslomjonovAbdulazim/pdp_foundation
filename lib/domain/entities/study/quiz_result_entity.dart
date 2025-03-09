@@ -1,5 +1,4 @@
 class QuizResultEntity {
-  final int quizID;
   final int topicID;
   final List<int> corrects;
   final List<int> wrongs;
@@ -8,7 +7,6 @@ class QuizResultEntity {
   final String topic;
 
   QuizResultEntity({
-    required this.quizID,
     required this.topicID,
     required this.corrects,
     required this.wrongs,

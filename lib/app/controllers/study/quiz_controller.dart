@@ -64,6 +64,7 @@ class QuizController extends GetxController {
       StudyRepositoryImp(dio: dioInstance),
     );
     final api = Get.find<StudyRepository>();
+    print(topic.value.id);
     final result = await api.quiz(topic.value.id);
     result.fold(
       (failure) {
@@ -103,7 +104,6 @@ class QuizController extends GetxController {
       quizStatus.value = QuizStatusEnum.notSelected;
     } else {
       QuizResultEntity result = QuizResultEntity(
-        quizID: topic.value.id,
         topicID: topic.value.id,
         corrects: List.from(corrects),
         wrongs: List.from(wrongs),

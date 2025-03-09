@@ -18,6 +18,7 @@ class LoginResponseModel with _$LoginResponseModel {
 // Extension to convert Model to Entity
 extension LoginResponseModelX on LoginResponseModel {
   LoginResponseEntity toEntity() => LoginResponseEntity(
+
     refreshToken: refreshToken,
     accessToken: accessToken,
   );

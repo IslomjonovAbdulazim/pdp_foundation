@@ -1,13 +1,9 @@
-
 import 'package:dio/dio.dart';
-import 'package:pdp_foundation/app/data/models/screens/login_model.dart';
-import 'package:pdp_foundation/app/data/models/screens/login_response_model.dart';
-import 'package:pdp_foundation/domain/entities/screens/login_entity.dart';
-import 'package:pdp_foundation/domain/entities/screens/login_response_entity.dart';
-import 'package:retrofit/error_logger.dart';
-import 'package:retrofit/http.dart';
+import 'package:retrofit/retrofit.dart';
 
 import '../../../utils/constants/api_constants.dart';
+import '../models/screens/login_model.dart';
+import '../models/screens/login_response_model.dart';
 
 part 'login_api_client.g.dart';
 
@@ -15,7 +11,7 @@ part 'login_api_client.g.dart';
 abstract class LoginApiClient {
   factory LoginApiClient(Dio dio, {String baseUrl}) = _LoginApiClient;
 
-  @POST(ApiConstants.login)
-  Future<LoginResponseModel> login(LoginModel login);
 
+  @POST(ApiConstants.login)
+  Future<LoginResponseModel> login(@Body() LoginModel login);
 }
