@@ -5,13 +5,13 @@ class UserProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = Get.arguments as LeaderboardUserEntity;
+    final user = Get.arguments as LeaderboardUserModel;
     return Scaffold(
       backgroundColor: context.backgroundColor,
       appBar: AppBar(
         backgroundColor: context.backgroundColor,
         surfaceTintColor: context.backgroundColor,
-        title: Text(user.fullname),
+        title: Text(user.firstName),
       ),
       body: const SingleChildScrollView(
         padding: EdgeInsets.symmetric(

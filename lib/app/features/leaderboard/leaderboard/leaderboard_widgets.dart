@@ -1,7 +1,7 @@
 part of 'imports.dart';
 
 class _Top3 extends StatelessWidget {
-  final List<LeaderboardUserEntity> top3users;
+  final List<LeaderboardUserModel> top3users;
 
   const _Top3({required this.top3users});
 
@@ -31,7 +31,7 @@ class _Top3 extends StatelessWidget {
                         ),
                         image: DecorationImage(
                           image: NetworkImage(
-                            top3users[1].image,
+                            top3users[1].avatar ?? "",
                           ),
                         ),
                       ),
@@ -39,14 +39,14 @@ class _Top3 extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    top3users[1].fullname,
+                    top3users[1].firstName,
                     style: context.name,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    "${top3users[1].points} pts",
+                    "${top3users[1].rating} pts",
                     style: context.number,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -78,7 +78,7 @@ class _Top3 extends StatelessWidget {
                           ),
                           image: DecorationImage(
                             image: NetworkImage(
-                              top3users[0].image,
+                              top3users[0].avatar!,
                             ),
                           ),
                         ),
@@ -86,14 +86,14 @@ class _Top3 extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      top3users[0].fullname,
+                      top3users[0].firstName,
                       style: context.name,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      "${top3users[0].points} pts",
+                      "${top3users[0].rating} pts",
                       style: context.number,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -124,7 +124,7 @@ class _Top3 extends StatelessWidget {
                         ),
                         image: DecorationImage(
                           image: NetworkImage(
-                            top3users[2].image,
+                            top3users[2].avatar!,
                           ),
                         ),
                       ),
@@ -132,14 +132,14 @@ class _Top3 extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    top3users[2].fullname,
+                    top3users[2].firstName,
                     style: context.name,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    "${top3users[2].points} pts",
+                    "${top3users[2].rating} pts",
                     style: context.number,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -155,7 +155,7 @@ class _Top3 extends StatelessWidget {
 }
 
 class _UserItem extends StatelessWidget {
-  final LeaderboardUserEntity user;
+  final LeaderboardUserModel user;
 
   const _UserItem({required this.user});
 
@@ -178,27 +178,38 @@ class _UserItem extends StatelessWidget {
             SizedBox(
               width: 30,
               child: Text(
-                "${user.rank}",
+                "${user.place}",
                 style: context.number,
               ),
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(100),
-              child: Image.network(
-                user.image,
-                height: 40,
-                width: 40,
-                fit: BoxFit.cover,
-              ),
+              child: user.avatar == null
+                  ? Container(
+                      height: 30,
+                      width: 30,
+                      color: Colors.red,
+                    )
+                  : Image.network(
+                      user.avatar!,
+                      height: 40,
+                      width: 40,
+                      fit: BoxFit.cover,
+                    ),
             ),
             const SizedBox(width: 10),
             Text(
-              user.fullname,
+              user.firstName,
+              style: context.name,
+            ),
+            const SizedBox(width: 3),
+            Text(
+              user.lastName,
               style: context.name,
             ),
             const Spacer(),
             Text(
-              "${user.points} pts",
+              "${user.rating} pts",
               style: context.number,
             ),
           ],

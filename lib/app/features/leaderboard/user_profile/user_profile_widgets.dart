@@ -5,13 +5,15 @@ class _Avatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = Get.arguments as LeaderboardUserEntity;
+    final user = Get.arguments as LeaderboardUserModel;
     return Column(
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(1000),
-          child: CachedNetworkWidget(user.image),
-        ),
+        user.avatar == null
+            ? const SizedBox.shrink()
+            : ClipRRect(
+                borderRadius: BorderRadius.circular(1000),
+                child: CachedNetworkWidget(user.avatar!),
+              ),
       ],
     );
   }
@@ -22,7 +24,7 @@ class _QuickInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = Get.arguments as LeaderboardUserEntity;
+    final user = Get.arguments as LeaderboardUserModel;
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 30,
@@ -48,7 +50,7 @@ class _QuickInfo extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  user.fullname,
+                  user.firstName,
                   style: context.biggerName,
                 ),
               ],

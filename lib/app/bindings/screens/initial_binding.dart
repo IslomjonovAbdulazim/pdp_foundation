@@ -1,24 +1,36 @@
 import 'package:get/get.dart';
-import 'package:pdp_foundation/app/bindings/home/home_binding.dart';
-import 'package:pdp_foundation/app/bindings/leaderboard/leaderboard_binding.dart';
-import 'package:pdp_foundation/app/controllers/study/themes_controller.dart';
-import 'package:pdp_foundation/app/data/providers/study_api_client.dart';
-import 'package:pdp_foundation/app/data/repositories/study_repository_imp.dart';
+import 'package:pdp_foundation/app/controllers/leaderboard/leaderboard_controller.dart';
 
 import '../../../domain/respositories/study_repository.dart';
+import '../../../utils/services/connectivity_service.dart';
+import '../../../utils/services/token_service.dart';
 import '../../controllers/screens/bnb_controller.dart';
+import '../../controllers/study/themes_controller.dart';
 import '../../data/providers/dio_manager.dart';
+import '../../data/providers/study_api_client.dart';
+import '../../data/repositories/study_repository_imp.dart';
+import '../home/home_binding.dart';
+import '../leaderboard/leaderboard_binding.dart';
 import '../study/study_impl_binding.dart';
 
 class InitialBinding extends Bindings {
   @override
-  void dependencies() async {
+  void dependencies() {
+    // Make sure dio is configured before registering related dependencies.
     configureDio();
+
+    // Register controllers and services synchronously.
     Get.put(BNBController());
     Get.put(HomeBinding());
     Get.put(LeaderboardBinding());
-    Get.put(ThemesController());
-    // Get.put<StudyApiClient>(StudyApiClient(dioInstance), permanent: true);
+    Get.put(LeaderboardController());
 
+    // For asynchronous initialization, use putAsync.
+    Get.putAsync<TokenService>(() async => await TokenService().init());
+
+    Get.put(ConnectivityService());
+
+    // Study dependencies
+    Get.put(ThemesController());
   }
 }

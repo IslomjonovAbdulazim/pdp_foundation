@@ -10,12 +10,17 @@ class TokenService extends GetxService {
   /// Called immediately after the service is registered.
   Future<TokenService> init() async {
     _token.value = _storage.read('token') ?? '';
+    print("-------------------------------token");
+    print(_token.value);
     return this;
   }
 
   Future<void> saveToken(String token) async {
     _token.value = token;
+    print("------------------------------token");
+    print(_token.value);
     await _storage.write('token', token);
+    print(_storage.read("token"));
   }
 
   Future<void> saveRefreshToken(String refreshToken) async {

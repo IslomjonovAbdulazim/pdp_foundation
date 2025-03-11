@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:pdp_foundation/app/data/models/leaderboard/leaderboard_user_model.dart';
 import 'package:pdp_foundation/app/widgets/cashed_network_image_widget.dart';
 import 'package:pdp_foundation/domain/entities/leaderboard/leaderboard_user_entity.dart';
 import 'package:pdp_foundation/utils/extenstions/color_extension.dart';
