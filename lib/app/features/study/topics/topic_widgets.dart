@@ -4,7 +4,10 @@ class _TopicItem extends StatelessWidget {
   final TopicEntity topic;
   final int index;
 
-  const _TopicItem({required this.topic, required this.index});
+  const _TopicItem({
+    required this.topic,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {

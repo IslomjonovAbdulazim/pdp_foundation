@@ -14,12 +14,12 @@ class TopicController extends GetxController {
 
   @override
   void onInit() {
+    theme.value = Get.arguments;
     super.onInit();
     load();
   }
 
   Future<void> load() async {
-    theme.value = Get.arguments;
     Get.put<StudyRepository>(
       StudyRepositoryImp(dio: dioInstance),
     );
