@@ -13,6 +13,7 @@ _$ThemeModelImpl _$$ThemeModelImplFromJson(Map<String, dynamic> json) =>
       icon: json['icon'] as String?,
       description: json['description'] as String,
       percent: (json['percent'] as num?)?.toInt() ?? 0,
+      passed: json['passed'] as bool,
     );
 
 Map<String, dynamic> _$$ThemeModelImplToJson(_$ThemeModelImpl instance) =>
@@ -22,4 +23,5 @@ Map<String, dynamic> _$$ThemeModelImplToJson(_$ThemeModelImpl instance) =>
       'icon': instance.icon,
       'description': instance.description,
       'percent': instance.percent,
+      'passed': instance.passed,
     };

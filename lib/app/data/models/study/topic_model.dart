@@ -13,6 +13,7 @@ class TopicModel with _$TopicModel {
     @JsonKey(name: "document_id") required int documentId,
     @JsonKey(name: "video_url") required String videoUrl,
     @Default(0) int progress,
+    required bool passed,
   }) = _TopicModel;
 
   factory TopicModel.fromJson(Map<String, dynamic> json) =>
@@ -28,5 +29,6 @@ extension TopicModelX on TopicModel {
         progress: progress,
         videoURL: videoUrl,
         documentID: documentId,
+        passed: passed,
       );
 }

@@ -9,9 +9,11 @@ class _ThemeItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoButton(
       padding: EdgeInsets.zero,
-      onPressed: () {
-        Get.toNamed(AppRoutes.topics, arguments: theme);
-      },
+      onPressed: theme.passed == false
+          ? null
+          : () {
+              Get.toNamed(AppRoutes.topics, arguments: theme);
+            },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 5),
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -43,6 +45,7 @@ class _ThemeItem extends StatelessWidget {
                   Text(
                     theme.name,
                     style: context.name,
+                    maxLines: 2,
                   ),
                   Text(
                     theme.description,
@@ -55,23 +58,25 @@ class _ThemeItem extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 15),
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                CircularProgressIndicator(
-                  value: theme.progress / 100,
-                  color: context.textPrimary,
-                  strokeCap: StrokeCap.round,
-                  strokeAlign: 4,
-                  strokeWidth: 3,
-                  backgroundColor: context.dividerColor,
-                ),
-                Text(
-                  "${theme.progress}%",
-                  style: context.smallName,
-                ),
-              ],
-            ),
+            theme.passed
+                ? Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      CircularProgressIndicator(
+                        value: theme.progress / 100,
+                        color: context.textPrimary,
+                        strokeCap: StrokeCap.round,
+                        strokeAlign: 4,
+                        strokeWidth: 3,
+                        backgroundColor: context.dividerColor,
+                      ),
+                      Text(
+                        "${theme.progress}%",
+                        style: context.smallName,
+                      ),
+                    ],
+                  )
+                : const Icon(CupertinoIcons.lock),
             const SizedBox(width: 5),
           ],
         ),

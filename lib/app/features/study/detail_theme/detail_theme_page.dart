@@ -13,11 +13,9 @@ class DetailThemePage extends GetView<DetailThemeController> {
         actions: [
           CupertinoButton(
             padding: EdgeInsets.zero,
-            onPressed: () {
-              Get.toNamed(AppRoutes.quiz, arguments: controller.topic.value);
-            },
+            onPressed: controller.load,
             child: Icon(
-              CupertinoIcons.play,
+              CupertinoIcons.refresh,
               color: context.textPrimary,
             ),
           ),
@@ -42,9 +40,10 @@ class DetailThemePage extends GetView<DetailThemeController> {
                             vertical: 10,
                           ),
                           color: context.onSurface,
-                          onPressed: () {
-                            Get.toNamed(AppRoutes.quiz,
+                          onPressed: () async {
+                            await Get.toNamed(AppRoutes.quiz,
                                 arguments: controller.topic.value);
+                            controller.reload();
                           },
                           child: Center(
                             child: Text(

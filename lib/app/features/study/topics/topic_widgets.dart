@@ -10,9 +10,11 @@ class _TopicItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoButton(
       padding: EdgeInsets.zero,
-      onPressed: () {
-        Get.toNamed(AppRoutes.detailTheme, arguments: topic);
-      },
+      onPressed: topic.passed == false
+          ? null
+          : () {
+              Get.toNamed(AppRoutes.detailTheme, arguments: topic);
+            },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 5),
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -56,23 +58,25 @@ class _TopicItem extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 10),
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                CircularProgressIndicator(
-                  value: topic.progress / 100,
-                  color: context.textPrimary,
-                  strokeCap: StrokeCap.round,
-                  strokeAlign: 4,
-                  strokeWidth: 3,
-                  backgroundColor: context.dividerColor,
-                ),
-                Text(
-                  "${topic.progress}%",
-                  style: context.smallName,
-                ),
-              ],
-            ),
+            topic.passed
+                ? Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      CircularProgressIndicator(
+                        value: topic.progress / 100,
+                        color: context.textPrimary,
+                        strokeCap: StrokeCap.round,
+                        strokeAlign: 4,
+                        strokeWidth: 3,
+                        backgroundColor: context.dividerColor,
+                      ),
+                      Text(
+                        "${topic.progress}%",
+                        style: context.smallName,
+                      ),
+                    ],
+                  )
+                : const Icon(CupertinoIcons.lock),
             const SizedBox(width: 5),
           ],
         ),

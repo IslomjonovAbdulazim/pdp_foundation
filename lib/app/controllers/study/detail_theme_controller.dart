@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:pdp_foundation/app/controllers/study/themes_controller.dart';
+import 'package:pdp_foundation/app/controllers/study/topic_controller.dart';
+import 'package:pdp_foundation/app/data/models/study/topic_model.dart';
 import 'package:pdp_foundation/domain/entities/study/article_entity.dart';
 import 'package:pdp_foundation/domain/entities/study/topic_entity.dart';
 
@@ -40,6 +43,15 @@ class DetailThemeController extends GetxController {
         }
       },
     );
+    isLoading.value = false;
+  }
+
+  void reload() async {
+    isLoading.value = true;
+    await Get.find<ThemesController>().load();
+    await Get.find<TopicController>().load();
+    List<TopicEntity> topics = Get.find<TopicController>().topics.value;
+    topic.value = topics.firstWhere((t) => t.id == topic.value.id);
     isLoading.value = false;
   }
 }

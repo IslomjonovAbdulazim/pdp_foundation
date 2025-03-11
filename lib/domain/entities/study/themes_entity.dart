@@ -4,6 +4,7 @@ class ThemeEntity {
   final String description;
   final int progress;
   final int number;
+  final bool passed;
 
   ThemeEntity({
     required this.id,
@@ -11,6 +12,7 @@ class ThemeEntity {
     required this.description,
     required this.progress,
     required this.number,
+     this.passed = false,
   });
 }
 

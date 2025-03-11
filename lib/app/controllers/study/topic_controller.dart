@@ -18,7 +18,7 @@ class TopicController extends GetxController {
     load();
   }
 
-  void load() async {
+  Future<void> load() async {
     theme.value = Get.arguments;
     Get.put<StudyRepository>(
       StudyRepositoryImp(dio: dioInstance),

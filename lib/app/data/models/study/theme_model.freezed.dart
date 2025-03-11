@@ -25,6 +25,7 @@ mixin _$ThemeModel {
   String? get icon => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   int get percent => throw _privateConstructorUsedError;
+  bool get passed => throw _privateConstructorUsedError;
 
   /// Serializes this ThemeModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,7 +44,12 @@ abstract class $ThemeModelCopyWith<$Res> {
       _$ThemeModelCopyWithImpl<$Res, ThemeModel>;
   @useResult
   $Res call(
-      {int pk, String title, String? icon, String description, int percent});
+      {int pk,
+      String title,
+      String? icon,
+      String description,
+      int percent,
+      bool passed});
 }
 
 /// @nodoc
@@ -66,6 +72,7 @@ class _$ThemeModelCopyWithImpl<$Res, $Val extends ThemeModel>
     Object? icon = freezed,
     Object? description = null,
     Object? percent = null,
+    Object? passed = null,
   }) {
     return _then(_value.copyWith(
       pk: null == pk
@@ -88,6 +95,10 @@ class _$ThemeModelCopyWithImpl<$Res, $Val extends ThemeModel>
           ? _value.percent
           : percent // ignore: cast_nullable_to_non_nullable
               as int,
+      passed: null == passed
+          ? _value.passed
+          : passed // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -101,7 +112,12 @@ abstract class _$$ThemeModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int pk, String title, String? icon, String description, int percent});
+      {int pk,
+      String title,
+      String? icon,
+      String description,
+      int percent,
+      bool passed});
 }
 
 /// @nodoc
@@ -122,6 +138,7 @@ class __$$ThemeModelImplCopyWithImpl<$Res>
     Object? icon = freezed,
     Object? description = null,
     Object? percent = null,
+    Object? passed = null,
   }) {
     return _then(_$ThemeModelImpl(
       pk: null == pk
@@ -144,6 +161,10 @@ class __$$ThemeModelImplCopyWithImpl<$Res>
           ? _value.percent
           : percent // ignore: cast_nullable_to_non_nullable
               as int,
+      passed: null == passed
+          ? _value.passed
+          : passed // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -156,7 +177,8 @@ class _$ThemeModelImpl implements _ThemeModel {
       required this.title,
       this.icon,
       required this.description,
-      this.percent = 0});
+      this.percent = 0,
+      required this.passed});
 
   factory _$ThemeModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ThemeModelImplFromJson(json);
@@ -172,10 +194,12 @@ class _$ThemeModelImpl implements _ThemeModel {
   @override
   @JsonKey()
   final int percent;
+  @override
+  final bool passed;
 
   @override
   String toString() {
-    return 'ThemeModel(pk: $pk, title: $title, icon: $icon, description: $description, percent: $percent)';
+    return 'ThemeModel(pk: $pk, title: $title, icon: $icon, description: $description, percent: $percent, passed: $passed)';
   }
 
   @override
@@ -188,13 +212,14 @@ class _$ThemeModelImpl implements _ThemeModel {
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.percent, percent) || other.percent == percent));
+            (identical(other.percent, percent) || other.percent == percent) &&
+            (identical(other.passed, passed) || other.passed == passed));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, pk, title, icon, description, percent);
+      Object.hash(runtimeType, pk, title, icon, description, percent, passed);
 
   /// Create a copy of ThemeModel
   /// with the given fields replaced by the non-null parameter values.
@@ -218,7 +243,8 @@ abstract class _ThemeModel implements ThemeModel {
       required final String title,
       final String? icon,
       required final String description,
-      final int percent}) = _$ThemeModelImpl;
+      final int percent,
+      required final bool passed}) = _$ThemeModelImpl;
 
   factory _ThemeModel.fromJson(Map<String, dynamic> json) =
       _$ThemeModelImpl.fromJson;
@@ -233,6 +259,8 @@ abstract class _ThemeModel implements ThemeModel {
   String get description;
   @override
   int get percent;
+  @override
+  bool get passed;
 
   /// Create a copy of ThemeModel
   /// with the given fields replaced by the non-null parameter values.

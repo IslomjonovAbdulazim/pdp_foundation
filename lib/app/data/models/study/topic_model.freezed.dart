@@ -28,6 +28,7 @@ mixin _$TopicModel {
   @JsonKey(name: "video_url")
   String get videoUrl => throw _privateConstructorUsedError;
   int get progress => throw _privateConstructorUsedError;
+  bool get passed => throw _privateConstructorUsedError;
 
   /// Serializes this TopicModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -51,7 +52,8 @@ abstract class $TopicModelCopyWith<$Res> {
       String description,
       @JsonKey(name: "document_id") int documentId,
       @JsonKey(name: "video_url") String videoUrl,
-      int progress});
+      int progress,
+      bool passed});
 }
 
 /// @nodoc
@@ -75,6 +77,7 @@ class _$TopicModelCopyWithImpl<$Res, $Val extends TopicModel>
     Object? documentId = null,
     Object? videoUrl = null,
     Object? progress = null,
+    Object? passed = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -101,6 +104,10 @@ class _$TopicModelCopyWithImpl<$Res, $Val extends TopicModel>
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as int,
+      passed: null == passed
+          ? _value.passed
+          : passed // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -119,7 +126,8 @@ abstract class _$$TopicModelImplCopyWith<$Res>
       String description,
       @JsonKey(name: "document_id") int documentId,
       @JsonKey(name: "video_url") String videoUrl,
-      int progress});
+      int progress,
+      bool passed});
 }
 
 /// @nodoc
@@ -141,6 +149,7 @@ class __$$TopicModelImplCopyWithImpl<$Res>
     Object? documentId = null,
     Object? videoUrl = null,
     Object? progress = null,
+    Object? passed = null,
   }) {
     return _then(_$TopicModelImpl(
       id: null == id
@@ -167,6 +176,10 @@ class __$$TopicModelImplCopyWithImpl<$Res>
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as int,
+      passed: null == passed
+          ? _value.passed
+          : passed // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -180,7 +193,8 @@ class _$TopicModelImpl implements _TopicModel {
       required this.description,
       @JsonKey(name: "document_id") required this.documentId,
       @JsonKey(name: "video_url") required this.videoUrl,
-      this.progress = 0});
+      this.progress = 0,
+      required this.passed});
 
   factory _$TopicModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$TopicModelImplFromJson(json);
@@ -200,10 +214,12 @@ class _$TopicModelImpl implements _TopicModel {
   @override
   @JsonKey()
   final int progress;
+  @override
+  final bool passed;
 
   @override
   String toString() {
-    return 'TopicModel(id: $id, title: $title, description: $description, documentId: $documentId, videoUrl: $videoUrl, progress: $progress)';
+    return 'TopicModel(id: $id, title: $title, description: $description, documentId: $documentId, videoUrl: $videoUrl, progress: $progress, passed: $passed)';
   }
 
   @override
@@ -220,13 +236,14 @@ class _$TopicModelImpl implements _TopicModel {
             (identical(other.videoUrl, videoUrl) ||
                 other.videoUrl == videoUrl) &&
             (identical(other.progress, progress) ||
-                other.progress == progress));
+                other.progress == progress) &&
+            (identical(other.passed, passed) || other.passed == passed));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, title, description, documentId, videoUrl, progress);
+  int get hashCode => Object.hash(runtimeType, id, title, description,
+      documentId, videoUrl, progress, passed);
 
   /// Create a copy of TopicModel
   /// with the given fields replaced by the non-null parameter values.
@@ -251,7 +268,8 @@ abstract class _TopicModel implements TopicModel {
       required final String description,
       @JsonKey(name: "document_id") required final int documentId,
       @JsonKey(name: "video_url") required final String videoUrl,
-      final int progress}) = _$TopicModelImpl;
+      final int progress,
+      required final bool passed}) = _$TopicModelImpl;
 
   factory _TopicModel.fromJson(Map<String, dynamic> json) =
       _$TopicModelImpl.fromJson;
@@ -270,6 +288,8 @@ abstract class _TopicModel implements TopicModel {
   String get videoUrl;
   @override
   int get progress;
+  @override
+  bool get passed;
 
   /// Create a copy of TopicModel
   /// with the given fields replaced by the non-null parameter values.

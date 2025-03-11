@@ -12,6 +12,7 @@ class ThemeModel with _$ThemeModel {
     String? icon,
     required String description,
     @Default(0) int percent,
+    required bool passed,
   }) = _ThemeModel;
 
   factory ThemeModel.fromJson(Map<String, dynamic> json) =>
@@ -25,5 +26,6 @@ extension ThemeModelX on ThemeModel {
         description: description,
         progress: percent,
         number: pk,
+        passed: passed,
       );
 }

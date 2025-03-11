@@ -14,6 +14,7 @@ _$TopicModelImpl _$$TopicModelImplFromJson(Map<String, dynamic> json) =>
       documentId: (json['document_id'] as num).toInt(),
       videoUrl: json['video_url'] as String,
       progress: (json['progress'] as num?)?.toInt() ?? 0,
+      passed: json['passed'] as bool,
     );
 
 Map<String, dynamic> _$$TopicModelImplToJson(_$TopicModelImpl instance) =>
@@ -24,4 +25,5 @@ Map<String, dynamic> _$$TopicModelImplToJson(_$TopicModelImpl instance) =>
       'document_id': instance.documentId,
       'video_url': instance.videoUrl,
       'progress': instance.progress,
+      'passed': instance.passed,
     };

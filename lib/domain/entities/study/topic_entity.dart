@@ -6,6 +6,7 @@ class TopicEntity {
   final int progress;
   final int documentID;
   final String videoURL;
+  final bool passed;
 
   TopicEntity({
     required this.id,
@@ -15,6 +16,7 @@ class TopicEntity {
     required this.progress,
     required this.videoURL,
     required this.documentID,
+    this.passed = false,
   });
 }
 
