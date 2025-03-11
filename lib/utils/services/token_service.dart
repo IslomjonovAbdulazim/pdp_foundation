@@ -37,5 +37,11 @@ class TokenService extends GetxService {
   bool get hasToken => _token.value.isNotEmpty;
 
   /// (Optional) Expose the token publicly if needed
-  String get token => _token.value;
+  String get token {
+    if (_token.value.isNotEmpty) {
+      return "Bearer ${_token.value}";
+    } else {
+      return "";
+    }
+  }
 }

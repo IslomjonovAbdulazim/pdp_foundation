@@ -191,7 +191,9 @@ class _UserItem extends StatelessWidget {
                       color: Colors.red,
                     )
                   : Image.network(
-                      user.avatar!,
+                      ApiConstants.baseURL
+                              .substring(0, ApiConstants.baseURL.length - 1) +
+                          user.avatar!,
                       height: 40,
                       width: 40,
                       fit: BoxFit.cover,

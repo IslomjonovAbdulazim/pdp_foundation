@@ -26,7 +26,6 @@ class InitialBinding extends Bindings {
     Get.put(LeaderboardController());
 
     // For asynchronous initialization, use putAsync.
-    Get.putAsync<TokenService>(() async => await TokenService().init());
 
     Get.put(ConnectivityService());
 

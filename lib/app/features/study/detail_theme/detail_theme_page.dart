@@ -14,7 +14,7 @@ class DetailThemePage extends GetView<DetailThemeController> {
           CupertinoButton(
             padding: EdgeInsets.zero,
             onPressed: () {
-              Get.toNamed(AppRoutes.quiz);
+              Get.toNamed(AppRoutes.quiz, arguments: controller.topic.value);
             },
             child: Icon(
               CupertinoIcons.play,

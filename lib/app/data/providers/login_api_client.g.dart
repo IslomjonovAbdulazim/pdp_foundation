@@ -10,7 +10,7 @@ part of 'login_api_client.dart';
 
 class _LoginApiClient implements LoginApiClient {
   _LoginApiClient(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'http://10.10.3.47:8001/';
+    baseUrl ??= 'http://10.10.2.58:8001/';
   }
 
   final Dio _dio;

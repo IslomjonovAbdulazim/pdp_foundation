@@ -21,7 +21,6 @@ class DetailThemeController extends GetxController {
 
   void load() async {
     isLoading.value = true;
-    await Future.delayed(const Duration(seconds: 1));
     topic.value = Get.arguments;
     Get.put<StudyRepository>(
       StudyRepositoryImp(dio: dioInstance),

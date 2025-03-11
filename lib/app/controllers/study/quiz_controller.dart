@@ -60,6 +60,7 @@ class QuizController extends GetxController {
 
   void init() async {
     isLoading.value = true;
+    topic.value = Get.arguments;
     Get.put<StudyRepository>(
       StudyRepositoryImp(dio: dioInstance),
     );

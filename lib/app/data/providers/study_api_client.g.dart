@@ -10,7 +10,7 @@ part of 'study_api_client.dart';
 
 class _StudyApiClient implements StudyApiClient {
   _StudyApiClient(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'http://10.10.3.47:8001/';
+    baseUrl ??= 'http://10.10.2.58:8001/';
   }
 
   final Dio _dio;
@@ -20,10 +20,11 @@ class _StudyApiClient implements StudyApiClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<ThemeModel>> getThemes() async {
+  Future<List<ThemeModel>> getThemes(String token) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<List<ThemeModel>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
@@ -51,10 +52,11 @@ class _StudyApiClient implements StudyApiClient {
   }
 
   @override
-  Future<List<TopicModel>> getTopics(int themeId) async {
+  Future<List<TopicModel>> getTopics(int themeId, String token) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<List<TopicModel>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
@@ -82,10 +84,11 @@ class _StudyApiClient implements StudyApiClient {
   }
 
   @override
-  Future<List<DocumentModel>> getDocument(int documentID) async {
+  Future<List<DocumentModel>> getDocument(int documentID, String token) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<List<DocumentModel>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
@@ -113,10 +116,11 @@ class _StudyApiClient implements StudyApiClient {
   }
 
   @override
-  Future<List<QuizModel>> getQuiz(int topicID) async {
+  Future<List<QuizModel>> getQuiz(int topicID, String token) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<List<QuizModel>>(
       Options(method: 'GET', headers: _headers, extra: _extra)

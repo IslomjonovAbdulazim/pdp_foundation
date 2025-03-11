@@ -6,24 +6,50 @@ class LeaderboardPage extends GetView<LeaderboardController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Leaderboard",
+          style: context.title,
+        ),
+        actions: [
+          CupertinoButton(
+            onPressed: () {
+              Get.toNamed(AppRoutes.liveQuiz);
+            },
+            child: const Icon(
+              CupertinoIcons.play,
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: StreamBuilder<List<LeaderboardUserModel>>(
             stream: controller.connectLeaderboard(),
             builder: (context, snapshot) {
-              if (snapshot.hasError || snapshot.data == null)
+              if (snapshot.hasError || snapshot.data == null) {
                 return Center(
                   child: Text(snapshot.error.toString()),
                 );
-              if (snapshot.connectionState == ConnectionState.waiting)
-                return Center(
+              }
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(
                   child: Text("Wait"),
                 );
-              return ListView.builder(
-                itemCount: snapshot.data?.length ?? 0,
-                itemBuilder: (context, index) =>
-                    _UserItem(user: snapshot.data![index]),
+              }
+
+              final users = snapshot.data!;
+
+              return ImplicitlyAnimatedList<LeaderboardUserModel>(
+                items: users,
+                areItemsTheSame: (oldItem, newItem) => oldItem.id == newItem.id,
+                itemBuilder: (context, animation, user, index) {
+                  return SizeFadeTransition(
+                    animation: animation,
+                    child: _UserItem(user: user),
+                  );
+                },
               );
             },
           ),

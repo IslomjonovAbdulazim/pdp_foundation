@@ -29,16 +29,16 @@ class TopicPage extends GetView<TopicController> {
                 centerTitle: true,
                 title: Text(controller.theme.value.name),
                 actions: [
-                  CupertinoButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: () {
-                      Get.toNamed(AppRoutes.liveQuiz);
-                    },
-                    child: Icon(
-                      CupertinoIcons.play,
-                      color: context.textPrimary,
-                    ),
-                  ),
+                  // CupertinoButton(
+                  //   padding: EdgeInsets.zero,
+                  //   onPressed: () {
+                  //     Get.toNamed(AppRoutes.liveQuiz);
+                  //   },
+                  //   child: Icon(
+                  //     CupertinoIcons.play,
+                  //     color: context.textPrimary,
+                  //   ),
+                  // ),
                 ],
               ),
               Obx(

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:pdp_foundation/utils/services/token_service.dart';
 
 import '../../../domain/entities/study/article_entity.dart';
 import '../../../domain/entities/study/quiz_entity.dart';
@@ -30,7 +31,7 @@ class StudyRepositoryImp extends StudyRepository {
   @override
   Future<Either<NetworkFailure, List<ThemeEntity>>> themes() async {
     try {
-      final themes = await apiClient.getThemes();
+      final themes = await apiClient.getThemes(TokenService.to.token);
       return Right(themes.map((model) => model.toEntity()).toList());
     } on DioException catch (e) {
       return Left(
@@ -45,7 +46,7 @@ class StudyRepositoryImp extends StudyRepository {
   @override
   Future<Either<NetworkFailure, List<TopicEntity>>> topics(int themeID) async {
     try {
-      final topics = await apiClient.getTopics(themeID);
+      final topics = await apiClient.getTopics(themeID, TokenService.to.token);
       return Right(topics.map((model) => model.toEntity()).toList());
     } on DioException catch (e) {
       return Left(
@@ -61,7 +62,7 @@ class StudyRepositoryImp extends StudyRepository {
   Future<Either<NetworkFailure, List<ArticleContentEntity>>> document(
       int documentID) async {
     try {
-      final documents = await apiClient.getDocument(documentID);
+      final documents = await apiClient.getDocument(documentID, TokenService.to.token);
       return Right(documents.map((model) => model.toEntity()).toList());
     } on DioException catch (e) {
       return Left(
@@ -76,7 +77,7 @@ class StudyRepositoryImp extends StudyRepository {
   @override
   Future<Either<NetworkFailure, List<QuizEntity>>> quiz(int topicID) async {
     try {
-      final quiz = await apiClient.getQuiz(topicID);
+      final quiz = await apiClient.getQuiz(topicID, TokenService.to.token);
       return Right(quiz.map((model) => model.toEntity()).toList());
     } on DioException catch (e) {
       return Left(

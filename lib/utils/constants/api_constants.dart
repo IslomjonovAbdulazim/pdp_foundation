@@ -1,6 +1,6 @@
 class ApiConstants {
-  static const String baseURL = "http://10.10.3.47:8001/";
-  static const String streamURL = "ws://10.10.3.47:8001/";
+  static const String baseURL = "http://10.10.2.58:8001/";
+  static const String streamURL = "ws://10.10.2.58:8001/";
   static const String _ = "http://85.92.110.162:8021/";
 
   /// Leaderboard
@@ -11,7 +11,7 @@ class ApiConstants {
   static const String topicList = "/api/v1/topic/{theme_id}/";
   static const String document = "/api/v1/get-document/{document_id}/";
   static const String quiz = "/api/v1/get-task/topic/{topic_id}/";
-
+  static const String quizResult = "/api/v1/task-result/";
 
   /// Auth
   static const String login = "/api/v1/login/";

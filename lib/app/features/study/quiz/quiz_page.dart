@@ -24,7 +24,7 @@ class QuizPage extends GetView<QuizController> {
       ),
       body: SafeArea(
         child: Obx(
-          () => controller.isLoading.value
+          () => controller.isLoading.value || controller.quiz.isEmpty
               ? const Center(
                   child: CircularProgressIndicator.adaptive(),
                 )

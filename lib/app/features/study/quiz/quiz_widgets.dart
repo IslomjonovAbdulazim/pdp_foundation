@@ -65,9 +65,14 @@ class _Variants extends GetView<QuizController> {
                     : () {
                         onTap(option);
                       },
-                child: Text(
-                  option,
-                  style: context.name,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Text(
+                    option,
+                    style: context.name,
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
             ),
