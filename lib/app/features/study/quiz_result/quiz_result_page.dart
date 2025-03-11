@@ -14,27 +14,9 @@ class QuizResultPage extends GetView<QuizResultController> {
                   padding: const EdgeInsets.all(20),
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            DateFormat.Hms()
-                                .format(controller.result.value.start),
-                            style: context.name,
-                          ),
-                          const SizedBox(width: 5),
-                          const Expanded(child: Divider(thickness: .4)),
-                          const Expanded(child: Divider(thickness: .4)),
-                          const SizedBox(width: 5),
-                          Text(
-                            DateFormat.Hms()
-                                .format(controller.result.value.end),
-                            style: context.name,
-                          ),
-                        ],
-                      ),
                       const Spacer(),
                       Text(
-                        "controller.result.value.topic",
+                        controller.result.value.topic,
                         style: context.title,
                       ),
                       SizedBox(
@@ -66,13 +48,12 @@ class QuizResultPage extends GetView<QuizResultController> {
                               controller.percentage,
                               style: context.title,
                             ),
-                            const SizedBox(width: 10),
-                            Text(
-                              "+5pts",
-                              style: context.title,
-                            ),
                           ],
                         ),
+                      ),
+                      Text(
+                        "+${controller.result.value.earned.toStringAsFixed(1)}pts",
+                        style: context.title,
                       ),
                       const Spacer(),
                       CupertinoButton(

@@ -1,5 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:pdp_foundation/app/data/models/study/quiz_result_model.dart';
+import 'package:pdp_foundation/app/data/models/study/quiz_result_response_model.dart';
+import 'package:pdp_foundation/domain/entities/study/quiz_result_entity.dart';
+import 'package:pdp_foundation/domain/entities/study/quiz_result_response_entity.dart';
 import 'package:pdp_foundation/utils/services/token_service.dart';
 
 import '../../../domain/entities/study/article_entity.dart';
@@ -79,6 +83,21 @@ class StudyRepositoryImp extends StudyRepository {
     try {
       final quiz = await apiClient.getQuiz(topicID, TokenService.to.token);
       return Right(quiz.map((model) => model.toEntity()).toList());
+    } on DioException catch (e) {
+      return Left(
+        NetworkFailure(
+          message: e.response?.statusMessage,
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<NetworkFailure, QuizResultResponseEntity>> quizResult(QuizResultModel result)async  {
+    try {
+      final quiz = await apiClient.quizResult(result, TokenService.to.token);
+      return Right(quiz.toEntity());
     } on DioException catch (e) {
       return Left(
         NetworkFailure(

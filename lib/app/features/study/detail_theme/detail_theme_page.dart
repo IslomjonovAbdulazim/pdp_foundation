@@ -34,6 +34,27 @@ class DetailThemePage extends GetView<DetailThemeController> {
                   padding: const EdgeInsets.all(10),
                   child: Column(
                     children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 40),
+                        child: CupertinoButton(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 10,
+                          ),
+                          color: context.onSurface,
+                          onPressed: () {
+                            Get.toNamed(AppRoutes.quiz,
+                                arguments: controller.topic.value);
+                          },
+                          child: Center(
+                            child: Text(
+                              "Quiz  |  ${controller.topic.value.progress}%",
+                              style: context.elevatedButton,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 15),
                       _Video(controller.topic.value.videoURL),
                       ArticleWidget(article: controller.article),
                     ],

@@ -2,8 +2,9 @@ part of 'imports.dart';
 
 class _TopicItem extends StatelessWidget {
   final TopicEntity topic;
+  final int index;
 
-  const _TopicItem({required this.topic});
+  const _TopicItem({required this.topic, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class _TopicItem extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  topic.number.toString().padLeft(2, "0"),
+                  index.toString().padLeft(2, "0"),
                   style: context.title,
                 ),
               ),

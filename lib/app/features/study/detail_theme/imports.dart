@@ -7,6 +7,7 @@ import 'package:pdp_foundation/app/widgets/video_player_widget.dart';
 import 'package:pdp_foundation/domain/entities/study/article_entity.dart';
 import 'package:pdp_foundation/domain/entities/study/detail_topic_entity.dart';
 import 'package:pdp_foundation/domain/entities/study/themes_entity.dart';
+import 'package:pdp_foundation/utils/extenstions/button_extenstion.dart';
 import 'package:pdp_foundation/utils/extenstions/color_extension.dart';
 
 import '../../../routes/app_routes.dart';

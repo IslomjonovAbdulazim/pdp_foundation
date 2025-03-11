@@ -2,6 +2,8 @@
 
 import 'package:dio/dio.dart';
 import 'package:pdp_foundation/app/data/models/study/quiz_model.dart';
+import 'package:pdp_foundation/app/data/models/study/quiz_result_model.dart';
+import 'package:pdp_foundation/app/data/models/study/quiz_result_response_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../utils/constants/api_constants.dart';
@@ -35,6 +37,12 @@ abstract class StudyApiClient {
   @GET(ApiConstants.quiz)
   Future<List<QuizModel>> getQuiz(
     @Path("topic_id") int topicID,
+    @Header("Authorization") String token,
+  );
+
+  @POST(ApiConstants.quizResult)
+  Future<QuizResultResponseModel> quizResult(
+    @Body() QuizResultModel login,
     @Header("Authorization") String token,
   );
 }

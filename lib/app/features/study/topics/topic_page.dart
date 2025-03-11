@@ -54,8 +54,10 @@ class TopicPage extends GetView<TopicController> {
                       )
                     : SliverList(
                         delegate: SliverChildBuilderDelegate(
-                          (context, index) =>
-                              _TopicItem(topic: controller.topics[index]),
+                          (context, index) => _TopicItem(
+                            topic: controller.topics[index],
+                            index: index + 1,
+                          ),
                           childCount: controller.topics.length,
                         ),
                       ),

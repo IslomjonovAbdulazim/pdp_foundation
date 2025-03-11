@@ -4,7 +4,8 @@ class QuizResultEntity {
   final List<int> wrongs;
   final DateTime start;
   final DateTime end;
-  final String topic;
+  late String topic;
+  late double earned;
 
   QuizResultEntity({
     required this.topicID,
@@ -13,5 +14,6 @@ class QuizResultEntity {
     required this.start,
     required this.end,
     this.topic = "",
+    this.earned = 0,
   });
 }

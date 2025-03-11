@@ -26,6 +26,10 @@ class ThemesPage extends GetView<ThemesController> {
                             centerTitle: true,
                             title: const Text("Study"),
                             actions: [
+                              CupertinoButton(
+                                onPressed: controller.load,
+                                child: const Icon(CupertinoIcons.refresh),
+                              ),
                             ],
                           ),
                           SliverList(

@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 import 'package:pdp_foundation/domain/entities/study/quiz_result_entity.dart';
+import 'package:pdp_foundation/domain/entities/study/quiz_result_response_entity.dart';
 
 class QuizResultController extends GetxController {
   RxBool isLoading = true.obs;
   late Rx<QuizResultEntity> result;
-
   @override
   void onInit() {
     isLoading.value = true;

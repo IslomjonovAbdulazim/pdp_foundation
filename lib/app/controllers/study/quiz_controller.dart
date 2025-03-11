@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:pdp_foundation/app/data/models/study/quiz_result_model.dart';
 import 'package:pdp_foundation/app/routes/app_routes.dart';
 import 'package:pdp_foundation/domain/entities/study/quiz_result_entity.dart';
 
@@ -104,6 +105,7 @@ class QuizController extends GetxController {
       selected.value = "";
       quizStatus.value = QuizStatusEnum.notSelected;
     } else {
+      isLoading.value = true;
       QuizResultEntity result = QuizResultEntity(
         topicID: topic.value.id,
         corrects: List.from(corrects),
@@ -112,7 +114,26 @@ class QuizController extends GetxController {
         end: DateTime.now(),
         topic: topic.value.title,
       );
-      Get.offNamed(AppRoutes.quizResult, arguments: result);
+      final api = Get.find<StudyRepository>();
+      final res = await api.quizResult(
+        QuizResultModel(
+          topicID: result.topicID,
+          corrects: result.corrects,
+          wrongs: result.wrongs,
+          start: start,
+          end: result.end,
+        ),
+      );
+      res.fold(
+        (failure) {
+          StatusCodeService.showSnackbar(failure.statusCode ?? 505);
+        },
+        (response) {
+          result.earned = response.earnedPoints;
+          Get.offNamed(AppRoutes.quizResult, arguments: result);
+        },
+      );
+      isLoading.value = false;
     }
   }
 
