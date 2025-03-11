@@ -12,8 +12,6 @@ class QuizResultEntity {
     required this.wrongs,
     required this.start,
     required this.end,
-    required this.topic,
+    this.topic = "",
   });
 }
-
-

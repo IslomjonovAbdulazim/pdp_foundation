@@ -34,7 +34,7 @@ class QuizResultPage extends GetView<QuizResultController> {
                       ),
                       const Spacer(),
                       Text(
-                        controller.result.value.topic,
+                        "controller.result.value.topic",
                         style: context.title,
                       ),
                       SizedBox(
