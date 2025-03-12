@@ -12,7 +12,6 @@ class HomeModel with _$HomeModel {
     required int place,
     required int streak,
     String? avatar,
-    required LastTheme lastTheme,
     required List<Challenge> challenges,
     required List<String> heatmap,
     required List<String> activeDates,
@@ -20,19 +19,6 @@ class HomeModel with _$HomeModel {
 
   factory HomeModel.fromJson(Map<String, dynamic> json) =>
       _$HomeModelFromJson(json);
-}
-
-@freezed
-class LastTheme with _$LastTheme {
-  const factory LastTheme({
-    required int id,
-    required String title,
-    required String description,
-    required double percent,
-  }) = _LastTheme;
-
-  factory LastTheme.fromJson(Map<String, dynamic> json) =>
-      _$LastThemeFromJson(json);
 }
 
 @freezed
