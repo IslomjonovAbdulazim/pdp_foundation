@@ -1,6 +1,7 @@
 class AppRoutes {
   /// #HOME
   static const String home = "/home";
+  static const String profile = "/profile";
 
   /// #LEADERBOARD
   static const String leaderboard = "/leaderboard";
