@@ -17,10 +17,11 @@ _$HomeModelImpl _$$HomeModelImplFromJson(Map<String, dynamic> json) =>
       challenges: (json['challenges'] as List<dynamic>)
           .map((e) => Challenge.fromJson(e as Map<String, dynamic>))
           .toList(),
-      heatmap:
-          (json['heatmap'] as List<dynamic>).map((e) => e as String).toList(),
+      heatmap: (json['heatmap'] as List<dynamic>)
+          .map((e) => DateTime.parse(e as String))
+          .toList(),
       activeDates: (json['activeDates'] as List<dynamic>)
-          .map((e) => e as String)
+          .map((e) => DateTime.parse(e as String))
           .toList(),
     );
 
@@ -33,8 +34,9 @@ Map<String, dynamic> _$$HomeModelImplToJson(_$HomeModelImpl instance) =>
       'streak': instance.streak,
       'avatar': instance.avatar,
       'challenges': instance.challenges,
-      'heatmap': instance.heatmap,
-      'activeDates': instance.activeDates,
+      'heatmap': instance.heatmap.map((e) => e.toIso8601String()).toList(),
+      'activeDates':
+          instance.activeDates.map((e) => e.toIso8601String()).toList(),
     };
 
 _$ChallengeImpl _$$ChallengeImplFromJson(Map<String, dynamic> json) =>

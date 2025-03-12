@@ -27,8 +27,8 @@ mixin _$HomeModel {
   int get streak => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
   List<Challenge> get challenges => throw _privateConstructorUsedError;
-  List<String> get heatmap => throw _privateConstructorUsedError;
-  List<String> get activeDates => throw _privateConstructorUsedError;
+  List<DateTime> get heatmap => throw _privateConstructorUsedError;
+  List<DateTime> get activeDates => throw _privateConstructorUsedError;
 
   /// Serializes this HomeModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -53,8 +53,8 @@ abstract class $HomeModelCopyWith<$Res> {
       int streak,
       String? avatar,
       List<Challenge> challenges,
-      List<String> heatmap,
-      List<String> activeDates});
+      List<DateTime> heatmap,
+      List<DateTime> activeDates});
 }
 
 /// @nodoc
@@ -114,11 +114,11 @@ class _$HomeModelCopyWithImpl<$Res, $Val extends HomeModel>
       heatmap: null == heatmap
           ? _value.heatmap
           : heatmap // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<DateTime>,
       activeDates: null == activeDates
           ? _value.activeDates
           : activeDates // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<DateTime>,
     ) as $Val);
   }
 }
@@ -139,8 +139,8 @@ abstract class _$$HomeModelImplCopyWith<$Res>
       int streak,
       String? avatar,
       List<Challenge> challenges,
-      List<String> heatmap,
-      List<String> activeDates});
+      List<DateTime> heatmap,
+      List<DateTime> activeDates});
 }
 
 /// @nodoc
@@ -198,11 +198,11 @@ class __$$HomeModelImplCopyWithImpl<$Res>
       heatmap: null == heatmap
           ? _value._heatmap
           : heatmap // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<DateTime>,
       activeDates: null == activeDates
           ? _value._activeDates
           : activeDates // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<DateTime>,
     ));
   }
 }
@@ -218,8 +218,8 @@ class _$HomeModelImpl implements _HomeModel {
       required this.streak,
       this.avatar,
       required final List<Challenge> challenges,
-      required final List<String> heatmap,
-      required final List<String> activeDates})
+      required final List<DateTime> heatmap,
+      required final List<DateTime> activeDates})
       : _challenges = challenges,
         _heatmap = heatmap,
         _activeDates = activeDates;
@@ -247,17 +247,17 @@ class _$HomeModelImpl implements _HomeModel {
     return EqualUnmodifiableListView(_challenges);
   }
 
-  final List<String> _heatmap;
+  final List<DateTime> _heatmap;
   @override
-  List<String> get heatmap {
+  List<DateTime> get heatmap {
     if (_heatmap is EqualUnmodifiableListView) return _heatmap;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_heatmap);
   }
 
-  final List<String> _activeDates;
+  final List<DateTime> _activeDates;
   @override
-  List<String> get activeDates {
+  List<DateTime> get activeDates {
     if (_activeDates is EqualUnmodifiableListView) return _activeDates;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_activeDates);
@@ -327,8 +327,8 @@ abstract class _HomeModel implements HomeModel {
       required final int streak,
       final String? avatar,
       required final List<Challenge> challenges,
-      required final List<String> heatmap,
-      required final List<String> activeDates}) = _$HomeModelImpl;
+      required final List<DateTime> heatmap,
+      required final List<DateTime> activeDates}) = _$HomeModelImpl;
 
   factory _HomeModel.fromJson(Map<String, dynamic> json) =
       _$HomeModelImpl.fromJson;
@@ -348,9 +348,9 @@ abstract class _HomeModel implements HomeModel {
   @override
   List<Challenge> get challenges;
   @override
-  List<String> get heatmap;
+  List<DateTime> get heatmap;
   @override
-  List<String> get activeDates;
+  List<DateTime> get activeDates;
 
   /// Create a copy of HomeModel
   /// with the given fields replaced by the non-null parameter values.

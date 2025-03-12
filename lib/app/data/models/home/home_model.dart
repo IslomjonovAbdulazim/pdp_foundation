@@ -13,8 +13,8 @@ class HomeModel with _$HomeModel {
     required int streak,
     String? avatar,
     required List<Challenge> challenges,
-    required List<String> heatmap,
-    required List<String> activeDates,
+    required List<DateTime> heatmap,
+    required List<DateTime> activeDates,
   }) = _HomeModel;
 
   factory HomeModel.fromJson(Map<String, dynamic> json) =>
