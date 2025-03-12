@@ -15,4 +15,8 @@ class ApiConstants {
 
   /// Auth
   static const String login = "/api/v1/login/";
+
+  /// Home
+  static const String home = "/api/v1/session_user/";
+
 }
