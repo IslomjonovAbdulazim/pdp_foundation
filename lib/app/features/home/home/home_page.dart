@@ -1,6 +1,6 @@
 part of 'imports.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
 
   @override
@@ -24,23 +24,29 @@ class HomePage extends StatelessWidget {
           ),
         ),
         centerTitle: false,
-        title: const Text(
-          "Salom, Aziz!",
+        title: Text(
+          "Salom, ${controller.isLoading.value ? "..." : controller.home?.value.firstName ?? "No Name"}!",
         ),
         actions: [
-          CupertinoButton(
-            padding: EdgeInsets.zero,
-            onPressed: () {},
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(100),
-              clipBehavior: Clip.antiAlias,
-              child: SizedBox(
-                height: 40,
-                width: 40,
-                child: CachedNetworkWidget(mockUser.image),
-              ),
-            ),
-          ),
+          controller.isLoading.value
+              ? const Center(
+                  child: CircularProgressIndicator.adaptive(),
+                )
+              : CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(100),
+                    clipBehavior: Clip.antiAlias,
+                    child: SizedBox(
+                      height: 40,
+                      width: 40,
+                      child: CachedNetworkWidget(
+                        controller.home?.value.avatar ?? mockUser.image,
+                      ),
+                    ),
+                  ),
+                ),
           const SizedBox(width: 10),
         ],
       ),

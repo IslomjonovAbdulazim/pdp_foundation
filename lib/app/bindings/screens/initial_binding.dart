@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:pdp_foundation/app/controllers/home/home_controller.dart';
 import 'package:pdp_foundation/app/controllers/leaderboard/leaderboard_controller.dart';
 
 import '../../../domain/respositories/study_repository.dart';
@@ -18,6 +19,10 @@ class InitialBinding extends Bindings {
   void dependencies() {
     // Make sure dio is configured before registering related dependencies.
     configureDio();
+
+    // Home
+    Get.put(HomeController());
+    Get.put(HomeBinding());
 
     // Register controllers and services synchronously.
     Get.put(BNBController());

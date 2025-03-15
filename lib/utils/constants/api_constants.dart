@@ -1,6 +1,6 @@
 class ApiConstants {
-  static const String baseURL = "http://10.10.2.113:8001/";
-  static const String streamURL = "ws://10.10.2.113:8001/";
+  static const String baseURL = "http://85.92.110.162:8021/";
+  static const String streamURL = "ws://85.92.110.162:8021/";
   static const String _ = "http://85.92.110.162:8021/";
 
   /// Leaderboard

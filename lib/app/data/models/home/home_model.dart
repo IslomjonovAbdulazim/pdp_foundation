@@ -6,15 +6,15 @@ part 'home_model.g.dart';
 @freezed
 class HomeModel with _$HomeModel {
   const factory HomeModel({
-    required String firstName,
-    required String lastName,
+    @JsonKey(name: "first_name") required String firstName,
+    @JsonKey(name: "last_name") required String lastName,
     required int rating,
     required int place,
     required int streak,
     String? avatar,
     required List<Challenge> challenges,
     required List<DateTime> heatmap,
-    required List<DateTime> activeDates,
+    @JsonKey(name: "active_dates") required List<DateTime> activeDates,
   }) = _HomeModel;
 
   factory HomeModel.fromJson(Map<String, dynamic> json) =>
@@ -28,7 +28,7 @@ class Challenge with _$Challenge {
     required String title,
     required String description,
     required int rating,
-    required String createdAt,
+    @JsonKey(name: "created_at") required DateTime createdAt,
     required bool done,
   }) = _Challenge;
 

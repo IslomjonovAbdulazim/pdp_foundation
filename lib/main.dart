@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:pdp_foundation/app/controllers/home/home_controller.dart';
 import 'package:pdp_foundation/utils/services/token_service.dart';
 
 import 'app/bindings/screens/initial_binding.dart';
@@ -21,6 +22,7 @@ void main() async {
   await GetStorage.init();
   await Get.putAsync<TokenService>(() async => await TokenService().init());
   Get.put(ThemeController());
+  Get.put(HomeController());
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
       overlays: SystemUiOverlay.values);
   runApp(const MyApp());

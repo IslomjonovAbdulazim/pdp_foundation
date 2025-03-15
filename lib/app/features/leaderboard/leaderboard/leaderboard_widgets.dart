@@ -190,13 +190,10 @@ class _UserItem extends StatelessWidget {
                       width: 30,
                       color: Colors.red,
                     )
-                  : Image.network(
-                      ApiConstants.baseURL
-                              .substring(0, ApiConstants.baseURL.length - 1) +
-                          user.avatar!,
+                  : CachedNetworkWidget(
+                      user.avatar!,
                       height: 40,
                       width: 40,
-                      fit: BoxFit.cover,
                     ),
             ),
             const SizedBox(width: 10),

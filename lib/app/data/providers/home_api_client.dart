@@ -12,7 +12,6 @@ part 'home_api_client.g.dart';
 abstract class HomeApiClient {
   factory HomeApiClient(Dio dio, {String baseUrl}) = _HomeApiClient;
 
-
-  @POST(ApiConstants.login)
-  Future<HomeModel> home(@Path() String token);
+  @GET(ApiConstants.home)
+  Future<HomeModel> home(@Header("Authorization") String token);
 }

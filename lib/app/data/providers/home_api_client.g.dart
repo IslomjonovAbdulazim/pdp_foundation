@@ -10,7 +10,7 @@ part of 'home_api_client.dart';
 
 class _HomeApiClient implements HomeApiClient {
   _HomeApiClient(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'http://10.10.2.113:8001/';
+    baseUrl ??= 'http://85.92.110.162:8021/';
   }
 
   final Dio _dio;
@@ -23,13 +23,14 @@ class _HomeApiClient implements HomeApiClient {
   Future<HomeModel> home(String token) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<HomeModel>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
+      Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/api/v1/login/',
+            '/api/v1/session_user/',
             queryParameters: queryParameters,
             data: _data,
           )

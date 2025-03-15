@@ -1,6 +1,6 @@
 part of 'imports.dart';
 
-class _QuickInfo extends StatelessWidget {
+class _QuickInfo extends GetView<HomeController> {
   const _QuickInfo({super.key});
 
   @override
@@ -15,62 +15,64 @@ class _QuickInfo extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
       ),
       child: Center(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Text(
-                  "#${mockUser.rank}",
-                  style: context.title,
-                ),
-                const SizedBox(width: 5),
-                Text(
-                  " All Time",
-                  style: context.smallName,
-                ),
-                const Spacer(),
-                Text(
-                  "${mockUser.firstname} ${mockUser.lastname}",
-                  style: context.biggerName,
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Row(
-              children: [
-                Text(
-                  "${mockUser.points}",
-                  style: context.title,
-                ),
-                const SizedBox(width: 5),
-                SvgPicture.asset(
-                  IconConstants.points,
-                  height: 30,
-                  width: 30,
-                ),
-                Text(
-                  "pts.",
-                  style: context.name,
-                ),
-                const Spacer(),
-                Text(
-                  "streak",
-                  style: context.name,
-                ),
-                SvgPicture.asset(
-                  IconConstants.streak,
-                  height: 30,
-                  width: 30,
-                ),
-                const SizedBox(width: 5),
-                Text(
-                  "${mockUser.streaks}",
-                  style: context.title,
-                ),
-              ],
-            ),
-          ],
-        ),
+        child: controller.isLoading.value
+            ? const CircularProgressIndicator.adaptive()
+            : Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        "#${controller.home?.value.place}",
+                        style: context.title,
+                      ),
+                      const SizedBox(width: 5),
+                      Text(
+                        " All Time",
+                        style: context.smallName,
+                      ),
+                      const Spacer(),
+                      Text(
+                        "${controller.home?.value.firstName ?? "No Name"} ${controller.home?.value.lastName}",
+                        style: context.biggerName,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Text(
+                        "${controller.home?.value.rating}",
+                        style: context.title,
+                      ),
+                      const SizedBox(width: 5),
+                      SvgPicture.asset(
+                        IconConstants.points,
+                        height: 30,
+                        width: 30,
+                      ),
+                      Text(
+                        "rating",
+                        style: context.name,
+                      ),
+                      const Spacer(),
+                      Text(
+                        "streak",
+                        style: context.name,
+                      ),
+                      SvgPicture.asset(
+                        IconConstants.streak,
+                        height: 30,
+                        width: 30,
+                      ),
+                      const SizedBox(width: 5),
+                      Text(
+                        "${controller.home?.value.streak}",
+                        style: context.title,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
       ),
     );
   }
@@ -159,7 +161,7 @@ class _LastRead extends StatelessWidget {
   }
 }
 
-class _Challenges extends StatelessWidget {
+class _Challenges extends GetView<HomeController> {
   const _Challenges();
 
   @override
@@ -188,16 +190,24 @@ class _Challenges extends StatelessWidget {
         ),
         SizedBox(
           height: 250,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: mockDailyChallenges
-                  .map(
-                    (challenge) => __ChallengeItem(challenge: challenge),
-                  )
-                  .toList(),
-            ),
-          ),
+          child: (controller.isLoading.value || controller.home == null)
+              ? const Center(
+                  child: CircularProgressIndicator.adaptive(),
+                )
+              : Align(
+                  alignment: Alignment.centerLeft,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: controller.home!.value.challenges
+                          .map(
+                            (challenge) =>
+                                __ChallengeItem(challenge: challenge),
+                          )
+                          .toList(),
+                    ),
+                  ),
+                ),
         ),
       ],
     );
@@ -205,7 +215,7 @@ class _Challenges extends StatelessWidget {
 }
 
 class __ChallengeItem extends StatelessWidget {
-  final DailyChallenges challenge;
+  final Challenge challenge;
 
   const __ChallengeItem({required this.challenge});
 
@@ -233,7 +243,7 @@ class __ChallengeItem extends StatelessWidget {
               ),
               const SizedBox(width: 10),
               Text(
-                "${challenge.points}",
+                "${challenge.rating}",
                 style: context.name,
               ),
               SvgPicture.asset(
@@ -247,6 +257,7 @@ class __ChallengeItem extends StatelessWidget {
           Text(
             challenge.description,
             style: context.body,
+            maxLines: 3,
           ),
           const Spacer(),
           CupertinoButton(
@@ -266,86 +277,100 @@ class __ChallengeItem extends StatelessWidget {
   }
 }
 
-class _Heatmap extends StatelessWidget {
+class _Heatmap extends GetView<HomeController> {
   const _Heatmap();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
+    return controller.isLoading.value || controller.home == null
+        ? const SizedBox(
+            height: 200,
+            child: Center(
+              child: CircularProgressIndicator.adaptive(),
+            ),
+          )
+        : Column(
             children: [
-              Text(
-                "Heatmap",
-                style: context.name,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  children: [
+                    Text(
+                      "Heatmap",
+                      style: context.name,
+                    ),
+                    const Spacer(),
+                    const SizedBox(width: 5),
+                    Text(
+                      "${controller.home!.value.rating}",
+                      style: context.title,
+                    ),
+                    SvgPicture.asset(
+                      IconConstants.points,
+                      height: 30,
+                      width: 30,
+                    ),
+                    Text(
+                      "pts.",
+                      style: context.name,
+                    ),
+                  ],
+                ),
               ),
-              const Spacer(),
-              const SizedBox(width: 5),
-              Text(
-                "${mockUser.points}",
-                style: context.title,
-              ),
-              SvgPicture.asset(
-                IconConstants.points,
-                height: 30,
-                width: 30,
-              ),
-              Text(
-                "pts.",
-                style: context.name,
+              CustomHeatmap(
+                startDate: DateTime.now().subtract(const Duration(days: 300)),
+                endDate: DateTime.now().add(
+                  const Duration(days: 100),
+                ),
+                data: {for (var entry in heatmapData) entry.time: entry.lvl},
               ),
             ],
-          ),
-        ),
-        CustomHeatmap(
-          startDate: DateTime.now().subtract(const Duration(days: 300)),
-          endDate: DateTime.now().add(
-            const Duration(days: 100),
-          ),
-          data: {for (var entry in heatmapData) entry.time: entry.lvl},
-        ),
-      ],
-    );
+          );
   }
 }
 
-class _Streak extends StatelessWidget {
+class _Streak extends GetView<HomeController> {
   const _Streak();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
+    return controller.isLoading.value || controller.home == null
+        ? const SizedBox(
+            height: 200,
+            child: Center(
+              child: CircularProgressIndicator.adaptive(),
+            ),
+          )
+        : Column(
             children: [
-              Text(
-                "Active Dates",
-                style: context.name,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  children: [
+                    Text(
+                      "Active Dates",
+                      style: context.name,
+                    ),
+                    const Spacer(),
+                    Text(
+                      "Current streak",
+                      style: context.smallName,
+                    ),
+                    const SizedBox(width: 5),
+                    Text(
+                      "${controller.home!.value.streak}",
+                      style: context.title,
+                    ),
+                    SvgPicture.asset(
+                      IconConstants.streak,
+                      height: 25,
+                      width: 25,
+                    ),
+                  ],
+                ),
               ),
-              const Spacer(),
-              Text(
-                "Current streak",
-                style: context.smallName,
-              ),
-              const SizedBox(width: 5),
-              Text(
-                "${mockStreakEntity.currentStreak}",
-                style: context.title,
-              ),
-              SvgPicture.asset(
-                IconConstants.streak,
-                height: 25,
-                width: 25,
-              ),
+              StreakCalendarWidget(activeDates: controller.home!.value.activeDates),
             ],
-          ),
-        ),
-        StreakCalendarWidget(activeDates: mockStreakEntity.activeDates),
-      ],
-    );
+          );
   }
 }
