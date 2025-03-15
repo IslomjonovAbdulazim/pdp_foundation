@@ -15,64 +15,76 @@ class _QuickInfo extends GetView<HomeController> {
         borderRadius: BorderRadius.circular(30),
       ),
       child: Center(
-        child: controller.isLoading.value
-            ? const CircularProgressIndicator.adaptive()
-            : Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        "#${controller.home?.value.place}",
+        child: Column(
+          children: [
+            Row(
+              children: [
+                StreamBuilder<int>(
+                    stream: controller.placeLive(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const CircularProgressIndicator.adaptive();
+                      }
+                      return Text(
+                        "#${snapshot.data ?? -1}",
                         style: context.title,
-                      ),
-                      const SizedBox(width: 5),
-                      Text(
-                        " All Time",
-                        style: context.smallName,
-                      ),
-                      const Spacer(),
-                      Text(
-                        "${controller.home?.value.firstName ?? "No Name"} ${controller.home?.value.lastName}",
-                        style: context.biggerName,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Text(
-                        "${controller.home?.value.rating}",
+                      );
+                    }),
+                const SizedBox(width: 5),
+                Text(
+                  " All Time",
+                  style: context.smallName,
+                ),
+                const Spacer(),
+                Text(
+                  "${controller.home?.value.firstName ?? "No Name"} ${controller.home?.value.lastName}",
+                  style: context.biggerName,
+                ),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Row(
+              children: [
+                StreamBuilder<int>(
+                    stream: controller.ratingLive(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const CircularProgressIndicator.adaptive();
+                      }
+                      return Text(
+                        "${snapshot.data ?? -1}",
                         style: context.title,
-                      ),
-                      const SizedBox(width: 5),
-                      SvgPicture.asset(
-                        IconConstants.points,
-                        height: 30,
-                        width: 30,
-                      ),
-                      Text(
-                        "rating",
-                        style: context.name,
-                      ),
-                      const Spacer(),
-                      Text(
-                        "streak",
-                        style: context.name,
-                      ),
-                      SvgPicture.asset(
-                        IconConstants.streak,
-                        height: 30,
-                        width: 30,
-                      ),
-                      const SizedBox(width: 5),
-                      Text(
-                        "${controller.home?.value.streak}",
-                        style: context.title,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                      );
+                    }),
+                const SizedBox(width: 5),
+                SvgPicture.asset(
+                  IconConstants.points,
+                  height: 30,
+                  width: 30,
+                ),
+                Text(
+                  "rating",
+                  style: context.name,
+                ),
+                const Spacer(),
+                Text(
+                  "streak",
+                  style: context.name,
+                ),
+                SvgPicture.asset(
+                  IconConstants.streak,
+                  height: 30,
+                  width: 30,
+                ),
+                const SizedBox(width: 5),
+                Text(
+                  "${controller.home?.value.streak}",
+                  style: context.title,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -369,7 +381,8 @@ class _Streak extends GetView<HomeController> {
                   ],
                 ),
               ),
-              StreakCalendarWidget(activeDates: controller.home!.value.activeDates),
+              StreakCalendarWidget(
+                  activeDates: controller.home!.value.activeDates),
             ],
           );
   }

@@ -50,25 +50,36 @@ class HomePage extends GetView<HomeController> {
           const SizedBox(width: 10),
         ],
       ),
-      body: const SingleChildScrollView(
-        padding: EdgeInsets.symmetric(
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(
           horizontal: 10,
           vertical: 20,
         ),
-        child: Column(
-          children: [
-            _QuickInfo(),
-            SizedBox(height: 15),
-            _LastRead(),
-            SizedBox(height: 30),
-            _Challenges(),
-            SizedBox(height: 30),
-            _Heatmap(),
-            SizedBox(height: 30),
-            _Streak(),
-            SizedBox(height: 200),
-          ],
-        ),
+        child: controller.isLoading.value
+            ? const Center(
+                child: CircularProgressIndicator.adaptive(),
+              )
+            : controller.home?.value == null
+                ? Center(
+                    child: Text(
+                      "Something went wrong!",
+                      style: context.title,
+                    ),
+                  )
+                : const Column(
+                    children: [
+                      _QuickInfo(),
+                      SizedBox(height: 15),
+                      _LastRead(),
+                      SizedBox(height: 30),
+                      _Challenges(),
+                      SizedBox(height: 30),
+                      _Heatmap(),
+                      SizedBox(height: 30),
+                      _Streak(),
+                      SizedBox(height: 200),
+                    ],
+                  ),
       ),
     );
   }

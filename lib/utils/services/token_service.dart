@@ -44,4 +44,13 @@ class TokenService extends GetxService {
       return "";
     }
   }
+
+  /// (Optional) Expose the token publicly if needed
+  String get withoutBearer {
+    if (_token.value.isNotEmpty) {
+      return _token.value;
+    } else {
+      return "";
+    }
+  }
 }
