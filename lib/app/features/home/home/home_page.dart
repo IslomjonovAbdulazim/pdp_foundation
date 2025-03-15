@@ -15,7 +15,10 @@ class HomePage extends GetView<HomeController> {
           padding: const EdgeInsets.only(left: 10),
           child: CupertinoButton(
             padding: EdgeInsets.zero,
-            onPressed: () {},
+            onPressed: () {
+              TokenService.to.clearToken();
+              Get.offNamed(AppRoutes.splash);
+            },
             child: SizedBox(
               height: 40,
               width: 40,
