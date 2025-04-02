@@ -13,7 +13,7 @@ import '../../data/providers/dio_manager.dart';
 
 class HomeController extends GetxController {
   Rx<HomeModel>? home;
-  RxBool isLoading = true.obs;
+  RxBool isLoading = false.obs;
 
   @override
   void onInit() {

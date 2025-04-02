@@ -10,7 +10,7 @@ part of 'home_api_client.dart';
 
 class _HomeApiClient implements HomeApiClient {
   _HomeApiClient(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'http://176.57.214.64:8020/';
+    baseUrl ??= 'http://10.10.2.6:8001/';
   }
 
   final Dio _dio;

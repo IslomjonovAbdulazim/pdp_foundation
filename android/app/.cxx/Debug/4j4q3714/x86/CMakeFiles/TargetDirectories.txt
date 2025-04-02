@@ -1,0 +1,2 @@
+/Users/abdulazim/flutter/tech-startup/math/pdp_foundation/android/app/.cxx/Debug/4j4q3714/x86/CMakeFiles/edit_cache.dir
+/Users/abdulazim/flutter/tech-startup/math/pdp_foundation/android/app/.cxx/Debug/4j4q3714/x86/CMakeFiles/rebuild_cache.dir

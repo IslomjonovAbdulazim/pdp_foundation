@@ -13,7 +13,7 @@ class BNBPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<BNBController>();
     return Scaffold(
-      body: Obx(() => pages[controller.currentIndex.value]), // Dynamic body
+      body: Obx(() => pages[controller.currentIndex.value]),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           currentIndex: controller.currentIndex.value,
