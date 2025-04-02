@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:pdp_foundation/app/controllers/home/home_controller.dart';
+import 'package:pdp_foundation/utils/helpers/logger.dart';
 import 'package:pdp_foundation/utils/services/token_service.dart';
 
 import 'app/bindings/screens/initial_binding.dart';

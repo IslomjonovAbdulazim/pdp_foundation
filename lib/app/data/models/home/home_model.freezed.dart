@@ -29,7 +29,7 @@ mixin _$HomeModel {
   int get streak => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
   List<Challenge> get challenges => throw _privateConstructorUsedError;
-  List<DateTime> get heatmap => throw _privateConstructorUsedError;
+  List<HeatmapPoint> get heatmap => throw _privateConstructorUsedError;
   @JsonKey(name: "active_dates")
   List<DateTime> get activeDates => throw _privateConstructorUsedError;
 
@@ -56,7 +56,7 @@ abstract class $HomeModelCopyWith<$Res> {
       int streak,
       String? avatar,
       List<Challenge> challenges,
-      List<DateTime> heatmap,
+      List<HeatmapPoint> heatmap,
       @JsonKey(name: "active_dates") List<DateTime> activeDates});
 }
 
@@ -117,7 +117,7 @@ class _$HomeModelCopyWithImpl<$Res, $Val extends HomeModel>
       heatmap: null == heatmap
           ? _value.heatmap
           : heatmap // ignore: cast_nullable_to_non_nullable
-              as List<DateTime>,
+              as List<HeatmapPoint>,
       activeDates: null == activeDates
           ? _value.activeDates
           : activeDates // ignore: cast_nullable_to_non_nullable
@@ -142,7 +142,7 @@ abstract class _$$HomeModelImplCopyWith<$Res>
       int streak,
       String? avatar,
       List<Challenge> challenges,
-      List<DateTime> heatmap,
+      List<HeatmapPoint> heatmap,
       @JsonKey(name: "active_dates") List<DateTime> activeDates});
 }
 
@@ -201,7 +201,7 @@ class __$$HomeModelImplCopyWithImpl<$Res>
       heatmap: null == heatmap
           ? _value._heatmap
           : heatmap // ignore: cast_nullable_to_non_nullable
-              as List<DateTime>,
+              as List<HeatmapPoint>,
       activeDates: null == activeDates
           ? _value._activeDates
           : activeDates // ignore: cast_nullable_to_non_nullable
@@ -221,7 +221,7 @@ class _$HomeModelImpl implements _HomeModel {
       required this.streak,
       this.avatar,
       required final List<Challenge> challenges,
-      required final List<DateTime> heatmap,
+      required final List<HeatmapPoint> heatmap,
       @JsonKey(name: "active_dates") required final List<DateTime> activeDates})
       : _challenges = challenges,
         _heatmap = heatmap,
@@ -252,9 +252,9 @@ class _$HomeModelImpl implements _HomeModel {
     return EqualUnmodifiableListView(_challenges);
   }
 
-  final List<DateTime> _heatmap;
+  final List<HeatmapPoint> _heatmap;
   @override
-  List<DateTime> get heatmap {
+  List<HeatmapPoint> get heatmap {
     if (_heatmap is EqualUnmodifiableListView) return _heatmap;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_heatmap);
@@ -333,7 +333,7 @@ abstract class _HomeModel implements HomeModel {
       required final int streak,
       final String? avatar,
       required final List<Challenge> challenges,
-      required final List<DateTime> heatmap,
+      required final List<HeatmapPoint> heatmap,
       @JsonKey(name: "active_dates")
       required final List<DateTime> activeDates}) = _$HomeModelImpl;
 
@@ -357,7 +357,7 @@ abstract class _HomeModel implements HomeModel {
   @override
   List<Challenge> get challenges;
   @override
-  List<DateTime> get heatmap;
+  List<HeatmapPoint> get heatmap;
   @override
   @JsonKey(name: "active_dates")
   List<DateTime> get activeDates;
@@ -625,5 +625,190 @@ abstract class _Challenge implements Challenge {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChallengeImplCopyWith<_$ChallengeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+HeatmapPoint _$HeatmapPointFromJson(Map<String, dynamic> json) {
+  return _HeatmapPoint.fromJson(json);
+}
+
+/// @nodoc
+mixin _$HeatmapPoint {
+  DateTime get date => throw _privateConstructorUsedError;
+  int get point => throw _privateConstructorUsedError;
+  int? get level => throw _privateConstructorUsedError;
+
+  /// Serializes this HeatmapPoint to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of HeatmapPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $HeatmapPointCopyWith<HeatmapPoint> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $HeatmapPointCopyWith<$Res> {
+  factory $HeatmapPointCopyWith(
+          HeatmapPoint value, $Res Function(HeatmapPoint) then) =
+      _$HeatmapPointCopyWithImpl<$Res, HeatmapPoint>;
+  @useResult
+  $Res call({DateTime date, int point, int? level});
+}
+
+/// @nodoc
+class _$HeatmapPointCopyWithImpl<$Res, $Val extends HeatmapPoint>
+    implements $HeatmapPointCopyWith<$Res> {
+  _$HeatmapPointCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of HeatmapPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? date = null,
+    Object? point = null,
+    Object? level = freezed,
+  }) {
+    return _then(_value.copyWith(
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      point: null == point
+          ? _value.point
+          : point // ignore: cast_nullable_to_non_nullable
+              as int,
+      level: freezed == level
+          ? _value.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$HeatmapPointImplCopyWith<$Res>
+    implements $HeatmapPointCopyWith<$Res> {
+  factory _$$HeatmapPointImplCopyWith(
+          _$HeatmapPointImpl value, $Res Function(_$HeatmapPointImpl) then) =
+      __$$HeatmapPointImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({DateTime date, int point, int? level});
+}
+
+/// @nodoc
+class __$$HeatmapPointImplCopyWithImpl<$Res>
+    extends _$HeatmapPointCopyWithImpl<$Res, _$HeatmapPointImpl>
+    implements _$$HeatmapPointImplCopyWith<$Res> {
+  __$$HeatmapPointImplCopyWithImpl(
+      _$HeatmapPointImpl _value, $Res Function(_$HeatmapPointImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HeatmapPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? date = null,
+    Object? point = null,
+    Object? level = freezed,
+  }) {
+    return _then(_$HeatmapPointImpl(
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      point: null == point
+          ? _value.point
+          : point // ignore: cast_nullable_to_non_nullable
+              as int,
+      level: freezed == level
+          ? _value.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$HeatmapPointImpl implements _HeatmapPoint {
+  const _$HeatmapPointImpl(
+      {required this.date, required this.point, this.level});
+
+  factory _$HeatmapPointImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HeatmapPointImplFromJson(json);
+
+  @override
+  final DateTime date;
+  @override
+  final int point;
+  @override
+  final int? level;
+
+  @override
+  String toString() {
+    return 'HeatmapPoint(date: $date, point: $point, level: $level)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HeatmapPointImpl &&
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.point, point) || other.point == point) &&
+            (identical(other.level, level) || other.level == level));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, date, point, level);
+
+  /// Create a copy of HeatmapPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HeatmapPointImplCopyWith<_$HeatmapPointImpl> get copyWith =>
+      __$$HeatmapPointImplCopyWithImpl<_$HeatmapPointImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$HeatmapPointImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _HeatmapPoint implements HeatmapPoint {
+  const factory _HeatmapPoint(
+      {required final DateTime date,
+      required final int point,
+      final int? level}) = _$HeatmapPointImpl;
+
+  factory _HeatmapPoint.fromJson(Map<String, dynamic> json) =
+      _$HeatmapPointImpl.fromJson;
+
+  @override
+  DateTime get date;
+  @override
+  int get point;
+  @override
+  int? get level;
+
+  /// Create a copy of HeatmapPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HeatmapPointImplCopyWith<_$HeatmapPointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

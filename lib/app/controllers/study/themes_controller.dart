@@ -18,6 +18,7 @@ class ThemesController extends GetxController {
 
   Future<void> load() async {
     isLoading.value = true;
+
     Get.put<StudyRepository>(
       StudyRepositoryImp(dio: dioInstance),
     );

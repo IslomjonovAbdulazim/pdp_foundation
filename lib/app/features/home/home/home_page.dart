@@ -27,65 +27,77 @@ class HomePage extends GetView<HomeController> {
           ),
         ),
         centerTitle: false,
-        title: Text(
-          controller.isLoading.value
-              ? "..."
-              : "Salom, ${controller.home?.value.firstName}!",
+        title: Obx(
+          () => Text(
+            controller.isLoading.value
+                ? "..."
+                : "Salom, ${controller.home?.value.firstName}!",
+          ),
         ),
         actions: [
-          controller.isLoading.value
-              ? const Center(
-                  child: CupertinoActivityIndicator(),
-                )
-              : CupertinoButton(
-                  padding: EdgeInsets.zero,
-                  onPressed: () {},
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(100),
-                    clipBehavior: Clip.antiAlias,
-                    child: SizedBox(
-                      height: 40,
-                      width: 40,
-                      child: CachedNetworkWidget(
-                        controller.home?.value.avatar ?? mockUser.image,
+          Obx(
+            () => controller.isLoading.value
+                ? CupertinoButton(
+                    onPressed: () {
+                      controller.load();
+                    },
+                    child: Icon(
+                      CupertinoIcons.refresh,
+                      color: context.textPrimary,
+                    ),
+                  )
+                : CupertinoButton(
+                    padding: EdgeInsets.zero,
+                    onPressed: () {},
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(100),
+                      clipBehavior: Clip.antiAlias,
+                      child: SizedBox(
+                        height: 40,
+                        width: 40,
+                        child: CachedNetworkWidget(
+                          controller.home?.value.avatar ?? mockUser.image,
+                        ),
                       ),
                     ),
                   ),
-                ),
+          ),
           const SizedBox(width: 10),
         ],
       ),
-      body: controller.isLoading.value
-          ? const Center(
-              child: CupertinoActivityIndicator(),
-            )
-          : SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 20,
-              ),
-              child: controller.home?.value == null
-                  ? Center(
-                      child: Text(
-                        "Something went wrong!",
-                        style: context.title,
+      body: Obx(
+        () => controller.isLoading.value
+            ? const Center(
+                child: CupertinoActivityIndicator(),
+              )
+            : SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 20,
+                ),
+                child: controller.home?.value == null
+                    ? Center(
+                        child: Text(
+                          "Something went wrong!",
+                          style: context.title,
+                        ),
+                      )
+                    : const Column(
+                        children: [
+                          _QuickInfo(),
+                          SizedBox(height: 15),
+                          _LastRead(),
+                          SizedBox(height: 30),
+                          _Challenges(),
+                          SizedBox(height: 30),
+                          _Heatmap(),
+                          SizedBox(height: 30),
+                          _Streak(),
+                          SizedBox(height: 200),
+                        ],
                       ),
-                    )
-                  : const Column(
-                      children: [
-                        _QuickInfo(),
-                        SizedBox(height: 15),
-                        _LastRead(),
-                        SizedBox(height: 30),
-                        _Challenges(),
-                        SizedBox(height: 30),
-                        _Heatmap(),
-                        SizedBox(height: 30),
-                        _Streak(),
-                        SizedBox(height: 200),
-                      ],
-                    ),
-            ),
+              ),
+      ),
     );
   }
 }

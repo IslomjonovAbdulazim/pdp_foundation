@@ -18,7 +18,7 @@ _$HomeModelImpl _$$HomeModelImplFromJson(Map<String, dynamic> json) =>
           .map((e) => Challenge.fromJson(e as Map<String, dynamic>))
           .toList(),
       heatmap: (json['heatmap'] as List<dynamic>)
-          .map((e) => DateTime.parse(e as String))
+          .map((e) => HeatmapPoint.fromJson(e as Map<String, dynamic>))
           .toList(),
       activeDates: (json['active_dates'] as List<dynamic>)
           .map((e) => DateTime.parse(e as String))
@@ -34,7 +34,7 @@ Map<String, dynamic> _$$HomeModelImplToJson(_$HomeModelImpl instance) =>
       'streak': instance.streak,
       'avatar': instance.avatar,
       'challenges': instance.challenges,
-      'heatmap': instance.heatmap.map((e) => e.toIso8601String()).toList(),
+      'heatmap': instance.heatmap,
       'active_dates':
           instance.activeDates.map((e) => e.toIso8601String()).toList(),
     };
@@ -57,4 +57,18 @@ Map<String, dynamic> _$$ChallengeImplToJson(_$ChallengeImpl instance) =>
       'rating': instance.rating,
       'created_at': instance.createdAt.toIso8601String(),
       'done': instance.done,
+    };
+
+_$HeatmapPointImpl _$$HeatmapPointImplFromJson(Map<String, dynamic> json) =>
+    _$HeatmapPointImpl(
+      date: DateTime.parse(json['date'] as String),
+      point: (json['point'] as num).toInt(),
+      level: (json['level'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$$HeatmapPointImplToJson(_$HeatmapPointImpl instance) =>
+    <String, dynamic>{
+      'date': instance.date.toIso8601String(),
+      'point': instance.point,
+      'level': instance.level,
     };

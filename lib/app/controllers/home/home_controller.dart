@@ -14,15 +14,20 @@ import '../../data/providers/dio_manager.dart';
 class HomeController extends GetxController {
   Rx<HomeModel>? home;
   RxBool isLoading = false.obs;
+  late WebSocketChannel _channel;
+  final RxInt place = 0.obs;
+  final RxInt rating = 0.obs;
 
   @override
   void onInit() {
     load();
+    _initWebSocket();
     super.onInit();
   }
 
   Future<void> load() async {
     isLoading.value = true;
+    print("Load----------");
     Get.put<HomeRepository>(
       HomeRepositoryImp(dio: dioInstance),
     );
@@ -40,27 +45,18 @@ class HomeController extends GetxController {
     isLoading.value = false;
   }
 
-  Stream<int> placeLive() {
-    print("aaa ${ApiConstants.streamURL}${ApiConstants.userinfo}?token=${TokenService.to.withoutBearer}");
-    final channel = WebSocketChannel.connect(
-      Uri.parse("${ApiConstants.streamURL}${ApiConstants.userinfo}?token=${TokenService.to.withoutBearer}"),
-    );
+  void _initWebSocket() {
+    final url = "${ApiConstants.streamURL}${ApiConstants.userinfo}?token=${TokenService.to.withoutBearer}";
+    print("WebSocket URL: $url");
+    _channel = WebSocketChannel.connect(Uri.parse(url));
 
-    return channel.stream.map((data) {
-      final d = jsonDecode(data);
-      return d["user_info"]["place"];
-    });
-  }
-
-  Stream<int> ratingLive() {
-    print("aaa ${ApiConstants.streamURL}${ApiConstants.userinfo}?token=${TokenService.to.withoutBearer}");
-    final channel = WebSocketChannel.connect(
-      Uri.parse("${ApiConstants.streamURL}${ApiConstants.userinfo}?token=${TokenService.to.withoutBearer}"),
-    );
-
-    return channel.stream.map((data) {
-      final d = jsonDecode(data);
-      return d["user_info"]["rating"];
+    _channel.stream.listen((data) {
+      final decoded = jsonDecode(data);
+      final userInfo = decoded["user_info"];
+      if (userInfo != null) {
+        place.value = userInfo["place"];
+        rating.value = userInfo["rating"];
+      }
     });
   }
 }

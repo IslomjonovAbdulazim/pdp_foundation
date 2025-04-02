@@ -19,17 +19,10 @@ class _QuickInfo extends GetView<HomeController> {
           children: [
             Row(
               children: [
-                StreamBuilder<int>(
-                    stream: controller.placeLive(),
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const CircularProgressIndicator.adaptive();
-                      }
-                      return Text(
-                        "#${snapshot.data ?? -1}",
-                        style: context.title,
-                      );
-                    }),
+                Text(
+                  "#${controller.place.value}",
+                  style: context.title,
+                ),
                 const SizedBox(width: 5),
                 Text(
                   " All Time",
@@ -45,17 +38,10 @@ class _QuickInfo extends GetView<HomeController> {
             const SizedBox(height: 10),
             Row(
               children: [
-                StreamBuilder<int>(
-                    stream: controller.ratingLive(),
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const CircularProgressIndicator.adaptive();
-                      }
-                      return Text(
-                        "${snapshot.data ?? -1}",
-                        style: context.title,
-                      );
-                    }),
+                Text(
+                  "${controller.rating.value}",
+                  style: context.title,
+                ),
                 const SizedBox(width: 5),
                 SvgPicture.asset(
                   IconConstants.points,

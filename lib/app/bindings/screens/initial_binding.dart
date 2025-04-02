@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:pdp_foundation/app/controllers/home/home_controller.dart';
 import 'package:pdp_foundation/app/controllers/leaderboard/leaderboard_controller.dart';
 
+import '../../../domain/respositories/home_repository.dart';
 import '../../../domain/respositories/study_repository.dart';
 import '../../../utils/services/connectivity_service.dart';
 import '../../../utils/services/token_service.dart';
@@ -9,6 +10,7 @@ import '../../controllers/screens/bnb_controller.dart';
 import '../../controllers/study/themes_controller.dart';
 import '../../data/providers/dio_manager.dart';
 import '../../data/providers/study_api_client.dart';
+import '../../data/repositories/home_repository_impl.dart';
 import '../../data/repositories/study_repository_imp.dart';
 import '../home/home_binding.dart';
 import '../leaderboard/leaderboard_binding.dart';
@@ -22,12 +24,9 @@ class InitialBinding extends Bindings {
 
     // Home
     Get.put(HomeController());
-    Get.put(HomeBinding());
 
     // Register controllers and services synchronously.
     Get.put(BNBController());
-    Get.put(HomeBinding());
-    Get.put(LeaderboardBinding());
     Get.put(LeaderboardController());
 
     // For asynchronous initialization, use putAsync.

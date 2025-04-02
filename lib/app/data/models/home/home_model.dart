@@ -13,7 +13,7 @@ class HomeModel with _$HomeModel {
     required int streak,
     String? avatar,
     required List<Challenge> challenges,
-    required List<DateTime> heatmap,
+    required List<HeatmapPoint> heatmap,
     @JsonKey(name: "active_dates") required List<DateTime> activeDates,
   }) = _HomeModel;
 
@@ -34,4 +34,16 @@ class Challenge with _$Challenge {
 
   factory Challenge.fromJson(Map<String, dynamic> json) =>
       _$ChallengeFromJson(json);
+}
+
+@freezed
+class HeatmapPoint with _$HeatmapPoint {
+  const factory HeatmapPoint({
+    required DateTime date,
+    required int point,
+    int? level,
+  }) = _HeatmapPoint;
+
+  factory HeatmapPoint.fromJson(Map<String, dynamic> json) =>
+      _$HeatmapPointFromJson(json);
 }
